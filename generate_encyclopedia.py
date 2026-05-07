@@ -1,4 +1,6 @@
 import json
+import os
+import glob
 
 with open("index.html.backup", "r") as f:
     lines = f.readlines()
@@ -6,68 +8,22 @@ with open("index.html.backup", "r") as f:
 # Extract parts
 header_html = "".join(lines[:702])
 
-# We will create a dynamic container
+# Dynamic container
 dynamic_container = """
 <div id="week-display-container"></div>
 """
 
 footer_html = "".join(lines[3962:])
 
-# We need the JS template for week 4. Let's simplify the data structure a bit to fit in memory.
-# The user asked for all 40 weeks.
-# I'll generate the WEEKS_DATA array.
-js_weeks_data = """
-const WEEKS_DATA = {
-"""
+# Read all batches and combine
+all_weeks_data = {}
+for file in sorted(glob.glob("data/batch_*.json")):
+    with open(file, "r") as f:
+        batch_data = json.load(f)
+        all_weeks_data.update(batch_data)
 
-for w in range(1, 42):
-    t = 't1'
-    if w > 13: t = 't2'
-    if w > 27: t = 't3'
-    
-    js_weeks_data += f"""
-  '{w}': {{
-    id: '{w}',
-    title: 'Week {w} Milestone',
-    subtitle: 'Welcome to Week {w}. Your baby is growing steadily.',
-    trimester: '{t}',
-    trimesterLabel: '{t.upper()}',
-    emoji: '👶',
-    size: 'Growing',
-    sizeDesc: 'Growing larger every day.',
-    keyDev: 'Continuous Growth',
-    keyDevDesc: 'Nervous system and organs are developing.',
-    dadPriority: 'Support and Prepare',
-    dadPriorityDesc: 'Keep supporting your partner.',
-    partnerSymptoms: 'Varies',
-    partnerSymptomsDesc: 'Fatigue and hormonal changes.',
-    babyDevBullets: ['Growth is continuous.', 'Organs are maturing.'],
-    symptomTable: [
-      {{ name: 'Fatigue', why: 'Hormones', help: 'Rest' }}
-    ],
-    emotionalScripts: ['How can I help today?'],
-    practicalTasks: ['Schedule checkups', 'Stock pantry'],
-    relationshipIdeas: ['Watch a movie together'],
-    bondingTasks: [
-      {{ emoji: '🗣️', title: 'Talk to Baby', text: 'Baby can hear you.' }}
-    ],
-    mustBuy: ['Prenatal vitamins'],
-    optionalBuy: ['Pregnancy pillow'],
-    medicalRoadmap: ['Attend scheduled OB appointments.'],
-    questions: ['What tests are next?'],
-    takeaways: ['Stay supportive.', 'Communicate openly.']
-  }},
-"""
-
-js_weeks_data += """
-  'prep': {
-    id: 'prep', title: 'Pre-Conception Planning', subtitle: 'Preparing for the journey.', trimester: 'prep', trimesterLabel: 'PREP', emoji: '🌱', size: 'N/A', sizeDesc: 'Planning stage.', keyDev: 'Health Optimization', keyDevDesc: 'Taking vitamins.', dadPriority: 'Align Goals', dadPriorityDesc: 'Talk about the future.', partnerSymptoms: 'None yet', partnerSymptomsDesc: 'Tracking cycles.', babyDevBullets: ['Getting ready!'], symptomTable: [], emotionalScripts: ['Are we ready?'], practicalTasks: ['Doctor checkup'], relationshipIdeas: ['Date night'], bondingTasks: [], mustBuy: ['Prenatals'], optionalBuy: [], medicalRoadmap: ['Checkups'], questions: [], takeaways: ['Get healthy.']
-  },
-  'birth': {
-    id: 'birth', title: 'Labor & Delivery', subtitle: 'The big day is here.', trimester: 'birth', trimesterLabel: 'BIRTH', emoji: '🎉', size: 'Newborn', sizeDesc: 'Full term.', keyDev: 'Birth', keyDevDesc: 'Meeting your baby.', dadPriority: 'Coach & Support', dadPriorityDesc: 'Be present.', partnerSymptoms: 'Labor', partnerSymptomsDesc: 'Contractions.', babyDevBullets: ['Ready for the world.'], symptomTable: [], emotionalScripts: ['You are doing great.'], practicalTasks: ['Hospital bag'], relationshipIdeas: ['Hold hands'], bondingTasks: [], mustBuy: ['Car seat'], optionalBuy: [], medicalRoadmap: ['Hospital protocols'], questions: [], takeaways: ['Breathe.']
-  }
-};
-"""
+# Convert combined dict back to a JSON string for JS
+js_weeks_data = "const WEEKS_DATA = " + json.dumps(all_weeks_data, indent=2) + ";"
 
 js_render_function = """
 function renderWeek(key) {
@@ -76,13 +32,18 @@ function renderWeek(key) {
   
   const container = document.getElementById('week-display-container');
   
-  // We recreate the Week 4 layout structure
+  // Create symptom table rows safely
+  const symptomRows = data.symptomTable && data.symptomTable.length > 0 
+    ? data.symptomTable.map(s => `<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-bottom:1px solid var(--color-border);font-size:var(--text-sm)"><div><strong>${s.name}</strong></div><div>${s.why}</div><div>${s.help}</div></div>`).join('')
+    : '<div style="font-size:var(--text-sm);color:var(--color-text-muted)">No major symptoms this week.</div>';
+
+  // We recreate the layout structure with all data
   const html = `
 <article id="week-${data.id}">
   <div class="week-header">
     <div class="container">
       <div class="week-eyebrow">
-        <span class="week-badge">Week ${data.id} · ${data.trimesterLabel}</span>
+        <span class="week-badge">Week ${data.id === 'prep' || data.id === 'birth' ? '' : data.id + ' · '}${data.trimesterLabel}</span>
       </div>
       <h2 class="week-title">${data.emoji} ${data.title}</h2>
       <p class="week-subtitle">${data.subtitle}</p>
@@ -120,6 +81,7 @@ function renderWeek(key) {
 
       <div class="content-layout" style="margin-top:var(--space-10)">
         <div class="main-content">
+          
           <div class="info-card fade-in">
             <div class="info-card-header">
               <div class="info-card-icon icon-baby">👶</div>
@@ -131,6 +93,71 @@ function renderWeek(key) {
               ${data.babyDevBullets.map(b => `<div class="list-item"><span class="list-bullet"></span><span>${b}</span></div>`).join('')}
             </div>
           </div>
+          
+          <div class="info-card fade-in" style="margin-top:var(--space-6)">
+            <div class="info-card-header">
+              <div class="info-card-icon icon-partner">❤️</div>
+              <div>
+                <div class="info-card-title">Partner's Journey</div>
+                <div class="info-card-desc">Symptom decoder and how to help</div>
+              </div>
+            </div>
+            <div style="margin-top:var(--space-4)">
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--space-2);padding-bottom:var(--space-2);border-bottom:2px solid var(--color-border);font-weight:700;font-size:var(--text-xs);text-transform:uppercase;letter-spacing:0.05em;color:var(--color-text-muted)">
+                <div>Symptom</div><div>Why it's happening</div><div>How you can help</div>
+              </div>
+              ${symptomRows}
+            </div>
+          </div>
+
+          <div class="info-card fade-in" style="margin-top:var(--space-6)">
+            <div class="info-card-header">
+              <div class="info-card-icon icon-mission">🚀</div>
+              <div>
+                <div class="info-card-title">Mission Control</div>
+                <div class="info-card-desc">Your dad duties for this week</div>
+              </div>
+            </div>
+            <div class="mission-tabs">
+              <button class="mission-tab active" onclick="switchTab(this, 'tab-emotional')" aria-selected="true">Emotional</button>
+              <button class="mission-tab" onclick="switchTab(this, 'tab-practical')" aria-selected="false">Practical</button>
+              <button class="mission-tab" onclick="switchTab(this, 'tab-relationship')" aria-selected="false">Relationship</button>
+            </div>
+            <div class="mission-content">
+              <div id="tab-emotional" class="mission-panel active">
+                <ul style="padding-left:var(--space-4);margin:0;font-size:var(--text-sm)">
+                  ${data.emotionalScripts.map(s => `<li style="margin-bottom:var(--space-2)">"${s}"</li>`).join('')}
+                </ul>
+              </div>
+              <div id="tab-practical" class="mission-panel">
+                <div class="checklist">
+                  ${data.practicalTasks.map(t => `
+                  <div class="check-item" onclick="toggleCheck(this)">
+                    <div class="ci-box"></div>
+                    <div class="ci-text">${t}</div>
+                  </div>`).join('')}
+                </div>
+              </div>
+              <div id="tab-relationship" class="mission-panel">
+                <ul style="padding-left:var(--space-4);margin:0;font-size:var(--text-sm)">
+                  ${data.relationshipIdeas.map(r => `<li style="margin-bottom:var(--space-2)">${r}</li>`).join('')}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-card fade-in" style="margin-top:var(--space-6); background:var(--color-surface-2)">
+            <div class="info-card-header">
+              <div class="info-card-icon">🧠</div>
+              <div>
+                <div class="info-card-title">Takeaways</div>
+              </div>
+            </div>
+            <div class="list-items" style="margin-top:var(--space-4)">
+              ${data.takeaways.map(t => `<div class="list-item"><span class="list-bullet"></span><span style="font-weight:500">${t}</span></div>`).join('')}
+            </div>
+          </div>
+
         </div>
         
         <aside class="sidebar">
@@ -138,11 +165,41 @@ function renderWeek(key) {
                 <div class="sidebar-title">
                   Progress Tracker
                 </div>
-                <p>Select a week below:</p>
+                <p style="font-size:var(--text-sm);margin-bottom:var(--space-4)">Select a week below:</p>
                 <div class="progress-weeks" style="gap: 5px;">
-                  ${Object.keys(WEEKS_DATA).map(k => `<div class="week-dot ${k===key ? 'current' : 'completed'}" onclick="renderWeek('${k}')" style="cursor:pointer">${k}</div>`).join('')}
+                  ${Object.keys(WEEKS_DATA).map(k => `
+                    <div class="week-dot ${k===key ? 'current' : 'completed'}" 
+                         onclick="renderWeek('${k}')" 
+                         style="cursor:pointer"
+                         title="${WEEKS_DATA[k].title}">
+                      ${k === 'prep' ? 'P' : (k === 'birth' ? 'B' : k)}
+                    </div>
+                  `).join('')}
                 </div>
             </div>
+
+            <div class="sidebar-card" style="margin-top:var(--space-6)">
+              <div class="sidebar-title">🛒 Dad's Shopping List</div>
+              <div class="checklist" style="margin-top:var(--space-4)">
+                <div style="font-weight:700;font-size:var(--text-xs);text-transform:uppercase;margin-bottom:var(--space-2)">Must Buy</div>
+                ${data.mustBuy && data.mustBuy.length > 0 ? data.mustBuy.map(b => `<div class="check-item" onclick="toggleCheck(this)"><div class="ci-box"></div><div class="ci-text">${b}</div></div>`).join('') : '<div style="font-size:var(--text-sm);color:var(--color-text-muted)">None this week</div>'}
+                <div style="font-weight:700;font-size:var(--text-xs);text-transform:uppercase;margin:var(--space-4) 0 var(--space-2) 0">Optional</div>
+                ${data.optionalBuy && data.optionalBuy.length > 0 ? data.optionalBuy.map(b => `<div class="check-item" onclick="toggleCheck(this)"><div class="ci-box"></div><div class="ci-text">${b}</div></div>`).join('') : '<div style="font-size:var(--text-sm);color:var(--color-text-muted)">None this week</div>'}
+              </div>
+            </div>
+
+            <div class="sidebar-card" style="margin-top:var(--space-6)">
+              <div class="sidebar-title">🩺 Medical Roadmap</div>
+              <ul style="padding-left:var(--space-4);font-size:var(--text-sm);margin-top:var(--space-4)">
+                ${data.medicalRoadmap.map(m => `<li style="margin-bottom:var(--space-2)">${m}</li>`).join('')}
+              </ul>
+              ${data.questions && data.questions.length > 0 ? `
+              <div style="font-weight:700;font-size:var(--text-xs);text-transform:uppercase;margin:var(--space-4) 0 var(--space-2) 0">Questions to Ask</div>
+              <ul style="padding-left:var(--space-4);font-size:var(--text-sm);color:var(--color-text-muted)">
+                ${data.questions.map(q => `<li>${q}</li>`).join('')}
+              </ul>` : ''}
+            </div>
+
         </aside>
       </div>
     </div>
@@ -158,6 +215,9 @@ function renderWeek(key) {
   document.querySelectorAll('.trimester-btn').forEach(btn => btn.classList.remove('active'));
   const trimBtn = document.querySelector(`.trimester-btn.${data.trimester}`);
   if(trimBtn) trimBtn.classList.add('active');
+  
+  // Scroll to top of week display smoothly
+  document.getElementById('week-display-container').scrollIntoView({behavior: 'smooth', block: 'start'});
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -179,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.removeAttribute('onclick');
         btn.addEventListener('click', (e) => {
             if(btn.classList.contains('prep')) renderWeek('prep');
-            else if(btn.classList.contains('t1')) renderWeek('4');
+            else if(btn.classList.contains('t1')) renderWeek('1');
             else if(btn.classList.contains('t2')) renderWeek('14');
             else if(btn.classList.contains('t3')) renderWeek('28');
             else if(btn.classList.contains('birth')) renderWeek('birth');
@@ -196,4 +256,4 @@ final_html = header_html + dynamic_container + footer_html
 with open("index.html", "w") as f:
     f.write(final_html)
 
-print("Generated full dynamic index.html successfully.")
+print("Generated full dynamic index.html with all JSON batches successfully.")
