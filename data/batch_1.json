@@ -1,0 +1,566 @@
+{
+  "prep": {
+    "id": "prep",
+    "title": "The Starting Line",
+    "subtitle": "Preparing together, building healthy habits, aligning on parenting values.",
+    "trimester": "prep",
+    "trimesterLabel": "PRE-CONCEPTION",
+    "emoji": "🚀",
+    "size": "N/A",
+    "sizeDesc": "Planning Phase",
+    "keyDev": "Health Optimization",
+    "keyDevDesc": "Creating the best environment for conception.",
+    "dadPriority": "Vitamins & Habits",
+    "dadPriorityDesc": "Start taking multivitamins and limit alcohol.",
+    "partnerSymptoms": "Tracking Cycles",
+    "partnerSymptomsDesc": "Monitoring ovulation and temperature.",
+    "babyDevBullets": [
+      "No baby yet! This is the preparation phase.",
+      "Sperm takes about 74 days to mature, so your health now affects conception 2.5 months from now.",
+      "Your partner's body needs 400-800mcg of folic acid daily to prevent neural tube defects once conception occurs."
+    ],
+    "symptomTable": [
+      { "name": "Temperature Tracking", "why": "Identifying ovulation window", "help": "Help her remember to take temp first thing in morning" }
+    ],
+    "emotionalScripts": [
+      "What kind of parents do we want to be?",
+      "Are there any fears we should talk about before we start trying?"
+    ],
+    "practicalTasks": [
+      "Start taking a men's multivitamin with zinc and selenium.",
+      "Cut back on alcohol, quit smoking.",
+      "Review your health insurance maternity coverage."
+    ],
+    "relationshipIdeas": [
+      "Have a 'pre-TTC' (Trying To Conceive) special date night to celebrate this new chapter."
+    ],
+    "bondingTasks": [
+      { "emoji": "📝", "title": "Values List", "text": "Write down 3 values you want to instill in your future child." }
+    ],
+    "mustBuy": [
+      "Prenatal vitamins (for her)",
+      "Men's multivitamin (for you)",
+      "Ovulation predictor kits"
+    ],
+    "optionalBuy": [
+      "Basal body thermometer"
+    ],
+    "medicalRoadmap": [
+      "Schedule a pre-conception checkup for your partner.",
+      "Get dental checkups (gum health affects pregnancy)."
+    ],
+    "questions": [
+      "Are all our vaccinations up to date?"
+    ],
+    "takeaways": [
+      "Pregnancy health starts months before conception.",
+      "Your habits matter just as much as hers right now."
+    ]
+  },
+  "1": {
+    "id": "1",
+    "title": "The First Week",
+    "subtitle": "Technically, you're not pregnant yet.",
+    "trimester": "t1",
+    "trimesterLabel": "FIRST TRIMESTER",
+    "emoji": "⏳",
+    "size": "N/A",
+    "sizeDesc": "Menstrual Period",
+    "keyDev": "Lining Shedding",
+    "keyDevDesc": "Uterus preparing for a new egg.",
+    "dadPriority": "Patience & Support",
+    "dadPriorityDesc": "Support her during her period.",
+    "partnerSymptoms": "Menstruation",
+    "partnerSymptomsDesc": "Cramps, bleeding, fatigue.",
+    "babyDevBullets": [
+      "Week 1 of pregnancy actually begins on the first day of her last menstrual period (LMP).",
+      "There is no baby yet. The body is shedding the old uterine lining to prepare a fresh bed for a fertilized egg."
+    ],
+    "symptomTable": [
+      { "name": "Cramping", "why": "Uterus contracting to shed lining", "help": "Offer a heating pad and ibuprofen" }
+    ],
+    "emotionalScripts": [
+      "Do you need anything to feel more comfortable today?"
+    ],
+    "practicalTasks": [
+      "Keep track of the exact start date of this period—it will be used to calculate the due date later!",
+      "Stock up on her preferred period products and comfort foods."
+    ],
+    "relationshipIdeas": [
+      "Low-key movie night with a heating pad."
+    ],
+    "bondingTasks": [
+      { "emoji": "📅", "title": "Mark the Calendar", "text": "Record the LMP date in a shared calendar." }
+    ],
+    "mustBuy": [],
+    "optionalBuy": [],
+    "medicalRoadmap": [
+      "Continue taking prenatal vitamins daily."
+    ],
+    "questions": [],
+    "takeaways": [
+      "Due dates are calculated from this week.",
+      "Record the date—it's very important."
+    ]
+  },
+  "2": {
+    "id": "2",
+    "title": "The Ovulation Window",
+    "subtitle": "The egg is released and waiting.",
+    "trimester": "t1",
+    "trimesterLabel": "FIRST TRIMESTER",
+    "emoji": "🎯",
+    "size": "Microscopic",
+    "sizeDesc": "A single egg",
+    "keyDev": "Ovulation",
+    "keyDevDesc": "The egg travels down the fallopian tube.",
+    "dadPriority": "Timing is Everything",
+    "dadPriorityDesc": "This is the conception window.",
+    "partnerSymptoms": "Ovulation Signs",
+    "partnerSymptomsDesc": "Mild cramping (mittelschmerz), changes in cervical mucus.",
+    "babyDevBullets": [
+      "Ovulation usually occurs around day 14 of a 28-day cycle.",
+      "An egg is released from the ovary and travels into the fallopian tube, where it waits for sperm.",
+      "Sperm can live inside the reproductive tract for up to 5 days, but the egg only survives for 12-24 hours."
+    ],
+    "symptomTable": [
+      { "name": "Mittelschmerz", "why": "Egg releasing from ovary", "help": "Usually mild, no action needed" }
+    ],
+    "emotionalScripts": [
+      "Let's keep this fun and not just a clinical chore."
+    ],
+    "practicalTasks": [
+      "Be available and responsive to the ovulation window.",
+      "Avoid using hot tubs or saunas (heat kills sperm)."
+    ],
+    "relationshipIdeas": [
+      "Focus on romance and intimacy without pressure."
+    ],
+    "bondingTasks": [
+      { "emoji": "💑", "title": "Intimacy", "text": "Connect with your partner." }
+    ],
+    "mustBuy": [],
+    "optionalBuy": [
+      "Fertility-friendly lubricant (e.g., Pre-Seed)"
+    ],
+    "medicalRoadmap": [
+      "Have intercourse during the fertile window (the days leading up to and day of ovulation)."
+    ],
+    "questions": [],
+    "takeaways": [
+      "Timing is crucial for conception.",
+      "Keep intimacy stress-free."
+    ]
+  },
+  "3": {
+    "id": "3",
+    "title": "Fertilization & Implantation",
+    "subtitle": "The spark of life happens.",
+    "trimester": "t1",
+    "trimesterLabel": "FIRST TRIMESTER",
+    "emoji": "🧬",
+    "size": "Pinhead",
+    "sizeDesc": "Blastocyst",
+    "keyDev": "Cell Division",
+    "keyDevDesc": "The fertilized egg rapidly divides.",
+    "dadPriority": "The Waiting Game",
+    "dadPriorityDesc": "Wait before taking a pregnancy test.",
+    "partnerSymptoms": "Early Implantation",
+    "partnerSymptomsDesc": "Possible light spotting, mild cramping.",
+    "babyDevBullets": [
+      "Sperm meets egg, creating a single cell called a zygote.",
+      "The zygote divides rapidly into a ball of cells (blastocyst) as it travels to the uterus.",
+      "Implantation begins: the blastocyst burrows into the nutrient-rich uterine lining."
+    ],
+    "symptomTable": [
+      { "name": "Implantation Bleeding", "why": "Blastocyst embedding in uterus", "help": "Reassure her it's normal and harmless" }
+    ],
+    "emotionalScripts": [
+      "I know the two-week wait is stressful. How are you holding up?"
+    ],
+    "practicalTasks": [
+      "Distract her from symptom-spotting.",
+      "Do NOT encourage taking a pregnancy test yet—it's too early for accurate results and can cause unnecessary heartbreak."
+    ],
+    "relationshipIdeas": [
+      "Plan a fun, engaging outing that takes your minds off waiting."
+    ],
+    "bondingTasks": [
+      { "emoji": "🧘‍♂️", "title": "Stress Relief", "text": "Do a relaxing activity together." }
+    ],
+    "mustBuy": [],
+    "optionalBuy": [],
+    "medicalRoadmap": [
+      "Avoid alcohol and medications not approved for pregnancy just in case."
+    ],
+    "questions": [],
+    "takeaways": [
+      "Implantation is happening now.",
+      "It is still too early to test."
+    ]
+  },
+  "4": {
+    "id": "4",
+    "title": "Tiny Heartbeat Begins",
+    "subtitle": "Most couples confirm pregnancy this week.",
+    "trimester": "t1",
+    "trimesterLabel": "FIRST TRIMESTER",
+    "emoji": "❤️",
+    "size": "Poppy Seed",
+    "sizeDesc": "~1-2 mm",
+    "keyDev": "Heart Tube Forms",
+    "keyDevDesc": "Neural tube closes, heart starts pulsing.",
+    "dadPriority": "Confirm & Book",
+    "dadPriorityDesc": "Take the test, book the OB, support her.",
+    "partnerSymptoms": "Hormone Surge",
+    "partnerSymptomsDesc": "Fatigue, sore breasts, missed period.",
+    "babyDevBullets": [
+      "Implantation completes, triggering the production of hCG (detected by tests).",
+      "Neural tube closes: the foundation of the brain and spinal cord takes shape.",
+      "The heart tube forms and begins pulsing at 80-85 beats per minute."
+    ],
+    "symptomTable": [
+      { "name": "Fatigue", "why": "Progesterone spikes", "help": "Take over evening chores" },
+      { "name": "Missed Period", "why": "Pregnancy hormones maintaining lining", "help": "Buy tests!" }
+    ],
+    "emotionalScripts": [
+      "I am here with you, whatever the result is.",
+      "We are going to figure this out together."
+    ],
+    "practicalTasks": [
+      "Buy a 2-pack of digital pregnancy tests.",
+      "Call to schedule the first OB-GYN appointment.",
+      "Start a pregnancy folder for documents."
+    ],
+    "relationshipIdeas": [
+      "Celebrate the positive test privately just the two of you."
+    ],
+    "bondingTasks": [
+      { "emoji": "📸", "title": "Take a Photo", "text": "Take a picture of her holding the positive test (keep it private for now)." }
+    ],
+    "mustBuy": [
+      "Pregnancy tests",
+      "Ginger candies (just in case)"
+    ],
+    "optionalBuy": [
+      "The Expectant Father book"
+    ],
+    "medicalRoadmap": [
+      "Call OB to schedule an 8-week dating scan."
+    ],
+    "questions": [
+      "What is our estimated due date based on LMP?"
+    ],
+    "takeaways": [
+      "You are officially going to be a dad.",
+      "Book the doctor appointment ASAP."
+    ]
+  },
+  "5": {
+    "id": "5",
+    "title": "Morning Sickness Peaks",
+    "subtitle": "The reality of pregnancy physical symptoms hits.",
+    "trimester": "t1",
+    "trimesterLabel": "FIRST TRIMESTER",
+    "emoji": "🤢",
+    "size": "Sesame Seed",
+    "sizeDesc": "~3.3 mm",
+    "keyDev": "Major Organs",
+    "keyDevDesc": "Brain, spinal cord, blood vessels develop.",
+    "dadPriority": "Hydration & Empathy",
+    "dadPriorityDesc": "Stock ginger, take over cooking.",
+    "partnerSymptoms": "Nausea & Exhaustion",
+    "partnerSymptomsDesc": "All-day sickness, food aversions, sore breasts.",
+    "babyDevBullets": [
+      "The embryo resembles a tiny tadpole.",
+      "The neural tube is developing rapidly into the brain.",
+      "Arm and leg buds begin to appear.",
+      "The heart beats steadily and circulates blood."
+    ],
+    "symptomTable": [
+      { "name": "Nausea", "why": "Rising hCG and estrogen", "help": "Stock crackers, avoid cooking smelly foods" },
+      { "name": "Frequent Urination", "why": "Kidneys working overtime", "help": "Ensure path to bathroom is clear at night" }
+    ],
+    "emotionalScripts": [
+      "You rest. I've got dinner and the chores tonight."
+    ],
+    "practicalTasks": [
+      "Take over cooking permanently for the first trimester.",
+      "Remove the litter box duty entirely (toxoplasmosis risk).",
+      "Keep a water bottle filled for her at all times."
+    ],
+    "relationshipIdeas": [
+      "Eat your meals in another room if the smell of your food makes her nauseous."
+    ],
+    "bondingTasks": [
+      { "emoji": "🎶", "title": "Playlist", "text": "Create a soothing music playlist." }
+    ],
+    "mustBuy": [
+      "Saltine crackers",
+      "Electrolyte drinks",
+      "Vitamin B6 (consult doctor for nausea)"
+    ],
+    "optionalBuy": [
+      "Sea-Bands (acupressure)"
+    ],
+    "medicalRoadmap": [
+      "Write down questions for your upcoming OB appointment."
+    ],
+    "questions": [],
+    "takeaways": [
+      "Morning sickness can happen 24/7.",
+      "Your main job is keeping her fed and rested."
+    ]
+  },
+  "6": {
+    "id": "6",
+    "title": "The First Ultrasound",
+    "subtitle": "Seeing the tiny flicker of life.",
+    "trimester": "t1",
+    "trimesterLabel": "FIRST TRIMESTER",
+    "emoji": "💓",
+    "size": "Lentil",
+    "sizeDesc": "~6 mm",
+    "keyDev": "Heartbeat Visible",
+    "keyDevDesc": "Heart beats at 100-160 bpm.",
+    "dadPriority": "Be Present",
+    "dadPriorityDesc": "Attend the ultrasound if possible.",
+    "partnerSymptoms": "Intense Fatigue",
+    "partnerSymptomsDesc": "Sleeping 10+ hours, extreme tiredness.",
+    "babyDevBullets": [
+      "The heartbeat can often be seen via transvaginal ultrasound.",
+      "Facial features like eyes and ears are forming.",
+      "The embryo's body is starting to curve into a C-shape."
+    ],
+    "symptomTable": [
+      { "name": "Extreme Fatigue", "why": "Massive metabolic output", "help": "Let her sleep as much as she needs" }
+    ],
+    "emotionalScripts": [
+      "It was amazing seeing that heartbeat with you."
+    ],
+    "practicalTasks": [
+      "Take time off work to attend the first ultrasound.",
+      "Keep the house quiet so she can nap.",
+      "Handle the grocery shopping alone."
+    ],
+    "relationshipIdeas": [
+      "Look at the ultrasound printout together and marvel at it."
+    ],
+    "bondingTasks": [
+      { "emoji": "🖼️", "title": "Ultrasound Frame", "text": "Put the first ultrasound picture on the fridge." }
+    ],
+    "mustBuy": [],
+    "optionalBuy": [
+      "Pregnancy journal"
+    ],
+    "medicalRoadmap": [
+      "First OB visit: expect bloodwork, urine test, and ultrasound."
+    ],
+    "questions": [
+      "Is the heartbeat strong?",
+      "Are we having twins?"
+    ],
+    "takeaways": [
+      "Seeing the heartbeat drops miscarriage risk significantly.",
+      "Her fatigue is a medical reality, not laziness."
+    ]
+  },
+  "7": {
+    "id": "7",
+    "title": "Brain Developing Rapidly",
+    "subtitle": "A million new brain cells every minute.",
+    "trimester": "t1",
+    "trimesterLabel": "FIRST TRIMESTER",
+    "emoji": "🧠",
+    "size": "Blueberry",
+    "sizeDesc": "~1.3 cm",
+    "keyDev": "Neurogenesis",
+    "keyDevDesc": "Brain cells multiply rapidly.",
+    "dadPriority": "Nutrition Stealth",
+    "dadPriorityDesc": "Sneak protein into whatever she can stomach.",
+    "partnerSymptoms": "Food Aversions",
+    "partnerSymptomsDesc": "Hating foods she normally loves.",
+    "babyDevBullets": [
+      "The brain is growing faster than the rest of the body.",
+      "Kidneys are forming and preparing to produce urine.",
+      "Hands and feet look like tiny paddles."
+    ],
+    "symptomTable": [
+      { "name": "Food Aversions", "why": "Evolutionary protection mechanism", "help": "Don't force healthy foods; feed her what she craves" }
+    ],
+    "emotionalScripts": [
+      "If you only want to eat toast today, I will make you the best toast."
+    ],
+    "practicalTasks": [
+      "Find foods she can tolerate (bland carbs are usually safe).",
+      "Clean the fridge of anything that triggers her nausea."
+    ],
+    "relationshipIdeas": [
+      "Give her a gentle foot massage."
+    ],
+    "bondingTasks": [
+      { "emoji": "🗣️", "title": "First Words", "text": "Start talking to her belly. The baby can't hear yet, but it builds the habit." }
+    ],
+    "mustBuy": [],
+    "optionalBuy": [],
+    "medicalRoadmap": [
+      "Discuss prenatal testing options (NIPT, NT scan) with your doctor."
+    ],
+    "questions": [
+      "When do we schedule genetic screening?"
+    ],
+    "takeaways": [
+      "Survival mode for food is okay right now.",
+      "The brain is developing at an astonishing rate."
+    ]
+  },
+  "8": {
+    "id": "8",
+    "title": "Fingers and Toes",
+    "subtitle": "Losing the tadpole tail.",
+    "trimester": "t1",
+    "trimesterLabel": "FIRST TRIMESTER",
+    "emoji": "🖐️",
+    "size": "Kidney Bean",
+    "sizeDesc": "~1.6 cm",
+    "keyDev": "Limbs Elongate",
+    "keyDevDesc": "Fingers and toes start to differentiate.",
+    "dadPriority": "Financial Foundation",
+    "dadPriorityDesc": "Start looking at the budget.",
+    "partnerSymptoms": "Bloating",
+    "partnerSymptomsDesc": "Pants feeling tight due to progesterone.",
+    "babyDevBullets": [
+      "The embryonic tail disappears.",
+      "Nerve cells are branching out to connect with one another.",
+      "Breathing tubes extend from throat to developing lungs."
+    ],
+    "symptomTable": [
+      { "name": "Bloating", "why": "Progesterone slows digestion", "help": "Compliment her body, buy comfortable loungewear" }
+    ],
+    "emotionalScripts": [
+      "You look beautiful. Your body is doing incredible work."
+    ],
+    "practicalTasks": [
+      "Draft a preliminary baby budget.",
+      "Research life insurance policies if you don't have them."
+    ],
+    "relationshipIdeas": [
+      "Order her favorite takeout and watch a comedy."
+    ],
+    "bondingTasks": [
+      { "emoji": "💸", "title": "Money Talk", "text": "Have a calm, 15-minute alignment chat on baby finances." }
+    ],
+    "mustBuy": [
+      "Stretchy sweatpants or leggings for her"
+    ],
+    "optionalBuy": [],
+    "medicalRoadmap": [
+      "If you haven't had the dating ultrasound yet, it will likely happen this week."
+    ],
+    "questions": [],
+    "takeaways": [
+      "The embryo is starting to look distinctly human.",
+      "It's time to get your finances organized."
+    ]
+  },
+  "9": {
+    "id": "9",
+    "title": "All Systems Go",
+    "subtitle": "All essential organs have formed.",
+    "trimester": "t1",
+    "trimesterLabel": "FIRST TRIMESTER",
+    "emoji": "🍇",
+    "size": "Grape",
+    "sizeDesc": "~2.3 cm",
+    "keyDev": "Organogenesis Ends",
+    "keyDevDesc": "Major organs are in place and begin functioning.",
+    "dadPriority": "Check in on Mom",
+    "dadPriorityDesc": "First trimester drag is real. Keep spirits up.",
+    "partnerSymptoms": "Mood Swings",
+    "partnerSymptomsDesc": "Crying at commercials, quick frustration.",
+    "babyDevBullets": [
+      "The critical period of organ development is nearly complete.",
+      "Heart finishes dividing into four chambers.",
+      "Tiny teeth are forming under the gums."
+    ],
+    "symptomTable": [
+      { "name": "Mood Swings", "why": "Hormones and exhaustion", "help": "Be an unshakeable rock. Don't take it personally." }
+    ],
+    "emotionalScripts": [
+      "It's okay to feel overwhelmed. I've got everything handled."
+    ],
+    "practicalTasks": [
+      "Take over laundry and heavy lifting entirely.",
+      "Make sure she is drinking 8-10 glasses of water daily."
+    ],
+    "relationshipIdeas": [
+      "Leave a supportive sticky note on her mirror."
+    ],
+    "bondingTasks": [
+      { "emoji": "📝", "title": "Name Game", "text": "Start throwing out wild baby names just to make her laugh." }
+    ],
+    "mustBuy": [],
+    "optionalBuy": [
+      "Body pillow"
+    ],
+    "medicalRoadmap": [
+      "Schedule the NIPT (Non-Invasive Prenatal Testing) blood draw for week 10 if opting in."
+    ],
+    "questions": [
+      "Do we want to know the gender early?"
+    ],
+    "takeaways": [
+      "The riskiest developmental phase is almost over.",
+      "Keep her hydrated and handle the house."
+    ]
+  },
+  "10": {
+    "id": "10",
+    "title": "Officially a Fetus",
+    "subtitle": "Graduating from embryo to fetus.",
+    "trimester": "t1",
+    "trimesterLabel": "FIRST TRIMESTER",
+    "emoji": "🍊",
+    "size": "Kumquat",
+    "sizeDesc": "~3.1 cm",
+    "keyDev": "Fetal Stage",
+    "keyDevDesc": "Bones begin to harden, joints can bend.",
+    "dadPriority": "Genetic Testing",
+    "dadPriorityDesc": "Support her through NIPT blood draws.",
+    "partnerSymptoms": "Visible Veins",
+    "partnerSymptomsDesc": "Increased blood volume makes veins visible.",
+    "babyDevBullets": [
+      "Officially called a fetus now!",
+      "Kidneys are producing urine.",
+      "Webbed fingers and toes have completely separated."
+    ],
+    "symptomTable": [
+      { "name": "Headaches", "why": "Blood volume increasing by 50%", "help": "Offer cold compresses, ensure hydration" }
+    ],
+    "emotionalScripts": [
+      "We are one step closer to the safe zone."
+    ],
+    "practicalTasks": [
+      "Drive her to the lab for the NIPT blood test.",
+      "Plan how/when you want to announce the pregnancy."
+    ],
+    "relationshipIdeas": [
+      "Discuss who you want to tell first and how."
+    ],
+    "bondingTasks": [
+      { "emoji": "🤐", "title": "The Secret", "text": "Enjoy knowing a huge secret that the rest of the world doesn't." }
+    ],
+    "mustBuy": [],
+    "optionalBuy": [],
+    "medicalRoadmap": [
+      "NIPT blood draw (screens for chromosomal abnormalities and can reveal gender)."
+    ],
+    "questions": [
+      "How long does NIPT results take?"
+    ],
+    "takeaways": [
+      "The embryo is now a fetus.",
+      "Blood volume is rising rapidly, causing headaches and visible veins."
+    ]
+  }
+}
