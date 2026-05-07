@@ -290,3 +290,8 @@ When building out the 40+ weeks of content, use the following approach to avoid 
 ### Python Generator
 - Use a Python script (e.g., `generate_encyclopedia.py`) to systematically build the `WEEKS_DATA` array and output the final `index.html`.
 - This ensures the massive data for all 40+ weeks can be generated and assembled without hitting LLM output token limits.
+
+***
+
+## 🏷️ VERSION CONTROL DIRECTIVE
+- **Gitmojis Required:** Whenever you commit ANY changes, you MUST add git emojis (e.g., `✨`, `🐛`, `📝`, `🚀`) to describe the commit visually. NEVER write a plain text commit message without a gitmoji.
