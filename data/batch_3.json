@@ -1,0 +1,499 @@
+{
+  "21": {
+    "id": "21",
+    "title": "Regular Movements",
+    "subtitle": "Kicks are getting stronger and more frequent.",
+    "trimester": "t2",
+    "trimesterLabel": "SECOND TRIMESTER",
+    "emoji": "🥕",
+    "size": "Carrot",
+    "sizeDesc": "~26.7 cm",
+    "keyDev": "Swallowing Fluid",
+    "keyDevDesc": "Baby digests amniotic fluid for nutrition practice.",
+    "dadPriority": "Nursery Prep",
+    "dadPriorityDesc": "Start painting or assembling furniture.",
+    "partnerSymptoms": "Braxton Hicks",
+    "partnerSymptomsDesc": "Painless 'practice' contractions may begin.",
+    "babyDevBullets": [
+      "The digestive system is maturing, practicing by swallowing amniotic fluid.",
+      "Bone marrow takes over the job of producing red blood cells.",
+      "Sleep cycles become more regular (and may not match mom's!)."
+    ],
+    "symptomTable": [
+      { "name": "Braxton Hicks Contractions", "why": "Uterus practicing for labor", "help": "Ensure she is hydrated; dehydration causes them" }
+    ],
+    "emotionalScripts": [
+      "I love watching your belly move when the baby kicks."
+    ],
+    "practicalTasks": [
+      "Start assembling the crib and any large nursery furniture.",
+      "Research pediatricians and schedule meet-and-greets."
+    ],
+    "relationshipIdeas": [
+      "Spend a quiet evening feeling the baby kick together."
+    ],
+    "bondingTasks": [
+      { "emoji": "🎨", "title": "Nursery Vision", "text": "Finalize the color scheme or theme for the baby's room." }
+    ],
+    "mustBuy": [],
+    "optionalBuy": [
+      "Paint for the nursery (low-VOC)"
+    ],
+    "medicalRoadmap": [
+      "Routine 24-week checkup is approaching, which includes the glucose test."
+    ],
+    "questions": [],
+    "takeaways": [
+      "Movements are becoming a regular daily pattern.",
+      "Start getting the physical nursery space ready."
+    ]
+  },
+  "22": {
+    "id": "22",
+    "title": "Looking Like a Newborn",
+    "subtitle": "Facial features are fully formed.",
+    "trimester": "t2",
+    "trimesterLabel": "SECOND TRIMESTER",
+    "emoji": "🥥",
+    "size": "Coconut",
+    "sizeDesc": "~27.8 cm",
+    "keyDev": "Senses Mature",
+    "keyDevDesc": "Baby can perceive light, sound, and touch.",
+    "dadPriority": "Birth Class",
+    "dadPriorityDesc": "Sign up for childbirth education classes.",
+    "partnerSymptoms": "Back Pain",
+    "partnerSymptomsDesc": "Center of gravity shifts further forward.",
+    "babyDevBullets": [
+      "Baby looks like a miniature newborn, just thinner.",
+      "Lips, eyelids, and eyebrows are distinct.",
+      "Tear ducts are developing."
+    ],
+    "symptomTable": [
+      { "name": "Lower Back Pain", "why": "Shifting gravity and relaxing ligaments", "help": "Offer massages, suggest a prenatal yoga class" }
+    ],
+    "emotionalScripts": [
+      "I signed us up for the birth classes today."
+    ],
+    "practicalTasks": [
+      "Register for childbirth education, breastfeeding, and newborn care classes.",
+      "Check smoke detectors and carbon monoxide monitors in the house."
+    ],
+    "relationshipIdeas": [
+      "Go out for a dessert date just to talk."
+    ],
+    "bondingTasks": [
+      { "emoji": "📝", "title": "Birth Plan Chat", "text": "Start a preliminary conversation about birth preferences." }
+    ],
+    "mustBuy": [],
+    "optionalBuy": [
+      "Support belt for mom's belly"
+    ],
+    "medicalRoadmap": [
+      "Prepare for the glucose screening test coming up between weeks 24-28."
+    ],
+    "questions": [],
+    "takeaways": [
+      "Baby's facial features are fully formed.",
+      "Education is key—book your classes now."
+    ]
+  },
+  "23": {
+    "id": "23",
+    "title": "Hearing Fully Developed",
+    "subtitle": "Baby is listening to your conversations.",
+    "trimester": "t2",
+    "trimesterLabel": "SECOND TRIMESTER",
+    "emoji": "🍊",
+    "size": "Grapefruit",
+    "sizeDesc": "~28.9 cm",
+    "keyDev": "Lungs Prep",
+    "keyDevDesc": "Surfactant production begins (crucial for breathing).",
+    "dadPriority": "Financial Check-In",
+    "dadPriorityDesc": "Review the baby budget.",
+    "partnerSymptoms": "Swollen Feet",
+    "partnerSymptomsDesc": "Edema (water retention) begins in the lower extremities.",
+    "babyDevBullets": [
+      "Bones in the middle ear harden, making hearing much sharper.",
+      "Baby can distinguish between mom's voice, your voice, and external noises.",
+      "Blood vessels in the lungs are developing to prepare for breathing air."
+    ],
+    "symptomTable": [
+      { "name": "Swollen Ankles/Feet (Edema)", "why": "Increased blood volume and fluid retention", "help": "Elevate her feet, encourage hydration, avoid salty foods" }
+    ],
+    "emotionalScripts": [
+      "Let me rub your feet, you've been on them all day."
+    ],
+    "practicalTasks": [
+      "Review your baby budget and start buying the essentials.",
+      "Read out loud to the belly daily—baby is actively listening."
+    ],
+    "relationshipIdeas": [
+      "Curate a playlist of songs you want the baby to recognize after birth."
+    ],
+    "bondingTasks": [
+      { "emoji": "📚", "title": "Story Time", "text": "Pick a favorite children's book and read it to the bump." }
+    ],
+    "mustBuy": [],
+    "optionalBuy": [
+      "Compression socks for mom"
+    ],
+    "medicalRoadmap": [
+      "Next appointment will likely include the glucose tolerance test (GTT)."
+    ],
+    "questions": [],
+    "takeaways": [
+      "Hearing is sharp—watch what you say!",
+      "Swelling is normal, but sudden severe swelling is a red flag (call OB)."
+    ]
+  },
+  "24": {
+    "id": "24",
+    "title": "The Viability Milestone",
+    "subtitle": "A major milestone for survival outside the womb.",
+    "trimester": "t2",
+    "trimesterLabel": "SECOND TRIMESTER",
+    "emoji": "🌽",
+    "size": "Ear of Corn",
+    "sizeDesc": "~30 cm",
+    "keyDev": "Viability",
+    "keyDevDesc": "Baby now has a chance of survival if born prematurely.",
+    "dadPriority": "Celebrate Viability",
+    "dadPriorityDesc": "Acknowledge this huge milestone.",
+    "partnerSymptoms": "Carpal Tunnel",
+    "partnerSymptomsDesc": "Tingling or numbness in the hands.",
+    "babyDevBullets": [
+      "Week 24 marks 'viability'—the point where a baby could potentially survive in the NICU.",
+      "The brain is growing rapidly, filling out the skull.",
+      "Taste buds are fully formed."
+    ],
+    "symptomTable": [
+      { "name": "Carpal Tunnel Syndrome", "why": "Fluid retention compressing nerves in wrists", "help": "Suggest wrist braces at night" }
+    ],
+    "emotionalScripts": [
+      "We hit the viability milestone today. I am so relieved and happy."
+    ],
+    "practicalTasks": [
+      "Take your partner to the glucose screening test (can take 1-3 hours).",
+      "Start finalizing your paternity leave paperwork with HR."
+    ],
+    "relationshipIdeas": [
+      "Celebrate the milestone with a nice dinner or special treat."
+    ],
+    "bondingTasks": [
+      { "emoji": "🥳", "title": "Milestone Cheer", "text": "Acknowledge the 24-week mark together." }
+    ],
+    "mustBuy": [],
+    "optionalBuy": [
+      "Wrist braces if she has carpal tunnel"
+    ],
+    "medicalRoadmap": [
+      "Glucose screening test for gestational diabetes.",
+      "Check for anemia (iron deficiency)."
+    ],
+    "questions": [
+      "What are the signs of preterm labor we should watch for now?"
+    ],
+    "takeaways": [
+      "Viability is a huge emotional relief.",
+      "The glucose test is not fun, be supportive."
+    ]
+  },
+  "25": {
+    "id": "25",
+    "title": "Recognizing Voices",
+    "subtitle": "Baby knows who you are.",
+    "trimester": "t2",
+    "trimesterLabel": "SECOND TRIMESTER",
+    "emoji": "🥦",
+    "size": "Cauliflower",
+    "sizeDesc": "~34.6 cm",
+    "keyDev": "Fat Accumulation",
+    "keyDevDesc": "Wrinkled skin is smoothing out as fat builds up.",
+    "dadPriority": "Hospital Research",
+    "dadPriorityDesc": "Start looking into hospital tours and preregistration.",
+    "partnerSymptoms": "Hemorrhoids",
+    "partnerSymptomsDesc": "Uncomfortable but common due to pressure and constipation.",
+    "babyDevBullets": [
+      "Baby is adding baby fat, making the skin look less translucent and wrinkled.",
+      "Capillaries are forming under the skin, giving it a pinkish hue.",
+      "Baby responds to familiar voices, especially yours and mom's."
+    ],
+    "symptomTable": [
+      { "name": "Hemorrhoids", "why": "Uterine pressure and increased blood flow", "help": "Buy witch hazel pads (Tucks), ensure she eats high-fiber foods" }
+    ],
+    "emotionalScripts": [
+      "I'm here to run out to the pharmacy whenever you need."
+    ],
+    "practicalTasks": [
+      "Call the hospital or birth center to ask about preregistration and tours.",
+      "Help increase her fiber intake (fruits, veggies, whole grains)."
+    ],
+    "relationshipIdeas": [
+      "Cook a high-fiber, healthy, and delicious meal together."
+    ],
+    "bondingTasks": [
+      { "emoji": "🎵", "title": "Sing a Song", "text": "Pick a lullaby and sing it to the baby every night. They will remember it." }
+    ],
+    "mustBuy": [
+      "Witch hazel pads (Tucks) if needed",
+      "Fiber supplements (if approved by OB)"
+    ],
+    "optionalBuy": [],
+    "medicalRoadmap": [
+      "Follow up on glucose test results."
+    ],
+    "questions": [],
+    "takeaways": [
+      "Baby is plumping up.",
+      "Hemorrhoids are common—don't make it awkward, just buy the supplies."
+    ]
+  },
+  "26": {
+    "id": "26",
+    "title": "Eyes Opening",
+    "subtitle": "Baby takes a look around.",
+    "trimester": "t2",
+    "trimesterLabel": "SECOND TRIMESTER",
+    "emoji": "🧅",
+    "size": "Scallion",
+    "sizeDesc": "~35.6 cm",
+    "keyDev": "Eyes Open",
+    "keyDevDesc": "Eyelids finally unseal and open.",
+    "dadPriority": "Baby Shower Prep",
+    "dadPriorityDesc": "Support the baby shower planning.",
+    "partnerSymptoms": "Pregnancy Brain",
+    "partnerSymptomsDesc": "Forgetfulness and trouble concentrating.",
+    "babyDevBullets": [
+      "Eyelids, which have been fused shut, are now opening.",
+      "Brain wave activity for visual and auditory systems kicks in.",
+      "Baby is inhaling and exhaling small amounts of amniotic fluid to practice breathing."
+    ],
+    "symptomTable": [
+      { "name": "Pregnancy Brain", "why": "Hormones, sleep deprivation, stress", "help": "Take over mental load tasks (scheduling, paying bills)" }
+    ],
+    "emotionalScripts": [
+      "Don't worry about forgetting that, I've got it handled."
+    ],
+    "practicalTasks": [
+      "Assist with baby shower logistics (invites, food, setup).",
+      "Take over paying the bills and managing the calendar to relieve her mental load."
+    ],
+    "relationshipIdeas": [
+      "Leave a surprise note for her in her purse or car."
+    ],
+    "bondingTasks": [
+      { "emoji": "👀", "title": "Eye Contact", "text": "The baby's eyes are open—shine a light on the belly and see if they kick!" }
+    ],
+    "mustBuy": [],
+    "optionalBuy": [],
+    "medicalRoadmap": [
+      "Discuss the Tdap (whooping cough) vaccine for both parents (usually administered between weeks 27-36)."
+    ],
+    "questions": [
+      "When should I (dad) get the Tdap booster?"
+    ],
+    "takeaways": [
+      "Baby's eyes are open.",
+      "Pregnancy brain is real—step up your organizational game."
+    ]
+  },
+  "27": {
+    "id": "27",
+    "title": "End of Second Trimester",
+    "subtitle": "The final stretch approaches.",
+    "trimester": "t2",
+    "trimesterLabel": "SECOND TRIMESTER",
+    "emoji": "🥬",
+    "size": "Head of Lettuce",
+    "sizeDesc": "~36.6 cm",
+    "keyDev": "Brain Growth",
+    "keyDevDesc": "Brain tissue increases rapidly.",
+    "dadPriority": "Childbirth Classes",
+    "dadPriorityDesc": "Attend the classes with her.",
+    "partnerSymptoms": "Sciatica",
+    "partnerSymptomsDesc": "Sharp pain shooting down the lower back and leg.",
+    "babyDevBullets": [
+      "Baby's brain is growing rapidly and becoming more complex.",
+      "Lungs are continuing to mature, producing more surfactant.",
+      "Baby is sleeping and waking on a regular schedule."
+    ],
+    "symptomTable": [
+      { "name": "Sciatica Pain", "why": "Uterus resting on the sciatic nerve", "help": "Suggest a warm bath, heating pad, or prenatal massage" }
+    ],
+    "emotionalScripts": [
+      "I am so proud of how well you're handling all these changes."
+    ],
+    "practicalTasks": [
+      "Attend childbirth classes together. Take notes and ask questions.",
+      "Book a prenatal massage for her to help with back/sciatica pain."
+    ],
+    "relationshipIdeas": [
+      "Discuss your fears and hopes about labor and delivery."
+    ],
+    "bondingTasks": [
+      { "emoji": "📓", "title": "Class Notes", "text": "Review what you learned in childbirth class together." }
+    ],
+    "mustBuy": [
+      "Heating pad"
+    ],
+    "optionalBuy": [
+      "Gift certificate for prenatal massage"
+    ],
+    "medicalRoadmap": [
+      "End of the second trimester. Appointments will soon shift to every two weeks."
+    ],
+    "questions": [],
+    "takeaways": [
+      "The second trimester is over.",
+      "Take the childbirth classes seriously—you are the coach."
+    ]
+  },
+  "28": {
+    "id": "28",
+    "title": "Third Trimester Begins",
+    "subtitle": "The final countdown.",
+    "trimester": "t3",
+    "trimesterLabel": "THIRD TRIMESTER",
+    "emoji": "🍆",
+    "size": "Eggplant",
+    "sizeDesc": "~37.6 cm",
+    "keyDev": "Baby Dreams",
+    "keyDevDesc": "REM sleep begins; baby is likely dreaming.",
+    "dadPriority": "Birth Plan",
+    "dadPriorityDesc": "Draft the birth plan together.",
+    "partnerSymptoms": "Insomnia",
+    "partnerSymptomsDesc": "Trouble sleeping due to size, heartburn, and anxiety.",
+    "babyDevBullets": [
+      "Welcome to the third trimester!",
+      "Baby is experiencing Rapid Eye Movement (REM) sleep, meaning they are likely dreaming.",
+      "Eyes can blink and lashes are fully grown."
+    ],
+    "symptomTable": [
+      { "name": "Insomnia", "why": "Physical discomfort, hormones, anxiety", "help": "Keep the bedroom cool, avoid screens before bed" }
+    ],
+    "emotionalScripts": [
+      "We're in the home stretch now. We can do this."
+    ],
+    "practicalTasks": [
+      "Sit down and draft a one-page birth preferences document (birth plan).",
+      "Make sure you know the route to the hospital and parking situation."
+    ],
+    "relationshipIdeas": [
+      "Review the birth plan over a quiet breakfast."
+    ],
+    "bondingTasks": [
+      { "emoji": "📝", "title": "Birth Plan", "text": "Finalize your roles for labor day." }
+    ],
+    "mustBuy": [],
+    "optionalBuy": [],
+    "medicalRoadmap": [
+      "If mom is Rh-negative, she will receive the RhoGAM shot this week.",
+      "Appointments move to every 2 weeks."
+    ],
+    "questions": [
+      "Does mom need the RhoGAM shot?"
+    ],
+    "takeaways": [
+      "Third trimester brings back some fatigue.",
+      "The birth plan is a communication tool, not a strict contract."
+    ]
+  },
+  "29": {
+    "id": "29",
+    "title": "Rapid Brain Growth",
+    "subtitle": "Brain is folding to create more surface area.",
+    "trimester": "t3",
+    "trimesterLabel": "THIRD TRIMESTER",
+    "emoji": "🍠",
+    "size": "Butternut Squash",
+    "sizeDesc": "~38.6 cm",
+    "keyDev": "Brain Folds",
+    "keyDevDesc": "Smooth brain surface develops grooves and ridges.",
+    "dadPriority": "Kick Counting",
+    "dadPriorityDesc": "Help monitor baby's movements.",
+    "partnerSymptoms": "Constipation",
+    "partnerSymptomsDesc": "Digestion slows down even more.",
+    "babyDevBullets": [
+      "The brain is growing so fast it's creating folds (gyri and sulci) to fit inside the skull.",
+      "Baby is packing on fat, helping regulate body temperature.",
+      "Bones are fully developed but still soft and pliable."
+    ],
+    "symptomTable": [
+      { "name": "Constipation", "why": "Progesterone and iron supplements", "help": "Ensure she's drinking tons of water and eating fiber" }
+    ],
+    "emotionalScripts": [
+      "How are the kicks feeling today? Nice and strong?"
+    ],
+    "practicalTasks": [
+      "Learn how to do 'kick counts' (timing how long it takes to feel 10 movements).",
+      "Preregister at the hospital to skip paperwork on labor day."
+    ],
+    "relationshipIdeas": [
+      "Do a kick counting session together in the evening."
+    ],
+    "bondingTasks": [
+      { "emoji": "⏱️", "title": "Kick Counts", "text": "Set a timer and feel for kicks together." }
+    ],
+    "mustBuy": [],
+    "optionalBuy": [],
+    "medicalRoadmap": [
+      "Monitor kicks daily. Decreased movement is a red flag."
+    ],
+    "questions": [
+      "What is your office's protocol if we notice decreased fetal movement?"
+    ],
+    "takeaways": [
+      "Baby's brain is highly active.",
+      "Kick counting is a vital daily task from now on."
+    ]
+  },
+  "30": {
+    "id": "30",
+    "title": "Bone Marrow Taking Over",
+    "subtitle": "The body systems are refining.",
+    "trimester": "t3",
+    "trimesterLabel": "THIRD TRIMESTER",
+    "emoji": "🥬",
+    "size": "Cabbage",
+    "sizeDesc": "~39.9 cm",
+    "keyDev": "Red Blood Cells",
+    "keyDevDesc": "Bone marrow completely takes over RBC production.",
+    "dadPriority": "Car Seat Installation",
+    "dadPriorityDesc": "Buy it, read the manual, install it.",
+    "partnerSymptoms": "Breathlessness",
+    "partnerSymptomsDesc": "Uterus is pushing up against the diaphragm.",
+    "babyDevBullets": [
+      "Bone marrow assumes the production of red blood cells from the spleen.",
+      "Amniotic fluid begins to decrease as baby takes up more room.",
+      "Baby is getting stronger, and kicks might actually hurt mom a bit."
+    ],
+    "symptomTable": [
+      { "name": "Breathlessness", "why": "Crowded lungs", "help": "Remind her to take it slow; don't let her carry anything" }
+    ],
+    "emotionalScripts": [
+      "Take your time, there is no rush."
+    ],
+    "practicalTasks": [
+      "Install the infant car seat base in your car. Get it inspected by a certified technician.",
+      "Identify your pediatrician and ensure they accept your insurance."
+    ],
+    "relationshipIdeas": [
+      "Celebrate finishing the major nursery tasks."
+    ],
+    "bondingTasks": [
+      { "emoji": "🚗", "title": "Car Seat Check", "text": "Install the car seat and test snapping the carrier in and out." }
+    ],
+    "mustBuy": [
+      "Infant Car Seat (do not leave the hospital without it)"
+    ],
+    "optionalBuy": [],
+    "medicalRoadmap": [
+      "Continue regular every-two-week checkups."
+    ],
+    "questions": [],
+    "takeaways": [
+      "Space is getting tight in there.",
+      "The car seat is non-negotiable. Install it now."
+    ]
+  }
+}
