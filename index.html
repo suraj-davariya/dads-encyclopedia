@@ -34,7 +34,8 @@
 
   --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
   --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem;
-  --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem;
+  --space-7: 1.75rem; --space-8: 2rem; --space-9: 2.25rem;
+  --space-10: 2.5rem; --space-12: 3rem;
   --space-16: 4rem; --space-20: 5rem; --space-24: 6rem;
 
   /* Trimester color palette */
@@ -290,8 +291,11 @@ a:hover { text-decoration: underline; }
 /* Info cards */
 .info-card {
   background: var(--color-surface); border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl); padding: var(--space-7); box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-xl); padding: var(--space-6); box-shadow: var(--shadow-sm);
   margin-bottom: var(--space-6);
+}
+@media (min-width: 768px) {
+  .info-card { padding: var(--space-10); }
 }
 .info-card-header { display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-5); padding-bottom: var(--space-5); border-bottom: 1px solid var(--color-divider); }
 .info-card-icon { width: 40px; height: 40px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0; }
@@ -304,10 +308,10 @@ a:hover { text-decoration: underline; }
 .icon-medical { background: color-mix(in oklab, #ef4444 15%, transparent); }
 .icon-shop { background: color-mix(in oklab, var(--color-t3-accent) 15%, transparent); }
 
-.list-items { display: flex; flex-direction: column; gap: var(--space-3); }
-.list-item { display: flex; align-items: flex-start; gap: var(--space-3); font-size: var(--text-sm); line-height: 1.5; }
-.list-bullet { width: 6px; height: 6px; border-radius: 50%; background: var(--color-primary); flex-shrink: 0; margin-top: 0.4rem; }
-.list-num { width: 22px; height: 22px; border-radius: 50%; background: var(--color-primary); color: white; font-size: 0.7rem; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.list-items { display: flex; flex-direction: column; gap: var(--space-4); padding-left: var(--space-6); }
+.list-item { display: flex; align-items: flex-start; gap: var(--space-4); font-size: var(--text-sm); line-height: 1.6; }
+.list-bullet { width: 6px; height: 6px; border-radius: 50%; background: var(--color-primary); flex-shrink: 0; margin-top: 0.5rem; }
+.list-num { width: 24px; height: 24px; border-radius: 50%; background: var(--color-primary); color: white; font-size: 0.75rem; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 
 .fun-fact-box { background: var(--color-t1); border: 1px solid color-mix(in oklab, var(--color-t1-accent) 30%, transparent); border-radius: var(--radius-lg); padding: var(--space-4); margin-top: var(--space-5); }
 .fun-fact-box .ff-label { font-size: var(--text-xs); font-weight: 800; color: var(--color-t1-accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-2); }
@@ -326,8 +330,11 @@ a:hover { text-decoration: underline; }
 
 /* Symptom table */
 .symptom-table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); margin-top: var(--space-4); }
-.symptom-table th { font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-muted); padding: var(--space-2) var(--space-3); text-align: left; border-bottom: 1px solid var(--color-divider); }
-.symptom-table td { padding: var(--space-3); border-bottom: 1px solid color-mix(in oklab, var(--color-divider) 50%, transparent); vertical-align: top; line-height: 1.5; }
+@media (max-width: 600px) {
+  .symptom-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+.symptom-table th { font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-muted); padding: var(--space-3) var(--space-4); text-align: left; border-bottom: 1px solid var(--color-divider); background: var(--color-surface-offset); }
+.symptom-table td { padding: var(--space-4); border-bottom: 1px solid color-mix(in oklab, var(--color-divider) 50%, transparent); vertical-align: top; line-height: 1.5; }
 .symptom-table tr:last-child td { border-bottom: none; }
 
 /* Mission tabs */
@@ -341,6 +348,8 @@ a:hover { text-decoration: underline; }
 .mission-tab:hover:not(.active) { background: var(--color-surface-offset); color: var(--color-text); }
 .mission-panel { display: none; }
 .mission-panel.active { display: block; }
+.mission-panel ul, .mission-panel ol { padding-left: var(--space-6); margin-top: var(--space-2); }
+.mission-panel li { margin-bottom: var(--space-2); }
 
 /* Communication scripts */
 .script-box {
@@ -370,13 +379,13 @@ a:hover { text-decoration: underline; }
 
 /* Checklist */
 .checklist { display: flex; flex-direction: column; gap: var(--space-2); margin-top: var(--space-4); }
-.checklist-item { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3); border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-surface); cursor: pointer; transition: all var(--transition); }
-.checklist-item:hover { background: var(--color-surface-2); }
-.checklist-item.checked { opacity: 0.6; }
-.checklist-item.checked .ci-text { text-decoration: line-through; color: var(--color-text-muted); }
-.ci-box { width: 20px; height: 20px; border-radius: var(--radius-sm); border: 2px solid var(--color-border); flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: all var(--transition); }
-.checklist-item.checked .ci-box { background: var(--color-t2-accent); border-color: var(--color-t2-accent); color: white; }
-.ci-text { font-size: var(--text-sm); flex: 1; }
+.checklist-item, .check-item { display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-3); border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-surface); cursor: pointer; transition: all var(--transition); }
+.checklist-item:hover, .check-item:hover { background: var(--color-surface-2); }
+.checklist-item.checked, .check-item.checked { opacity: 0.6; }
+.checklist-item.checked .ci-text, .check-item.checked .ci-text { text-decoration: line-through; color: var(--color-text-muted); }
+.ci-box { width: 20px; height: 20px; border-radius: var(--radius-sm); border: 2px solid var(--color-border); flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: all var(--transition); margin-top: 2px; }
+.checklist-item.checked .ci-box, .check-item.checked .ci-box { background: var(--color-t2-accent); border-color: var(--color-t2-accent); color: white; }
+.ci-text { font-size: var(--text-sm); flex: 1; line-height: 1.5; }
 .ci-badge { font-size: var(--text-xs); padding: 2px var(--space-2); border-radius: var(--radius-full); font-weight: 600; }
 .ci-badge.must { background: color-mix(in oklab, var(--color-t1-accent) 15%, transparent); color: var(--color-t1-accent); }
 .ci-badge.optional { background: var(--color-surface-offset); color: var(--color-text-muted); }
@@ -417,6 +426,7 @@ a:hover { text-decoration: underline; }
 .summary-section-title { font-size: var(--text-xs); font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-muted); margin-bottom: var(--space-3); }
 .summary-item { font-size: var(--text-sm); color: var(--color-text); display: flex; gap: var(--space-2); align-items: flex-start; margin-bottom: var(--space-2); }
 .si-num { font-weight: 800; color: var(--color-primary); flex-shrink: 0; width: 1.2rem; }
+.summary-box ul { padding-left: var(--space-4); list-style: none; }
 .reflection-box { grid-column: 1 / -1; background: rgba(255,255,255,0.5); border-radius: var(--radius-lg); padding: var(--space-4); margin-top: var(--space-4); }
 [data-theme="dark"] .reflection-box { background: rgba(0,0,0,0.2); }
 .reflection-q { font-size: var(--text-base); font-style: italic; color: var(--color-text); }
@@ -516,7 +526,14 @@ a:hover { text-decoration: underline; }
   .seo-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .hero-stats { flex-wrap: wrap; gap: var(--space-5); }
-  .nav-pills { display: none; }
+  .nav-pills { 
+    display: flex; 
+    overflow-x: auto; 
+    max-width: calc(100vw - 120px); 
+    padding-bottom: 5px;
+    scrollbar-width: none;
+  }
+  .nav-pills::-webkit-scrollbar { display: none; }
 }
 @media (max-width: 480px) {
   .overview-grid { grid-template-columns: 1fr; }
@@ -3598,6 +3615,12 @@ function renderWeek(key) {
   document.querySelectorAll('.trimester-btn').forEach(btn => btn.classList.remove('active'));
   const trimBtn = document.querySelector(`.trimester-btn.${data.trimester}`);
   if(trimBtn) trimBtn.classList.add('active');
+  
+  // Highlight header pills
+  document.querySelectorAll('.nav-pill').forEach(pill => {
+    pill.classList.remove('active');
+    if(pill.classList.contains(data.trimester)) pill.classList.add('active');
+  });
   
   // Scroll to top of week display smoothly
   document.getElementById('week-display-container').scrollIntoView({behavior: 'smooth', block: 'start'});
