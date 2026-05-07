@@ -274,3 +274,19 @@ A complete, turn-key encyclopedia ready for web deployment including:
 ***
 
 *This prompt document is the canonical reference for the First-Time Dad's Pregnancy Encyclopedia project. All chapters, features, and deliverables should trace back to this master specification.*
+***
+
+## 🏗️ DATA-DRIVEN ARCHITECTURE
+
+When building out the 40+ weeks of content, use the following approach to avoid token limits and maintain a single cleanly structured file:
+
+### JavaScript Data Engine
+- Keep the exact same CSS design system from the initial static templates.
+- Replace the static week HTML blocks with a JavaScript data array `WEEKS_DATA` containing all 40+ weeks (Pre-conception, Weeks 1-40, Birth & Beyond).
+- Use a `renderWeek(weekNum)` function that dynamically injects the HTML structure for the selected week into the `#week-display` container.
+- Implement a week navigation sidebar/dropdown that interacts with `renderWeek()`.
+- The rest of the page structure remains static (header, hero, special sections, source library, footer).
+
+### Python Generator
+- Use a Python script (e.g., `generate_encyclopedia.py`) to systematically build the `WEEKS_DATA` array and output the final `index.html`.
+- This ensures the massive data for all 40+ weeks can be generated and assembled without hitting LLM output token limits.
