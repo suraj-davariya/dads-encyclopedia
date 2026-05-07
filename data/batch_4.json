@@ -1,0 +1,554 @@
+{
+  "31": {
+    "id": "31",
+    "title": "Baby Processes Information",
+    "subtitle": "All five senses are working.",
+    "trimester": "t3",
+    "trimesterLabel": "THIRD TRIMESTER",
+    "emoji": "🥥",
+    "size": "Coconut",
+    "sizeDesc": "~41.1 cm",
+    "keyDev": "Five Senses",
+    "keyDevDesc": "Baby can hear, see light, feel, taste, and smell.",
+    "dadPriority": "Hospital Bag",
+    "dadPriorityDesc": "Start packing the go-bag.",
+    "partnerSymptoms": "Leaky Breasts",
+    "partnerSymptomsDesc": "Colostrum (first milk) may start leaking.",
+    "babyDevBullets": [
+      "All five senses are fully functional.",
+      "Baby is processing information from the environment.",
+      "Weight gain accelerates—baby will gain about a half-pound a week until birth."
+    ],
+    "symptomTable": [
+      { "name": "Colostrum Leaking", "why": "Breasts preparing for feeding", "help": "Buy nursing pads" }
+    ],
+    "emotionalScripts": [
+      "Whatever happens on labor day, I will be right by your side."
+    ],
+    "practicalTasks": [
+      "Start packing the hospital bag (clothes, toiletries, snacks).",
+      "Assemble the stroller and practice folding/unfolding it."
+    ],
+    "relationshipIdeas": [
+      "Discuss your visitor policy for the hospital and first few weeks home."
+    ],
+    "bondingTasks": [
+      { "emoji": "🎒", "title": "Pack the Bag", "text": "Pack your dad go-bag: long phone charger, snacks, change of clothes." }
+    ],
+    "mustBuy": [
+      "Nursing pads",
+      "Extra-long phone charging cable for the hospital"
+    ],
+    "optionalBuy": [],
+    "medicalRoadmap": [
+      "Discuss Group B Strep (GBS) testing, which usually happens around week 36."
+    ],
+    "questions": [],
+    "takeaways": [
+      "Baby is getting heavy.",
+      "The hospital bag should be packed and waiting by the door."
+    ]
+  },
+  "32": {
+    "id": "32",
+    "title": "Practicing Breathing",
+    "subtitle": "Lungs are doing practice reps.",
+    "trimester": "t3",
+    "trimesterLabel": "THIRD TRIMESTER",
+    "emoji": "🧅",
+    "size": "Jicama",
+    "sizeDesc": "~42.4 cm",
+    "keyDev": "Breathing Motions",
+    "keyDevDesc": "Baby expands lungs, inhaling amniotic fluid.",
+    "dadPriority": "Postpartum Plan",
+    "dadPriorityDesc": "Plan for meals and help after birth.",
+    "partnerSymptoms": "Pelvic Pressure",
+    "partnerSymptomsDesc": "Baby's head may be pressing down.",
+    "babyDevBullets": [
+      "Baby is doing 'practice breathing' by inhaling and exhaling amniotic fluid.",
+      "Lanugo (the fine body hair) is starting to fall off.",
+      "Skin is becoming fully opaque and smooth."
+    ],
+    "symptomTable": [
+      { "name": "Pelvic Pressure", "why": "Baby getting heavier and moving lower", "help": "Encourage resting on her side" }
+    ],
+    "emotionalScripts": [
+      "I've got the meal train set up so we don't have to cook those first few weeks."
+    ],
+    "practicalTasks": [
+      "Organize a 'meal train' with friends/family or freeze meals for the postpartum period.",
+      "Stock up on household essentials (toilet paper, paper plates, pet food)."
+    ],
+    "relationshipIdeas": [
+      "Spend a weekend afternoon batch-cooking and freezing meals."
+    ],
+    "bondingTasks": [
+      { "emoji": "🍲", "title": "Freezer Prep", "text": "Cook a massive batch of chili or lasagna to freeze." }
+    ],
+    "mustBuy": [
+      "Paper plates (to minimize dishes later)"
+    ],
+    "optionalBuy": [],
+    "medicalRoadmap": [
+      "Some doctors do a late third-trimester ultrasound to check baby's size and position."
+    ],
+    "questions": [
+      "Is the baby head-down yet?"
+    ],
+    "takeaways": [
+      "Lungs are doing vital practice.",
+      "Postpartum survival relies on having food ready."
+    ]
+  },
+  "33": {
+    "id": "33",
+    "title": "Immune System Boost",
+    "subtitle": "Getting antibodies from mom.",
+    "trimester": "t3",
+    "trimesterLabel": "THIRD TRIMESTER",
+    "emoji": "🍍",
+    "size": "Pineapple",
+    "sizeDesc": "~43.7 cm",
+    "keyDev": "Antibody Transfer",
+    "keyDevDesc": "Mom's antibodies cross the placenta to protect baby.",
+    "dadPriority": "Babyproofing Basics",
+    "dadPriorityDesc": "Secure heavy furniture.",
+    "partnerSymptoms": "Clumsiness",
+    "partnerSymptomsDesc": "Loose joints and off-balance.",
+    "babyDevBullets": [
+      "Baby is receiving a massive transfer of antibodies from mom to fight off infections after birth.",
+      "Pupils can constrict and dilate in response to light.",
+      "Amniotic fluid is at its maximum level."
+    ],
+    "symptomTable": [
+      { "name": "Clumsiness", "why": "Relaxin hormone loosening joints + large belly", "help": "Clear tripping hazards around the house" }
+    ],
+    "emotionalScripts": [
+      "I've cleared the hallways so you don't have to navigate around boxes."
+    ],
+    "practicalTasks": [
+      "Anchor heavy furniture (dressers, bookshelves, TVs) to the walls.",
+      "Set up the baby monitor and test the range."
+    ],
+    "relationshipIdeas": [
+      "Watch a movie and simply hold hands."
+    ],
+    "bondingTasks": [
+      { "emoji": "📹", "title": "Monitor Test", "text": "Test the baby monitor from the bedroom to the nursery." }
+    ],
+    "mustBuy": [
+      "Furniture wall anchors"
+    ],
+    "optionalBuy": [],
+    "medicalRoadmap": [
+      "Review the signs of preterm labor: regular contractions, water breaking, bleeding."
+    ],
+    "questions": [],
+    "takeaways": [
+      "Baby's immune system is getting primed.",
+      "Anchor your furniture now—toddlers climb everything."
+    ]
+  },
+  "34": {
+    "id": "34",
+    "title": "Fingernails Fully Formed",
+    "subtitle": "Baby is getting ready for their debut.",
+    "trimester": "t3",
+    "trimesterLabel": "THIRD TRIMESTER",
+    "emoji": "🍈",
+    "size": "Cantaloupe",
+    "sizeDesc": "~45 cm",
+    "keyDev": "Nervous System Matures",
+    "keyDevDesc": "Central nervous system is maturing rapidly.",
+    "dadPriority": "Postpartum Supplies",
+    "dadPriorityDesc": "Buy the postpartum recovery gear.",
+    "partnerSymptoms": "Exhaustion Returns",
+    "partnerSymptomsDesc": "Feeling as tired as the first trimester.",
+    "babyDevBullets": [
+      "Fingernails have reached the tips of the fingers (they may even need a trim at birth).",
+      "Boys' testicles are descending into the scrotum.",
+      "Vernix coating gets thicker."
+    ],
+    "symptomTable": [
+      { "name": "Extreme Fatigue", "why": "Carrying significant extra weight and poor sleep", "help": "Encourage her to start maternity leave early if possible" }
+    ],
+    "emotionalScripts": [
+      "I bought all your postpartum supplies so you don't have to think about it."
+    ],
+    "practicalTasks": [
+      "Assemble a postpartum recovery basket for her bathroom (peri bottle, dermoplast, giant pads).",
+      "Install the baby's bassinet next to your bed."
+    ],
+    "relationshipIdeas": [
+      "Give her a gentle foot and calf massage every single night."
+    ],
+    "bondingTasks": [
+      { "emoji": "🛏️", "title": "Bassinet Setup", "text": "Set up the safe sleep space." }
+    ],
+    "mustBuy": [
+      "Maxi pads, Dermoplast pain spray, Perineal bottle",
+      "Witch hazel cooling pads"
+    ],
+    "optionalBuy": [
+      "Adult diapers (many moms prefer these to giant pads)"
+    ],
+    "medicalRoadmap": [
+      "Prepare for the Group B Strep (GBS) swab test next week or week 36."
+    ],
+    "questions": [],
+    "takeaways": [
+      "She is exhausted; treat her like she's running a marathon.",
+      "The postpartum bathroom kit is an essential dad task."
+    ]
+  },
+  "35": {
+    "id": "35",
+    "title": "Dropping Into Position",
+    "subtitle": "Baby is moving into the pelvis.",
+    "trimester": "t3",
+    "trimesterLabel": "THIRD TRIMESTER",
+    "emoji": "🍈",
+    "size": "Honeydew Melon",
+    "sizeDesc": "~46.2 cm",
+    "keyDev": "Lightning",
+    "keyDevDesc": "Baby drops head-down into the pelvis.",
+    "dadPriority": "Labor Run-Through",
+    "dadPriorityDesc": "Review when to go to the hospital.",
+    "partnerSymptoms": "Frequent Urination",
+    "partnerSymptomsDesc": "Baby's head is directly on the bladder.",
+    "babyDevBullets": [
+      "Baby often 'drops' (lightening) into the pelvis to prepare for birth.",
+      "Kidneys are fully developed and liver can process waste.",
+      "Fat continues to accumulate, especially around the shoulders."
+    ],
+    "symptomTable": [
+      { "name": "Constant Urination", "why": "Baby's head on bladder", "help": "Map out bathrooms everywhere you go" }
+    ],
+    "emotionalScripts": [
+      "We know the plan. When it's time, I will get us there safely."
+    ],
+    "practicalTasks": [
+      "Review the 5-1-1 rule: Contractions 5 minutes apart, lasting 1 minute, for 1 hour = time to go.",
+      "Wash the baby's newborn clothes and blankets in fragrance-free detergent."
+    ],
+    "relationshipIdeas": [
+      "Keep things light and calm. Anxiety is probably high."
+    ],
+    "bondingTasks": [
+      { "emoji": "🧺", "title": "Baby Laundry", "text": "Wash and fold the tiny clothes." }
+    ],
+    "mustBuy": [
+      "Fragrance-free baby laundry detergent"
+    ],
+    "optionalBuy": [],
+    "medicalRoadmap": [
+      "GBS Swab Test: tests for bacteria that is harmless to mom but dangerous to baby during delivery."
+    ],
+    "questions": [
+      "If GBS positive, what is the protocol? (Usually IV antibiotics during labor)"
+    ],
+    "takeaways": [
+      "Baby dropping makes breathing easier but urination constant.",
+      "Know exactly when it's time to head to the hospital."
+    ]
+  },
+  "36": {
+    "id": "36",
+    "title": "Early Term",
+    "subtitle": "Almost at the finish line.",
+    "trimester": "t3",
+    "trimesterLabel": "THIRD TRIMESTER",
+    "emoji": "🥬",
+    "size": "Romaine Lettuce",
+    "sizeDesc": "~47.4 cm",
+    "keyDev": "Shedding Vernix",
+    "keyDevDesc": "Baby sheds the waxy coating and downy hair.",
+    "dadPriority": "Final Checks",
+    "dadPriorityDesc": "Gas in the car, bags by the door.",
+    "partnerSymptoms": "Nesting",
+    "partnerSymptomsDesc": "A sudden burst of energy to clean and organize.",
+    "babyDevBullets": [
+      "Baby sheds the vernix and lanugo, which they swallow (this becomes the meconium poop).",
+      "Digestive system is ready for breast milk or formula.",
+      "Baby is considered 'early term' next week."
+    ],
+    "symptomTable": [
+      { "name": "Nesting Instinct", "why": "Evolutionary drive to prepare the environment", "help": "Help her clean, but don't let her climb ladders or lift heavy things" }
+    ],
+    "emotionalScripts": [
+      "The house is ready. We are ready."
+    ],
+    "practicalTasks": [
+      "Never let the car's gas tank fall below half full.",
+      "Confirm who will take care of your pets when you go to the hospital."
+    ],
+    "relationshipIdeas": [
+      "Go on your absolute final date night (if she's up for it)."
+    ],
+    "bondingTasks": [
+      { "emoji": "⛽", "title": "Gas Check", "text": "Keep the tank full at all times." }
+    ],
+    "mustBuy": [],
+    "optionalBuy": [],
+    "medicalRoadmap": [
+      "Appointments are now once a week until birth."
+    ],
+    "questions": [
+      "Will the doctor perform a cervical check today?"
+    ],
+    "takeaways": [
+      "The baby is practically fully baked.",
+      "Logistics (gas, pets, bags) must be 100% locked in."
+    ]
+  },
+  "37": {
+    "id": "37",
+    "title": "Early Term Reached",
+    "subtitle": "Baby could safely arrive any day now.",
+    "trimester": "t3",
+    "trimesterLabel": "THIRD TRIMESTER",
+    "emoji": "🍈",
+    "size": "Winter Melon",
+    "sizeDesc": "~48.6 cm",
+    "keyDev": "Lungs Ready",
+    "keyDevDesc": "Lungs are capable of breathing outside air.",
+    "dadPriority": "Standby Mode",
+    "dadPriorityDesc": "Keep your phone loud and stay close.",
+    "partnerSymptoms": "Vaginal Discharge",
+    "partnerSymptomsDesc": "Losing the mucus plug.",
+    "babyDevBullets": [
+      "Baby is officially 'early term'.",
+      "Coordination is perfected so baby can grasp things (like the umbilical cord).",
+      "Immune system is getting final upgrades."
+    ],
+    "symptomTable": [
+      { "name": "Losing Mucus Plug", "why": "Cervix softening and opening", "help": "Don't panic; labor could still be days or weeks away" }
+    ],
+    "emotionalScripts": [
+      "My phone is off silent and I will answer on the first ring."
+    ],
+    "practicalTasks": [
+      "Stop traveling. Stay within an hour of the hospital.",
+      "Review the route to the hospital and alternate routes in case of traffic."
+    ],
+    "relationshipIdeas": [
+      "Enjoy quiet evenings at home. Rest is the priority."
+    ],
+    "bondingTasks": [
+      { "emoji": "📱", "title": "Ringer On", "text": "Take your phone off Do Not Disturb." }
+    ],
+    "mustBuy": [],
+    "optionalBuy": [
+      "Waterproof mattress protector (in case water breaks in bed)"
+    ],
+    "medicalRoadmap": [
+      "Weekly cervical checks may begin to see if she is dilating or effacing."
+    ],
+    "questions": [
+      "Are there any signs of dilation?"
+    ],
+    "takeaways": [
+      "Baby is safe to be born now.",
+      "Losing the mucus plug means the body is preparing, but it's not a reason to rush to the ER."
+    ]
+  },
+  "38": {
+    "id": "38",
+    "title": "Organs Ready",
+    "subtitle": "Just putting on the finishing touches.",
+    "trimester": "t3",
+    "trimesterLabel": "THIRD TRIMESTER",
+    "emoji": "🥬",
+    "size": "Leek",
+    "sizeDesc": "~49.8 cm",
+    "keyDev": "Brain & Lungs Fine-Tune",
+    "keyDevDesc": "Final maturing of brain and lung function.",
+    "dadPriority": "Calm Energy",
+    "dadPriorityDesc": "Be the anchor. Keep anxiety low.",
+    "partnerSymptoms": "Anxiety/Impatience",
+    "partnerSymptomsDesc": "So utterly done with being pregnant.",
+    "babyDevBullets": [
+      "Baby's organ systems are fully functioning.",
+      "Baby is continuing to pack on fat to stay warm after birth.",
+      "Eye color is established (though it can change over the first year)."
+    ],
+    "symptomTable": [
+      { "name": "Extreme Discomfort", "why": "A full-sized baby inside a human body", "help": "Be endlessly patient. Validate her complaints." }
+    ],
+    "emotionalScripts": [
+      "You have done such an incredible job. Not much longer now."
+    ],
+    "practicalTasks": [
+      "Ensure the house is clean.",
+      "Double-check the hospital bags and put them in the car."
+    ],
+    "relationshipIdeas": [
+      "Watch her favorite comforting movies."
+    ],
+    "bondingTasks": [
+      { "emoji": "🧳", "title": "Bags in Car", "text": "Move the go-bags to the trunk of the car." }
+    ],
+    "mustBuy": [],
+    "optionalBuy": [],
+    "medicalRoadmap": [
+      "Weekly check. The doctor may discuss membrane sweeping if appropriate."
+    ],
+    "questions": [
+      "What is our induction plan if we go past the due date?"
+    ],
+    "takeaways": [
+      "It is a waiting game now.",
+      "Keep her as comfortable and stress-free as possible."
+    ]
+  },
+  "39": {
+    "id": "39",
+    "title": "Full Term",
+    "subtitle": "Any minute now.",
+    "trimester": "t3",
+    "trimesterLabel": "THIRD TRIMESTER",
+    "emoji": "🍉",
+    "size": "Mini Watermelon",
+    "sizeDesc": "~50.7 cm",
+    "keyDev": "Shedding Skin",
+    "keyDevDesc": "New skin forms as outer layers shed.",
+    "dadPriority": "Wait and Watch",
+    "dadPriorityDesc": "Monitor for signs of labor.",
+    "partnerSymptoms": "Contractions",
+    "partnerSymptomsDesc": "Waiting for the real contractions to start.",
+    "babyDevBullets": [
+      "Officially full term!",
+      "Baby's head is likely engaged deep in the pelvis.",
+      "Endocrine system prepares to release stress hormones for birth."
+    ],
+    "symptomTable": [
+      { "name": "False Labor", "why": "Body warming up", "help": "Time the contractions. If they stop when she walks or drinks water, it's false labor." }
+    ],
+    "emotionalScripts": [
+      "Every contraction brings us closer to meeting our baby."
+    ],
+    "practicalTasks": [
+      "Download a contraction timer app on your phone.",
+      "Review the signs of labor: water breaking, bloody show, consistent 5-1-1 contractions."
+    ],
+    "relationshipIdeas": [
+      "Try natural ways to encourage labor if she is up for it (walking, spicy food, intimacy)."
+    ],
+    "bondingTasks": [
+      { "emoji": "⏱️", "title": "Timer App", "text": "Test out the contraction timer app so you know how to use it." }
+    ],
+    "mustBuy": [],
+    "optionalBuy": [],
+    "medicalRoadmap": [
+      "Weekly checkup. Monitoring for any signs of preeclampsia or distress."
+    ],
+    "questions": [
+      "When exactly do you want us to call the on-call doctor?"
+    ],
+    "takeaways": [
+      "This is it.",
+      "You are the timekeeper and the calm presence."
+    ]
+  },
+  "40": {
+    "id": "40",
+    "title": "The Due Date",
+    "subtitle": "Eviction Notice.",
+    "trimester": "t3",
+    "trimesterLabel": "THIRD TRIMESTER",
+    "emoji": "🎃",
+    "size": "Small Pumpkin",
+    "sizeDesc": "~51.2 cm, ~3.4 kg",
+    "keyDev": "Ready for the World",
+    "keyDevDesc": "Fully developed and ready to breathe air.",
+    "dadPriority": "Distraction",
+    "dadPriorityDesc": "Keep her mind off the waiting.",
+    "partnerSymptoms": "Frustration",
+    "partnerSymptomsDesc": "Only 5% of babies are born on their due date.",
+    "babyDevBullets": [
+      "Skull bones are not fused so they can overlap during the journey through the birth canal.",
+      "15% of the baby's body weight is fat.",
+      "Baby is ready for the world."
+    ],
+    "symptomTable": [
+      { "name": "Over it", "why": "Waiting is hard", "help": "Distract, distract, distract" }
+    ],
+    "emotionalScripts": [
+      "The due date is just an estimate. The baby will come when they are ready."
+    ],
+    "practicalTasks": [
+      "Field texts from family asking 'Is the baby here yet?' so she doesn't have to.",
+      "Keep walking and bouncing on an exercise ball."
+    ],
+    "relationshipIdeas": [
+      "Go to a movie theater or out to dinner—distract yourselves."
+    ],
+    "bondingTasks": [
+      { "emoji": "🛡️", "title": "Bouncer", "text": "Act as the communication shield between her and anxious relatives." }
+    ],
+    "mustBuy": [],
+    "optionalBuy": [],
+    "medicalRoadmap": [
+      "The OB will likely schedule an induction date for week 41 if nothing happens."
+    ],
+    "questions": [
+      "What is the plan for monitoring baby if we go past the due date?"
+    ],
+    "takeaways": [
+      "Do not stress if the baby isn't born today.",
+      "Protect her from annoying texts."
+    ]
+  },
+  "birth": {
+    "id": "birth",
+    "title": "Labor & Delivery",
+    "subtitle": "The Day Everything Changes.",
+    "trimester": "birth",
+    "trimesterLabel": "BIRTH & BEYOND",
+    "emoji": "🎉",
+    "size": "Newborn",
+    "sizeDesc": "Your Baby",
+    "keyDev": "The First Breath",
+    "keyDevDesc": "Fluid is cleared from lungs, baby breathes air.",
+    "dadPriority": "The Coach",
+    "dadPriorityDesc": "Support her through labor.",
+    "partnerSymptoms": "Labor",
+    "partnerSymptomsDesc": "Contractions, pushing, exhaustion.",
+    "babyDevBullets": [
+      "The journey through the birth canal squeezes fluid from the lungs.",
+      "The umbilical cord is cut, and baby takes their first breath.",
+      "Apgar scores are assessed at 1 and 5 minutes."
+    ],
+    "symptomTable": [
+      { "name": "Active Labor", "why": "Cervix dilating to 10cm", "help": "Provide counter-pressure, offer ice chips, advocate for her" }
+    ],
+    "emotionalScripts": [
+      "Look at me. Breathe with me. You are so strong."
+    ],
+    "practicalTasks": [
+      "Advocate for her birth plan preferences with the nurses.",
+      "Keep her hydrated (ice chips).",
+      "Cut the cord if you choose to do so."
+    ],
+    "relationshipIdeas": [
+      "Skin-to-skin contact with your new baby as soon as possible."
+    ],
+    "bondingTasks": [
+      { "emoji": "👶", "title": "Skin to Skin", "text": "Take your shirt off and hold your baby against your bare chest." }
+    ],
+    "mustBuy": [
+      "Coffee for you (it's going to be a long day)"
+    ],
+    "optionalBuy": [],
+    "medicalRoadmap": [
+      "Labor has 3 stages: Dilation, Pushing/Birth, and Delivery of the Placenta."
+    ],
+    "questions": [
+      "When can we do skin-to-skin?"
+    ],
+    "takeaways": [
+      "Be her rock.",
+      "You are a father now."
+    ]
+  }
+}

@@ -1,0 +1,503 @@
+{
+  "11": {
+    "id": "11",
+    "title": "Baby Swallows & Hiccups",
+    "subtitle": "Practicing for life on the outside.",
+    "trimester": "t1",
+    "trimesterLabel": "FIRST TRIMESTER",
+    "emoji": "🌰",
+    "size": "Fig",
+    "sizeDesc": "~4.1 cm",
+    "keyDev": "Reflexes Begin",
+    "keyDevDesc": "Baby starts swallowing fluid and hiccuping.",
+    "dadPriority": "Nuchal Scan Prep",
+    "dadPriorityDesc": "Prepare for the 12-week scan.",
+    "partnerSymptoms": "Nausea Fading",
+    "partnerSymptomsDesc": "Morning sickness may start to ease up.",
+    "babyDevBullets": [
+      "The fetus is learning to swallow amniotic fluid.",
+      "Vocal cords are forming.",
+      "Hair follicles are developing on the head and body."
+    ],
+    "symptomTable": [
+      { "name": "Increased Saliva", "why": "Hormonal changes", "help": "Offer mints or sour candies" }
+    ],
+    "emotionalScripts": [
+      "You've been so strong through these first rough weeks."
+    ],
+    "practicalTasks": [
+      "Double check that the 12-week NT scan is booked.",
+      "Start planning the nursery layout conceptually."
+    ],
+    "relationshipIdeas": [
+      "Go for a gentle walk together and talk about how you're both feeling."
+    ],
+    "bondingTasks": [
+      { "emoji": "👶", "title": "Heartbeat app", "text": "Listen for the heartbeat if you have an at-home doppler (but don't panic if you can't find it)." }
+    ],
+    "mustBuy": [],
+    "optionalBuy": [
+      "Belly butter for stretch mark prevention"
+    ],
+    "medicalRoadmap": [
+      "Nuchal Translucency (NT) scan usually occurs between weeks 11 and 13."
+    ],
+    "questions": [
+      "Do we need a full anatomy scan later if the NT scan is normal?"
+    ],
+    "takeaways": [
+      "The hardest physical weeks for her are almost over.",
+      "The baby is practicing swallowing."
+    ]
+  },
+  "12": {
+    "id": "12",
+    "title": "End of First Trimester",
+    "subtitle": "The risk of miscarriage drops significantly.",
+    "trimester": "t1",
+    "trimesterLabel": "FIRST TRIMESTER",
+    "emoji": "🍋",
+    "size": "Lime",
+    "sizeDesc": "~5.4 cm",
+    "keyDev": "Reflexes Fully Active",
+    "keyDevDesc": "Baby curls toes and fingers.",
+    "dadPriority": "Celebrate!",
+    "dadPriorityDesc": "You made it through the toughest part.",
+    "partnerSymptoms": "Energy Returning",
+    "partnerSymptomsDesc": "The placenta takes over hormone production.",
+    "babyDevBullets": [
+      "Reflexes are developing fast: fingers can open and close.",
+      "Intestines are moving into the baby's abdomen.",
+      "Kidneys are excreting urine into the bladder."
+    ],
+    "symptomTable": [
+      { "name": "Heartburn", "why": "Progesterone relaxes the stomach valve", "help": "Keep Tums handy, avoid spicy dinners" }
+    ],
+    "emotionalScripts": [
+      "We did it. We survived the first trimester."
+    ],
+    "practicalTasks": [
+      "Finalize your announcement plan (if sharing at 12 weeks).",
+      "Research daycare or nanny options—waitlists can be a year long!"
+    ],
+    "relationshipIdeas": [
+      "Celebrate reaching the 12-week milestone with a nice dinner."
+    ],
+    "bondingTasks": [
+      { "emoji": "📸", "title": "Announcement", "text": "Take the announcement photo." }
+    ],
+    "mustBuy": [
+      "Pregnancy-safe antacids"
+    ],
+    "optionalBuy": [],
+    "medicalRoadmap": [
+      "NT scan to measure fluid at the back of baby's neck."
+    ],
+    "questions": [
+      "When do we get the NIPT/NT results?"
+    ],
+    "takeaways": [
+      "Miscarriage risk drops below 2%.",
+      "Placenta takes over, giving her more energy."
+    ]
+  },
+  "13": {
+    "id": "13",
+    "title": "The Threshold",
+    "subtitle": "Welcome to the honeymoon phase.",
+    "trimester": "t1",
+    "trimesterLabel": "FIRST TRIMESTER",
+    "emoji": "🍑",
+    "size": "Peach",
+    "sizeDesc": "~7.4 cm",
+    "keyDev": "Fingerprints Form",
+    "keyDevDesc": "Unique fingerprints are established.",
+    "dadPriority": "Transition Phase",
+    "dadPriorityDesc": "Gear up for a more active second trimester.",
+    "partnerSymptoms": "Visible Bump",
+    "partnerSymptomsDesc": "Uterus shifts up and out of the pelvis.",
+    "babyDevBullets": [
+      "Unique fingerprints are forming on tiny fingertips.",
+      "Baby can make facial expressions like smiling and frowning.",
+      "Vocal cords are fully developed (though there's no air to make sound)."
+    ],
+    "symptomTable": [
+      { "name": "Round Ligament Pain", "why": "Uterus expanding rapidly", "help": "Suggest moving slowly when standing up" }
+    ],
+    "emotionalScripts": [
+      "Your bump is starting to show, you look amazing."
+    ],
+    "practicalTasks": [
+      "Take a baseline 'bump photo'.",
+      "Start looking into childbirth classes."
+    ],
+    "relationshipIdeas": [
+      "Plan a 'babymoon' (a final vacation before the baby arrives)."
+    ],
+    "bondingTasks": [
+      { "emoji": "✈️", "title": "Babymoon Planning", "text": "Pick a destination that is Zika-free and relaxing." }
+    ],
+    "mustBuy": [],
+    "optionalBuy": [
+      "Maternity clothes (jeans with elastic bands)"
+    ],
+    "medicalRoadmap": [
+      "Typically a month break until the next 16-week appointment."
+    ],
+    "questions": [],
+    "takeaways": [
+      "The first trimester is officially over.",
+      "Unique fingerprints are formed."
+    ]
+  },
+  "14": {
+    "id": "14",
+    "title": "Energy Returns",
+    "subtitle": "Second trimester officially begins.",
+    "trimester": "t2",
+    "trimesterLabel": "SECOND TRIMESTER",
+    "emoji": "🍋",
+    "size": "Lemon",
+    "sizeDesc": "~8.7 cm",
+    "keyDev": "Standing Tall",
+    "keyDevDesc": "Neck elongates, baby holds head up.",
+    "dadPriority": "Project Mode",
+    "dadPriorityDesc": "Capitalize on her returning energy to get things done.",
+    "partnerSymptoms": "Honeymoon Phase",
+    "partnerSymptomsDesc": "Nausea gone, energy back, glowing skin.",
+    "babyDevBullets": [
+      "The neck is getting longer, allowing the baby to hold its head straighter.",
+      "Spleen starts producing red blood cells.",
+      "Baby can squint, frown, and grimace."
+    ],
+    "symptomTable": [
+      { "name": "Increased Appetite", "why": "Nausea is gone, baby needs calories", "help": "Keep the fridge stocked with healthy snacks" }
+    ],
+    "emotionalScripts": [
+      "It is so good to see you feeling like yourself again."
+    ],
+    "practicalTasks": [
+      "Begin clearing out the room that will become the nursery.",
+      "Finalize the budget for big-ticket baby items (stroller, crib)."
+    ],
+    "relationshipIdeas": [
+      "Go out on a real date now that she can tolerate restaurant smells."
+    ],
+    "bondingTasks": [
+      { "emoji": "🛒", "title": "Registry Research", "text": "Start researching strollers together." }
+    ],
+    "mustBuy": [],
+    "optionalBuy": [],
+    "medicalRoadmap": [
+      "Second trimester blood tests (e.g., AFP for neural tube defects)."
+    ],
+    "questions": [],
+    "takeaways": [
+      "The golden trimester is here.",
+      "Get big projects started now."
+    ]
+  },
+  "15": {
+    "id": "15",
+    "title": "Sensing Light",
+    "subtitle": "Even with closed eyes, baby senses the outside world.",
+    "trimester": "t2",
+    "trimesterLabel": "SECOND TRIMESTER",
+    "emoji": "🍎",
+    "size": "Apple",
+    "sizeDesc": "~10.1 cm",
+    "keyDev": "Light Sensitivity",
+    "keyDevDesc": "Baby reacts to bright lights outside the belly.",
+    "dadPriority": "Physical Support",
+    "dadPriorityDesc": "Help her adjust to her changing center of gravity.",
+    "partnerSymptoms": "Nosebleeds & Congestion",
+    "partnerSymptomsDesc": "Increased blood volume swells mucous membranes.",
+    "babyDevBullets": [
+      "Baby's eyes are sensitive to light even though eyelids are fused shut.",
+      "Legs are growing longer than arms.",
+      "Baby is covered in lanugo (fine downy hair) to keep warm."
+    ],
+    "symptomTable": [
+      { "name": "Pregnancy Rhinitis", "why": "Swollen nasal passages", "help": "Buy a humidifier for the bedroom" }
+    ],
+    "emotionalScripts": [
+      "Let's take a break and elevate your feet."
+    ],
+    "practicalTasks": [
+      "Set up a humidifier in the bedroom to help with congestion.",
+      "Start interviewing pediatricians."
+    ],
+    "relationshipIdeas": [
+      "Read a parenting book chapter out loud together before bed."
+    ],
+    "bondingTasks": [
+      { "emoji": "🔦", "title": "Flashlight Game", "text": "Shine a flashlight on her belly to see if baby reacts (though it might still be too early to feel)." }
+    ],
+    "mustBuy": [
+      "Humidifier"
+    ],
+    "optionalBuy": [],
+    "medicalRoadmap": [
+      "16-week checkup is coming up."
+    ],
+    "questions": [
+      "Can we hear the heartbeat at the next visit?"
+    ],
+    "takeaways": [
+      "Baby can sense light.",
+      "Nasal congestion is a very common pregnancy symptom."
+    ]
+  },
+  "16": {
+    "id": "16",
+    "title": "Hearing Dad's Voice",
+    "subtitle": "Baby is listening.",
+    "trimester": "t2",
+    "trimesterLabel": "SECOND TRIMESTER",
+    "emoji": "🥑",
+    "size": "Avocado",
+    "sizeDesc": "~11.6 cm",
+    "keyDev": "Hearing Develops",
+    "keyDevDesc": "Bones in the ear harden, baby can hear.",
+    "dadPriority": "Talk to the Belly",
+    "dadPriorityDesc": "Start making your voice known.",
+    "partnerSymptoms": "The Quickening",
+    "partnerSymptomsDesc": "She might feel the first tiny flutters of movement.",
+    "babyDevBullets": [
+      "Tiny bones in the ear harden; baby can hear your voice and mom's heartbeat.",
+      "The heart is pumping about 25 quarts of blood a day.",
+      "Scalp patterning has begun, though hair isn't visible yet."
+    ],
+    "symptomTable": [
+      { "name": "Backache", "why": "Weight shift and relaxing ligaments", "help": "Offer lower back massages" }
+    ],
+    "emotionalScripts": [
+      "I love talking to our baby. It makes it feel so real."
+    ],
+    "practicalTasks": [
+      "Talk, sing, or read to the belly daily.",
+      "Look into life insurance and setting up a will."
+    ],
+    "relationshipIdeas": [
+      "Listen to a favorite album together and tell the baby about it."
+    ],
+    "bondingTasks": [
+      { "emoji": "🎙️", "title": "Voice Recognition", "text": "Lower your voice and talk directly to the bump so baby learns your pitch." }
+    ],
+    "mustBuy": [],
+    "optionalBuy": [
+      "Maternity pillow (U-shaped or C-shaped)"
+    ],
+    "medicalRoadmap": [
+      "16-week routine checkup (weight, blood pressure, Doppler heartbeat)."
+    ],
+    "questions": [
+      "Are we tracking on weight gain appropriately?"
+    ],
+    "takeaways": [
+      "The baby can hear you now.",
+      "She may feel the first kicks ('quickening')."
+    ]
+  },
+  "17": {
+    "id": "17",
+    "title": "Practice Swallowing",
+    "subtitle": "Getting ready for the real world.",
+    "trimester": "t2",
+    "trimesterLabel": "SECOND TRIMESTER",
+    "emoji": "🧅",
+    "size": "Turnip",
+    "sizeDesc": "~13 cm",
+    "keyDev": "Skeleton Hardens",
+    "keyDevDesc": "Cartilage turns into bone.",
+    "dadPriority": "Nursery Logistics",
+    "dadPriorityDesc": "Order the crib and plan the room.",
+    "partnerSymptoms": "Stretch Marks",
+    "partnerSymptomsDesc": "Skin stretches rapidly over the growing uterus.",
+    "babyDevBullets": [
+      "Baby's skeleton is transforming from soft cartilage to hard bone.",
+      "Baby is practicing swallowing and sucking reflexes.",
+      "Fat stores are beginning to develop under the skin."
+    ],
+    "symptomTable": [
+      { "name": "Itchy Skin", "why": "Skin stretching on abdomen", "help": "Apply thick cocoa butter or belly oil" }
+    ],
+    "emotionalScripts": [
+      "Your body is doing exactly what it needs to do."
+    ],
+    "practicalTasks": [
+      "Order the crib and mattress (delivery can take weeks).",
+      "Make sure you both have a clear plan for maternity/paternity leave."
+    ],
+    "relationshipIdeas": [
+      "Rub belly oil on her stomach for her before bed."
+    ],
+    "bondingTasks": [
+      { "emoji": "🛠️", "title": "Crib Assembly", "text": "Clear the space for the crib and gear." }
+    ],
+    "mustBuy": [
+      "Belly oil or lotion for stretch marks"
+    ],
+    "optionalBuy": [],
+    "medicalRoadmap": [
+      "Start preparing for the Anatomy Scan at week 18-20."
+    ],
+    "questions": [],
+    "takeaways": [
+      "Cartilage is turning into bone.",
+      "Skin care for her stretching belly is essential."
+    ]
+  },
+  "18": {
+    "id": "18",
+    "title": "The Anatomy Scan Window",
+    "subtitle": "The biggest ultrasound of the pregnancy.",
+    "trimester": "t2",
+    "trimesterLabel": "SECOND TRIMESTER",
+    "emoji": "🫑",
+    "size": "Bell Pepper",
+    "sizeDesc": "~14.2 cm",
+    "keyDev": "Nerves Myelinate",
+    "keyDevDesc": "Nerves are coated in myelin to speed messages.",
+    "dadPriority": "The Big Ultrasound",
+    "dadPriorityDesc": "Be there for the anatomy scan.",
+    "partnerSymptoms": "Dizziness",
+    "partnerSymptomsDesc": "Cardiovascular system adjusting to blood volume.",
+    "babyDevBullets": [
+      "Nervous system is rapidly maturing.",
+      "If it's a girl, her uterus and fallopian tubes are formed.",
+      "If it's a boy, his genitals may be visible on an ultrasound."
+    ],
+    "symptomTable": [
+      { "name": "Dizziness upon standing", "why": "Blood pressure drops", "help": "Remind her to stand up slowly, carry snacks" }
+    ],
+    "emotionalScripts": [
+      "I am so excited to see every little detail of our baby."
+    ],
+    "practicalTasks": [
+      "Attend the Anatomy Scan (Level 2 Ultrasound). Do not miss this.",
+      "If finding out the sex, decide if you want the tech to tell you or write it in an envelope."
+    ],
+    "relationshipIdeas": [
+      "Go out for a celebratory meal after the anatomy scan."
+    ],
+    "bondingTasks": [
+      { "emoji": "💌", "title": "Gender Reveal", "text": "Plan how you want to learn the gender (privately or with family)." }
+    ],
+    "mustBuy": [],
+    "optionalBuy": [
+      "Gender reveal items (if doing one)"
+    ],
+    "medicalRoadmap": [
+      "Anatomy Scan: Tech measures all organs, brain, heart, and limbs to ensure proper development."
+    ],
+    "questions": [
+      "Are all organs developing normally?",
+      "Is the placenta in a safe position?"
+    ],
+    "takeaways": [
+      "This is the most detailed ultrasound you will have.",
+      "You can find out the sex of the baby."
+    ]
+  },
+  "19": {
+    "id": "19",
+    "title": "Baby Kicks Soon",
+    "subtitle": "Sensory development kicks into high gear.",
+    "trimester": "t2",
+    "trimesterLabel": "SECOND TRIMESTER",
+    "emoji": "🍅",
+    "size": "Tomato",
+    "sizeDesc": "~15.3 cm",
+    "keyDev": "Vernix Caseosa",
+    "keyDevDesc": "A waxy coating protects baby's skin in the fluid.",
+    "dadPriority": "Feel the Kicks",
+    "dadPriorityDesc": "Start feeling her belly for movement.",
+    "partnerSymptoms": "Leg Cramps",
+    "partnerSymptomsDesc": "Charlie horses, especially at night.",
+    "babyDevBullets": [
+      "Brain is designating specialized areas for smell, taste, hearing, vision, and touch.",
+      "Baby is covered in vernix caseosa, a greasy white substance protecting skin from amniotic fluid.",
+      "Kidneys continue to produce urine."
+    ],
+    "symptomTable": [
+      { "name": "Leg Cramps", "why": "Weight gain, nerve compression, mineral shortage", "help": "Massage her calves, encourage bananas (potassium)" }
+    ],
+    "emotionalScripts": [
+      "Let me know the second you feel a kick so I can try to feel it too."
+    ],
+    "practicalTasks": [
+      "Research and register for infant CPR classes.",
+      "Start building the baby registry."
+    ],
+    "relationshipIdeas": [
+      "Spend 10 minutes each night with your hand on her belly waiting for a kick."
+    ],
+    "bondingTasks": [
+      { "emoji": "🦵", "title": "Calf Massage", "text": "Learn how to rub out a leg cramp effectively." }
+    ],
+    "mustBuy": [],
+    "optionalBuy": [],
+    "medicalRoadmap": [
+      "Review anatomy scan results with the OB."
+    ],
+    "questions": [
+      "Should we be taking magnesium for the leg cramps?"
+    ],
+    "takeaways": [
+      "Sensory brain development is peaking.",
+      "You might feel the first kick from the outside soon."
+    ]
+  },
+  "20": {
+    "id": "20",
+    "title": "Halfway There!",
+    "subtitle": "You are at the exact midpoint of pregnancy.",
+    "trimester": "t2",
+    "trimesterLabel": "SECOND TRIMESTER",
+    "emoji": "🍌",
+    "size": "Banana",
+    "sizeDesc": "~16.4 cm (crown to rump), ~25.6 cm (head to heel)",
+    "keyDev": "Meconium Forms",
+    "keyDevDesc": "Baby's first poop is forming in the intestines.",
+    "dadPriority": "Registry & Gear",
+    "dadPriorityDesc": "Finalize the baby registry.",
+    "partnerSymptoms": "Belly Button Pops",
+    "partnerSymptomsDesc": "The expanding uterus pushes the navel outward.",
+    "babyDevBullets": [
+      "Measurement changes from 'crown-to-rump' to 'head-to-heel'.",
+      "Baby has working taste buds and drinks amniotic fluid (tasting what mom eats).",
+      "Meconium (dark, sticky first poop) is forming in the bowels."
+    ],
+    "symptomTable": [
+      { "name": "Shortness of Breath", "why": "Uterus pushing against lungs", "help": "Don't rush her; carry the heavy items" }
+    ],
+    "emotionalScripts": [
+      "We are officially halfway to meeting our baby."
+    ],
+    "practicalTasks": [
+      "Publish the baby registry.",
+      "Plan the baby shower (or assist the friends/family planning it)."
+    ],
+    "relationshipIdeas": [
+      "Celebrate reaching the halfway mark!"
+    ],
+    "bondingTasks": [
+      { "emoji": "🎉", "title": "Halfway Celebration", "text": "Take a milestone photo to commemorate 20 weeks." }
+    ],
+    "mustBuy": [
+      "Comfortable, supportive shoes for her"
+    ],
+    "optionalBuy": [],
+    "medicalRoadmap": [
+      "Fundal height (measuring the belly) becomes a standard part of OB checks from now on."
+    ],
+    "questions": [
+      "Is fundal height measuring on track?"
+    ],
+    "takeaways": [
+      "You are halfway to birth.",
+      "Baby is practicing digestion and tasting mom's meals."
+    ]
+  }
+}
