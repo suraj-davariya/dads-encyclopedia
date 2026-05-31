@@ -867,9 +867,9 @@ a:hover { text-decoration: underline; }
           A comprehensive, week-by-week guide built for first-time fathers. From the first positive test to the first month home — every milestone, every question, every challenge covered.
         </p>
         <div class="hero-cta-group">
-          <a href="#week-4" class="btn-primary">
+          <a href="#week-prep" class="btn-primary">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
-            Start Week 4
+            Start the Guide
           </a>
           <a href="#source-library" class="btn-secondary">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
@@ -5192,20 +5192,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // Override header nav pills to render dynamically
-    document.querySelectorAll('.nav-pill').forEach(pill => {
-        pill.addEventListener('click', (e) => {
-            const href = pill.getAttribute('href');
-            if (href) {
+    // Catch-all click listener for any #week- hash links to keep rendering dynamic
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('a');
+        if (link) {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('#week-')) {
                 e.preventDefault();
-                const hash = href.replace('#week-', '').replace('#', '');
+                const hash = href.replace('#week-', '');
                 if (hash === 'pre-conception') renderWeek('prep');
                 else if (hash === 'second-trimester') renderWeek('14');
                 else if (hash === 'third-trimester') renderWeek('28');
                 else if (hash === 'birth') renderWeek('birth');
                 else if (WEEKS_DATA[hash]) renderWeek(hash);
             }
-        });
+        }
     });
 });
 
