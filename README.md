@@ -1,109 +1,118 @@
-<div align="center">
-  <img src="assets/logo-placeholder.png" alt="Dads Encyclopedia Logo" width="200"/>
-  
-  # 🍼 Ultimate First-Time Dad's Pregnancy Encyclopedia
-  
-  **The comprehensive, no-BS, action-oriented survival guide for modern fathers-to-be.**
+# 🍼 Ultimate First-Time Dad's Pregnancy Encyclopedia
 
-  [![Version](https://img.shields.io/badge/version-1.0-blue.svg?style=for-the-badge&logo=appveyor)](https://github.com/your-username/dads-encyclopedia)
-  [![Status](https://img.shields.io/badge/status-active-success.svg?style=for-the-badge)](https://github.com/your-username/dads-encyclopedia)
-  [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://github.com/your-username/dads-encyclopedia)
-  [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://github.com/your-username/dads-encyclopedia)
-  [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://github.com/your-username/dads-encyclopedia)
-  
-  [Live Demo](#) • [Installation](#-quick-start) • [Roadmap](#-roadmap) • [Contributing](CONTRIBUTING.md)
+> **The ultimate, no-BS, action-oriented week-by-week pregnancy companion for modern fathers-to-be.**
+> 
+> *Because "just be supportive" isn't a strategy. You need a mission control.* 🚀
+
+<div align="center">
+
+[![Live Demo](https://img.shields.io/badge/⚡%20LIVE%20DEMO-🚀%20Launch%20Mission%20Control-ff6a1a?style=for-the-badge&logo=rocket)](https://suraj-davariya.github.io/dads-encyclopedia/)
+
+[![Version](https://img.shields.io/badge/version-1.1--stable-blue.svg?style=flat-square&logo=git)](https://suraj-davariya.github.io/dads-encyclopedia/)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)](https://suraj-davariya.github.io/dads-encyclopedia/)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)](https://suraj-davariya.github.io/dads-encyclopedia/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://suraj-davariya.github.io/dads-encyclopedia/)
+
+[⚡ Live Demo](https://suraj-davariya.github.io/dads-encyclopedia/) • [🛠️ Architecture](#-monolithic-architecture) • [🗺️ Roadmap](#-roadmap-completed-milestones) • [📦 Quick Start](#-quick-start-local-development)
+
 </div>
 
-<br/>
+***
 
-> *"Because 'just be supportive' isn't a strategy. You need a mission control."* 🚀
+> [!CAUTION]
+> ### ⚠️ MEDICAL DISCLAIMER & CAUTION
+> **THIS APPLICATION IS NOT MEDICAL ADVICE.** The content, checklists, symptom decoders, and clinical references provided in this pregnancy encyclopedia are for **educational and supportive purposes only**. They are designed exclusively to help first-time fathers understand the pregnancy journey and better support their partners. 
+> 
+> **For any medical concerns, symptoms, or health questions, always consult a licensed doctor, OB-GYN, midwife, or qualified healthcare professional immediately.** Never disregard professional medical advice or delay seeking it because of something read in this guide. The creator and contributors of this application assume no liability for medical decisions made based on this software.
 
-Welcome to the **Ultimate First-Time Dad's Pregnancy Encyclopedia**. We took the massive, overwhelming mountain of pregnancy information and distilled it into an actionable, week-by-week playbook specifically designed for Dads. No jargon. No panic. Just exactly what you need to know, what you need to buy, and what you need to do right now.
+***
 
----
+Welcome to the **Ultimate First-Time Dad's Pregnancy Encyclopedia**. We took the overwhelming mountain of standard pregnancy information and distilled it into an actionable, premium week-by-week playbook specifically designed for Dads. No dry medical jargon. No panic. Just exactly what you need to know, what you need to buy, and what you need to do right now to step up as the ultimate partner.
 
-## ✨ High-End Features (Why This Rules)
+***
 
-- 📅 **42-Week Master Tracker:** A seamless, single-page experience covering pre-conception (`prep`) all the way to birth and postpartum (`birth`).
-- ⏱️ **Interactive Labor Contraction Timer Coach:** A globally accessible slide-out drawer dashboard. Includes high-visibility stopwatch timing, automated **5-1-1 Active Labor Rule** checking, real-time clinical labor phase feedback (Early 🏠, Active 🚨, Transition 🤰), and medical guidance alerts.
-- ✍️ **Dad's Weekly Journal & Timeline Diary:** Interactive mood trackers, custom "Dad Wins" milestone checklists, and a reflective journal editor with a 1000ms auto-save mechanism. Includes a compiled timeline modal to view, print, or export your entire journey as JSON.
-- 🖨️ **PDF Export & Ink-Saving Print Engine:** One-click dynamic printing. Includes `Print Checklist Only` mode which isolates active shopping lists and dad tasks onto paper, perfect for carrying around or sticking on the fridge.
-- 🎨 **Premium UI/UX & Micro-Animations:** Staggered vertical vertical-slide entrances (`@keyframes slideUpFade`), premium satin saturated blurs (`backdrop-filter: blur(18px) saturate(180%)`), and trimester color-coded progress tracker dots featuring stately pulsating active glows.
-- 🤰 **Partner Symptom Decoder:** Detailed lookups on physical changes (Insomnia, Crowded Diaphragm, Nesting hormonal surges, Braxton Hicks practicing), with clear instructions on how Dads can actively support.
-- 🩺 **Clinical-Grade Milestones Enriched:** Deeply researched chapters for critical weeks (Week 12 genetic scans, Week 20 detailed anatomy ultrasounds, Week 28 RhoGAM checks, and Week 36 Group B Strep (GBS) tests and infant car seat checks).
+## 🌟 Premium Interactive Features
 
----
+### ⏱️ Labor Contraction Timer Coach
+* **Automated 5-1-1 Analysis**: Real-time labor coach stopwatch that calculates contraction durations and intervals.
+* **Clinical Phase Coaching**: Displays actionable advice based on clinical milestones (Early 🏠, Active Labor 🚨, Transition 🤰).
+* **Zero Data Loss**: Automatically saves timing histories to persistent local storage so active logs are never lost.
 
-## 🏗️ Architecture & Tech Stack
+### ✍️ Dad's Weekly Journal & Compiler
+* **Mood Tracking**: Quick weekly energy and emotional check-in buttons (Exhausted, Excited, Overwhelmed).
+* **Trimester Reflections**: Custom, reflective prompts designed for every specific trimester milestone.
+* **Dad Wins & Timeline**: Log achievements and view your entire pregnancy diary in a beautiful interactive timeline modal (printable and exportable as JSON!).
 
-This project is built for performance, absolute simplicity, and zero configuration:
-- **Monolithic Architecture:** Highly optimized, self-contained `index.html` structure keeping the application lightning-fast and portable.
-- **Frontend Design System:** Built on premium HSL color tokens (`styles.css`), responsive layouts, and modern glassmorphic satins.
-- **Durable LocalStorage Engine:** Namespace-protected state engines (`dads-encyclopedia-checklists`, `dads-encyclopedia-journals`, `dads-encyclopedia-contractions`) ensuring user data, timed logs, and diary entries are never lost.
-- **Zero Configuration:** 100% vanilla HTML5, CSS3, and ES6+ JS. No node modules, compilation steps, or complex server requirements.
+### 🖨️ PDF & Ink-Saving Print Engine
+* **Checks Isolation**: High-contrast, clean `@media print` stylesheets.
+* **Isolated Lists**: Generate and print *only* the checklists (must-buys and dad tasks) with one click, perfect for sticking on the fridge or clipboard.
 
----
+### 🎨 High-Fidelity UI/UX & Micro-Animations
+* Staggered fade-in cards (`@keyframes slideUpFade`) creating a premium digital experience.
+* Satined blurs (`backdrop-filter: blur(18px) saturate(180%)`) and beautiful glassmorphism.
+* Trimester-coded sidebar progress dots with an active, breathing pulsating glow.
 
-## 📂 Project Structure
+***
+
+## 🧬 Monolithic Architecture
+
+This project is engineered to be portable, lightweight, and incredibly fast:
+* **The Monolith**: 100% self-contained in a single `index.html` structure. It loads instantly and runs entirely on the client side.
+* **Design System**: Tailored HSL color variables (`styles.css`) for seamless Dark and Light theme scaling.
+* **Persistent Storage**: Namespace-locked engines (`dads-encyclopedia-*`) that protect check items, journals, and contraction logs.
+* **Zero Compilation**: Zero frameworks, zero dependencies, and no node_modules required.
 
 ```text
 dads-encyclopedia/
-├── prompt-library/          # 🤖 AI templates, prompts, and roles
-├── styles.css               # 💅 Premium CSS variables, design system, and OKLCH properties
-├── index.html               # 🌐 Monolithic application & dynamic javascript engine
-└── README.md                # 📖 This documentation file
+├── prompt-library/          # 🤖 Spec-driven prompt assets and roadmap definitions
+├── styles.css               # 💅 Premium CSS variables, color tokens, and custom keyframes
+└── index.html               # 🌐 Monolithic application & client-side javascript engine
 ```
 
----
+***
+
+## 🗺️ Roadmap & Completed Milestones
+
+We are systematically completing the pregnancy roadmap. Check our current progress below:
+
+- [x] **Foundation Setup:** Weeks 1–4 + Pre-Conception (`prep` chapter)
+- [x] **First Trimester:** Weeks 5–13 (Morning sickness, genetic screens, Week 12 Placenta Transitions)
+- [x] **Second Trimester:** Weeks 14–27 (Ultrasounds, anatomy check-ins, Week 20 Halfway mark)
+- [x] **Third Trimester Begins:** Weeks 28–32 (Week 28 RhoGAM, pediatrician prep, kick counts)
+- [x] **Late Stage Ready:** Weeks 33–36 (Week 36 Nesting, GBS tests, car seat installation checks)
+- [ ] **Phase 4 (Birth & Beyond):** Labor, Delivery, and Postpartum Month 1
+- [x] **Labor Contraction Timer Coach Widget** (100% complete)
+- [x] **Weekly Journal & Compiled Diary Timeline** (100% complete)
+
+***
 
 ## 🚀 Quick Start (Local Development)
 
-Ready to launch mission control? It takes less than 30 seconds.
+Launch your local pregnancy command center in seconds:
 
-### 1. Serve the App Locally
-We recommend running a local HTTP server to support smooth localStorage state handling and resource isolation:
+### 1. Launch a Local Server
+For optimal browser security, local storage access, and resource isolation, run a simple local server:
 ```bash
 # Python 3 local server
 python3 -m http.server 8000
 ```
 
 ### 2. Open in Your Browser
-Open [http://localhost:8000](http://localhost:8000) in your web browser. 
+Open your browser and navigate to:
+```text
+http://localhost:8000
+```
 
----
+***
 
-## 🗺️ Roadmap & Completed Milestones
+## 🏷️ Version Control (Gitmoji Master Rule)
+We follow strict version control guidelines. Every commit must combine multiple git emojis to keep our history visual and readable:
+* `✨ 👶 📝` Add Week 36 milestones and update roadmap checklist
+* `🐛 💄 🚑` Fix flexbox rendering bugs and update layout alignments
+* `♻️ 🎨 🏗️` Refactor trimester variable color tokens for glowing highlights
 
-We are systematically completing the master roadmap. Track our progress below:
-
-- [x] **Foundation Setup:** Weeks 1–4 + Pre-Conception (`prep`)
-- [x] **First Trimester:** Weeks 5–13 (Morning sickness, genetic screens, Week 12 Placenta Transitions)
-- [x] **Second Trimester:** Weeks 14–27 (Ultrasounds, anatomy check-ins, Week 20 Halfway mark)
-- [x] **Third Trimester Begins:** Weeks 28–32 (Week 28 RhoGAM, pediatrician prep, kick counts)
-- [x] **Late Stage Ready:** Weeks 33–36 (Week 36 Nesting, GBS tests, car seat installation checks)
-- [ ] **Phase 4 (Birth & Beyond):** Labor, Delivery, and Postpartum Month 1
-- [x] **Contraction Timer Coach Widget** (Integrated & 100% robust)
-- [x] **Weekly Journal & compiled Journey Timeline** (Integrated & 100% robust)
-
----
-
-## 🏷️ Commit Guidelines (Gitmoji Master Rule)
-
-We take our version control seriously. You **MUST** use multiple [gitmojis](https://gitmoji.dev/) for every commit to keep our history highly visual and expressive. 
-
-**Examples:**
-- `✨ 👶 📝 Add Week 28 chapter and update timeline roadmap`
-- `🐛 💄 🚑 Fix broken flexbox layout in mission control tabs`
-- `♻️ 🎨 🏗️ Refactor CSS color tokens for trimester glows`
-
----
-
-## 🤝 Contributing
-
-Dads help dads. Whether you're an OB-GYN, a frontend wizard, or a veteran dad with a solid tip on diaper genies—we want your PRs. Check out the [CONTRIBUTING.md](CONTRIBUTING.md) to get started.
-
-<br/>
+***
 
 <div align="center">
-  <i>Built with ❤️, cold coffee, and minimal sleep for first-time dads everywhere.</i>
+  <i>Built with ❤️, excessive caffeine, and minimal sleep for first-time dads everywhere.</i>
 </div>
