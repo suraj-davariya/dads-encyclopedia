@@ -761,10 +761,10 @@ a:hover { text-decoration: underline; }
       </a>
 
       <nav class="nav-pills" aria-label="Trimester navigation">
-        <a href="#pre-conception" class="nav-pill prep">Pre-Conception</a>
-        <a href="#week-4" class="nav-pill t1 active">First Trimester</a>
-        <a href="#second-trimester" class="nav-pill t2">Second Trimester</a>
-        <a href="#third-trimester" class="nav-pill t3">Third Trimester</a>
+        <a href="#prep" class="nav-pill prep">Pre-Conception</a>
+        <a href="#week-1" class="nav-pill t1 active">First Trimester</a>
+        <a href="#week-14" class="nav-pill t2">Second Trimester</a>
+        <a href="#week-28" class="nav-pill t3">Third Trimester</a>
         <a href="#birth" class="nav-pill birth">Birth & Beyond</a>
       </nav>
 
@@ -927,39 +927,6 @@ a:hover { text-decoration: underline; }
 ════════════════════════════════════════ -->
 
 <div id="week-display-container"></div>
-
-<!-- ════════════════════════════════════════
-     SPECIAL SECTIONS PREVIEW
-════════════════════════════════════════ -->
-<section id="second-trimester" class="special-section">
-  <div class="container">
-    <div style="text-align:center;padding:var(--space-12) 0">
-      <span class="special-label" style="background:var(--color-t2);color:var(--color-t2-accent)">Coming Soon</span>
-      <h2 style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;margin:var(--space-4) 0">Second Trimester</h2>
-      <p style="font-size:var(--text-lg);color:var(--color-text-muted);max-width:40ch;margin:0 auto">Weeks 14–27 · The anatomy scan, first kicks, baby shower planning, and the relationship deepens.</p>
-    </div>
-  </div>
-</section>
-
-<section id="third-trimester" class="special-section">
-  <div class="container">
-    <div style="text-align:center;padding:var(--space-12) 0">
-      <span class="special-label" style="background:var(--color-t3);color:var(--color-t3-accent)">Coming Soon</span>
-      <h2 style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;margin:var(--space-4) 0">Third Trimester</h2>
-      <p style="font-size:var(--text-lg);color:var(--color-text-muted);max-width:40ch;margin:0 auto">Weeks 28–40+ · Birth plan, hospital bag, nesting mode, labor signs, and the final countdown.</p>
-    </div>
-  </div>
-</section>
-
-<section id="birth" class="special-section">
-  <div class="container">
-    <div style="text-align:center;padding:var(--space-12) 0">
-      <span class="special-label" style="background:var(--color-birth);color:var(--color-birth-accent)">Coming Soon</span>
-      <h2 style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;margin:var(--space-4) 0">Birth & Beyond</h2>
-      <p style="font-size:var(--text-lg);color:var(--color-text-muted);max-width:40ch;margin:0 auto">Labor through the first month home. Coaching, cutting the cord, skin-to-skin, and keeping everyone alive and thriving.</p>
-    </div>
-  </div>
-</section>
 
 <!-- ════════════════════════════════════════
      SPECIAL SECTIONS A–E
@@ -1202,11 +1169,11 @@ a:hover { text-decoration: underline; }
       <div>
         <div class="footer-col-title">Chapters</div>
         <div class="footer-links">
-          <a href="#pre-conception">Pre-Conception</a>
-          <a href="#week-4">Week 4</a>
-          <a href="#second-trimester">Second Trimester</a>
-          <a href="#third-trimester">Third Trimester</a>
-          <a href="#birth">Birth & Beyond</a>
+          <a href="#" onclick="event.preventDefault();renderWeek('prep')">Pre-Conception</a>
+          <a href="#" onclick="event.preventDefault();renderWeek('1')">First Trimester</a>
+          <a href="#" onclick="event.preventDefault();renderWeek('14')">Second Trimester</a>
+          <a href="#" onclick="event.preventDefault();renderWeek('28')">Third Trimester</a>
+          <a href="#" onclick="event.preventDefault();renderWeek('birth')">Birth & Beyond</a>
         </div>
       </div>
       <div>
@@ -3863,118 +3830,254 @@ const WEEKS_DATA = {
   "40": {
     "id": "40",
     "title": "The Due Date",
-    "subtitle": "Eviction Notice.",
+    "subtitle": "Only 5% of babies arrive on their actual due date. This week is about controlled patience, final checks, and being 100% ready to move at a moment's notice.",
     "trimester": "t3",
     "trimesterLabel": "THIRD TRIMESTER",
     "emoji": "\ud83c\udf83",
     "size": "Small Pumpkin",
     "sizeDesc": "~51.2 cm, ~3.4 kg",
     "keyDev": "Ready for the World",
-    "keyDevDesc": "Fully developed and ready to breathe air.",
-    "dadPriority": "Distraction",
-    "dadPriorityDesc": "Keep her mind off the waiting.",
-    "partnerSymptoms": "Frustration",
-    "partnerSymptomsDesc": "Only 5% of babies are born on their due date.",
+    "keyDevDesc": "All organs are fully developed. Lungs are producing surfactant. Skull bones remain unfused to allow passage through the birth canal.",
+    "dadPriority": "Controlled Patience",
+    "dadPriorityDesc": "Be her emotional shield, run interference on 'is the baby here yet?' texts, and keep the house launch-ready.",
+    "partnerSymptoms": "Frustration & Exhaustion",
+    "partnerSymptomsDesc": "She is physically done. Everything hurts. Patience is at zero. Your job: absorb the frustration without adding to it.",
     "babyDevBullets": [
-      "Skull bones are not fused so they can overlap during the journey through the birth canal.",
-      "15% of the baby's body weight is fat.",
-      "Baby is ready for the world."
+      "Skull bones are not fused \u2014 they overlap during birth canal transit (this is called 'molding' and is totally normal).",
+      "15% of the baby's body weight is now fat, providing energy reserves and temperature regulation after birth.",
+      "Baby is swallowing amniotic fluid and producing meconium (the dark, sticky first poop).",
+      "Antibodies are crossing the placenta, giving baby temporary immune protection for the first few months of life.",
+      "Vernix (the waxy white coating) is mostly gone, though some may remain in skin folds."
     ],
     "symptomTable": [
       {
-        "name": "Over it",
-        "why": "Waiting is hard",
-        "help": "Distract, distract, distract"
+        "name": "Braxton Hicks vs Real Contractions",
+        "why": "The uterus is 'practicing.' Braxton Hicks are irregular, don't increase in intensity, and stop when she changes position. Real contractions come at regular intervals, get closer together, get stronger, and don't stop with movement.",
+        "help": "Time contractions using the 5-1-1 rule: contractions 5 minutes apart, lasting 1 minute each, for at least 1 hour = call the hospital. Use a contraction timer app (Full Term, Contraction Timer+)."
+      },
+      {
+        "name": "Pelvic Pressure & Lightning Crotch",
+        "why": "Baby's head is deep in the pelvis, pressing on nerves. She may feel sudden sharp shooting pains in the pelvis/groin.",
+        "help": "Warm baths, pelvic tilts on all fours, and a pregnancy support belt can help. Avoid standing for long periods."
+      },
+      {
+        "name": "Mucus Plug / Bloody Show",
+        "why": "The cervix is softening and beginning to open. The mucus plug (sometimes with streaks of blood) may be expelled. This is a sign that labor is approaching \u2014 but could still be hours or days away.",
+        "help": "Don't panic. Note the time and color. If bleeding is heavy (soaking a pad), call the OB immediately."
+      },
+      {
+        "name": "Extreme Impatience & Frustration",
+        "why": "She has been pregnant for 9+ months. Everything is uncomfortable. She may cycle between wanting to induce immediately and crying from exhaustion.",
+        "help": "Validate her feelings without trying to 'fix' them. Avoid saying 'The baby will come when ready' \u2014 she knows. Instead: 'I see how hard this is. What can I do right now?'"
       }
     ],
     "emotionalScripts": [
-      "The due date is just an estimate. The baby will come when they are ready."
+      "I know this waiting is exhausting. I'm right here with you, and I'm not going anywhere.",
+      "You've done an incredible job getting us to this point. Our baby is lucky.",
+      "What would feel good right now \u2014 a walk, a movie, or just lying down together?",
+      "I've already set up the auto-reply for family texts. You don't have to answer a single one."
     ],
     "practicalTasks": [
-      "Field texts from family asking 'Is the baby here yet?' so she doesn't have to.",
-      "Keep walking and bouncing on an exercise ball."
+      "Set up a group text auto-reply for family: 'No baby yet! We promise you'll be the first to know. \u2764\ufe0f' \u2014 this saves her from answering the same question 40 times a day.",
+      "Do a final go-bag check: hospital bags packed and by the front door, car seat installed and inspected, phone chargers in the bag, snacks for you (labor can take 12+ hours).",
+      "Confirm your route to the hospital: time the drive during rush hour AND at 2 AM. Know which entrance to use after hours.",
+      "Finalize the pet care / child care plan: who gets called first, who has the spare key, where is the pet food.",
+      "Prepare freezer meals or stock easy grab-and-go food \u2014 you won't be cooking for days after delivery.",
+      "Check that the car has gas (or charge if EV), infant mirror installed, and a towel/waterproof pad on the passenger seat (her water could break in the car).",
+      "Set her up with comfort distractions: download movies, queue a podcast playlist, or plan a low-key date night."
     ],
     "relationshipIdeas": [
-      "Go to a movie theater or out to dinner\u2014distract yourselves."
+      "Go out for a 'Last Supper' date night \u2014 a nice dinner just the two of you before life changes forever.",
+      "Write her a letter she can read during labor, telling her what she means to you.",
+      "Take a belly photo together \u2014 this is the last week of just the two of you."
     ],
     "bondingTasks": [
       {
+        "emoji": "\u23f1\ufe0f",
+        "title": "Contraction Timer Coach",
+        "text": "Download a contraction timer app NOW and practice using it. When contractions start, your job is to time them calmly: start time, duration, interval. Use the 5-1-1 rule (5 min apart, 1 min long, for 1 hour). Stay calm \u2014 your calmness is contagious."
+      },
+      {
         "emoji": "\ud83d\udee1\ufe0f",
-        "title": "Bouncer",
-        "text": "Act as the communication shield between her and anxious relatives."
+        "title": "The Gate Keeper",
+        "text": "Set up the family auto-reply text. Field ALL incoming 'is the baby here?!' messages so she doesn't have to. Be her communication shield. Bonus: create a private update group for close family only."
+      },
+      {
+        "emoji": "\ud83c\udf19",
+        "title": "Last Quiet Night",
+        "text": "Plan one final 'just us' evening \u2014 cook her favorite meal, watch something together, hold her. Absorb the stillness. After delivery, quiet evenings will be rare for a while."
       }
     ],
-    "mustBuy": [],
-    "optionalBuy": [],
+    "mustBuy": [
+      "Extra phone chargers for the hospital bag (you'll both burn battery fast)",
+      "Snack bag for labor: granola bars, trail mix, electrolyte drinks, gum \u2014 this is for YOU (she likely can't eat during active labor)"
+    ],
+    "optionalBuy": [
+      "Portable Bluetooth speaker for the labor playlist",
+      "Lip balm and face mist for her \u2014 hospital rooms are extremely dry",
+      "A robe or comfortable button-up for her post-delivery (easier for breastfeeding than pulling a shirt over her head)"
+    ],
     "medicalRoadmap": [
-      "The OB will likely schedule an induction date for week 41 if nothing happens."
+      "The OB will check cervical dilation, effacement, and baby's station (how deep the head sits in the pelvis).",
+      "A membrane sweep (also called 'stripping the membranes') may be offered \u2014 the doctor gently separates the amniotic sac from the cervix to release prostaglandins and encourage labor to start. It can cause cramping and spotting but is generally safe.",
+      "Non-Stress Test (NST) may be ordered: baby is monitored for 20-40 minutes to ensure heart rate accelerates with movement.",
+      "If baby hasn't arrived, the OB will discuss an induction timeline \u2014 most providers schedule induction between 41+0 and 42+0 weeks.",
+      "Biophysical Profile (BPP) via ultrasound may be done to assess amniotic fluid levels, baby's breathing movements, muscle tone, and body movements."
     ],
     "questions": [
-      "What is the plan for monitoring baby if we go past the due date?"
+      "What is my partner's current cervical dilation and effacement?",
+      "Would you recommend a membrane sweep at this appointment, and what are the risks vs benefits?",
+      "If we go past the due date, what is the monitoring plan (NST, BPP, ultrasound schedule)?",
+      "At what point would you recommend induction, and what methods would be used (Cervidil, Pitocin, Foley bulb)?",
+      "Are there any safe natural labor-encouraging methods you'd recommend (walking, sex, nipple stimulation)?",
+      "What are the signs we should call or come in immediately vs waiting?"
     ],
     "takeaways": [
-      "Do not stress if the baby isn't born today.",
-      "Protect her from annoying texts."
+      "Only 5% of babies are born on their due date. Going past it is completely normal.",
+      "Protect her inbox: be the gatekeeper for all 'is the baby here yet?' messages.",
+      "Know the 5-1-1 contraction rule and have the timer app ready.",
+      "The go-bag should be by the door, the car seat installed, and the route rehearsed.",
+      "This is the last chapter of just the two of you \u2014 savor it."
     ]
   },
   "birth": {
     "id": "birth",
     "title": "Labor & Delivery",
-    "subtitle": "The Day Everything Changes.",
+    "subtitle": "This is the biggest day of your life. You are not a spectator \u2014 you are her coach, her advocate, and her anchor. Everything you've prepared for comes down to this.",
     "trimester": "birth",
     "trimesterLabel": "BIRTH & BEYOND",
     "emoji": "\ud83c\udf89",
     "size": "Newborn",
-    "sizeDesc": "Your Baby",
+    "sizeDesc": "~49-52 cm, ~2.7-4.0 kg",
     "keyDev": "The First Breath",
-    "keyDevDesc": "Fluid is cleared from lungs, baby breathes air.",
-    "dadPriority": "The Coach",
-    "dadPriorityDesc": "Support her through labor.",
-    "partnerSymptoms": "Labor",
-    "partnerSymptomsDesc": "Contractions, pushing, exhaustion.",
+    "keyDevDesc": "The journey through the birth canal squeezes fluid from baby's lungs. The umbilical cord is clamped and cut. Baby takes the first breath of air, and the lungs inflate for the very first time.",
+    "dadPriority": "Coach, Advocate, Anchor",
+    "dadPriorityDesc": "You are the calm in the storm. Breathe with her. Speak for her when she can't. Hold her hand. Remember: your energy directly affects hers.",
+    "partnerSymptoms": "Labor & Delivery",
+    "partnerSymptomsDesc": "She is doing the hardest physical work of her life. Contractions, dilation, pushing, exhaustion, and raw primal power. Your role: be unshakeable.",
     "babyDevBullets": [
-      "The journey through the birth canal squeezes fluid from the lungs.",
-      "The umbilical cord is cut, and baby takes their first breath.",
-      "Apgar scores are assessed at 1 and 5 minutes."
+      "The birth canal squeeze compresses the chest, pushing fluid out of the lungs and preparing them for the first breath of air.",
+      "The umbilical cord is clamped (delayed cord clamping for 1-3 minutes is now recommended to boost baby's iron stores and blood volume).",
+      "APGAR scores are assessed at 1 and 5 minutes after birth. APGAR = Appearance (skin color), Pulse (heart rate), Grimace (reflex response), Activity (muscle tone), Respiration (breathing). Score range: 0-10. Most healthy babies score 7-10.",
+      "Baby may look purple, cone-headed, and covered in vernix \u2014 this is completely normal. The cone shape resolves within days.",
+      "Skin-to-skin contact immediately after birth regulates baby's heart rate, breathing, temperature, and blood sugar. It also triggers breastfeeding instincts.",
+      "Baby's first poop (meconium) is dark, tar-like, and odorless. It's made of everything baby swallowed in the womb."
     ],
     "symptomTable": [
       {
-        "name": "Active Labor",
-        "why": "Cervix dilating to 10cm",
-        "help": "Provide counter-pressure, offer ice chips, advocate for her"
+        "name": "Stage 1: Early Labor (Latent Phase)",
+        "why": "Cervix dilates from 0 to 6 cm. Contractions are 5-30 minutes apart, lasting 30-60 seconds. This phase can last hours or even a full day. She may not even realize it's started.",
+        "help": "Stay home as long as possible. Walk, take a warm shower, watch a movie. Time contractions but don't obsess. Make sure she eats light snacks and stays hydrated. Distraction is king."
+      },
+      {
+        "name": "Stage 1: Active Labor",
+        "why": "Cervix dilates from 6 to 10 cm. Contractions are 3-5 minutes apart, lasting 60-90 seconds, and getting very intense. This is when you go to the hospital.",
+        "help": "Apply counter-pressure on her lower back during contractions (tennis ball or fist). Offer ice chips. Remind her to breathe. Play her labor playlist. Advocate for her birth plan with nurses. If she wants an epidural, support that decision without judgment."
+      },
+      {
+        "name": "Stage 1: Transition (Hardest Part)",
+        "why": "Cervix goes from 8 to 10 cm. Contractions are 2-3 minutes apart, lasting 60-90 seconds with almost no break between them. She may shake, vomit, or say 'I can't do this.' This phase is short (15-60 minutes) but the most intense.",
+        "help": "This is where you earn the title 'Coach.' Make eye contact. Breathe WITH her. Say: 'You ARE doing this. Look at me. One contraction at a time.' Do NOT take anything she says personally. She may yell, cry, or push you away. Stay. Steady."
+      },
+      {
+        "name": "Stage 2: Pushing & Birth",
+        "why": "Cervix is fully dilated (10 cm). She will feel an overwhelming urge to push. This stage lasts anywhere from minutes to 2-3 hours (longer for first-time moms).",
+        "help": "Support her in whatever position she chooses (squatting, side-lying, on all fours). Count to 10 during pushes. Hold a leg if the nurse asks. Stay at the head of the bed unless you want to watch \u2014 both are fine. When baby crowns, the room will fill with urgency. Stay calm."
+      },
+      {
+        "name": "Stage 3: Placenta Delivery",
+        "why": "After baby is born, the placenta must be delivered. This usually happens within 5-30 minutes. She'll have mild contractions. The doctor may push on her abdomen to help.",
+        "help": "You probably won't notice this stage \u2014 you'll be holding your baby. Let the medical team handle this. Focus on skin-to-skin with mom and baby."
       }
     ],
     "emotionalScripts": [
-      "Look at me. Breathe with me. You are so strong."
+      "Early Labor: 'We've got this. Let's time these and relax between them. I'm so proud of you.'",
+      "Active Labor: 'I'm right here. Breathe with me \u2014 in through the nose, out through the mouth. You are so strong.'",
+      "Transition: 'Look at me. You ARE doing this. One contraction at a time. Our baby is almost here.'",
+      "If she says 'I can't do this': 'You already ARE doing it. You are the strongest person I know. I believe in you.'",
+      "After birth: 'You did it. You are amazing. Look at our baby. I love you so much.'",
+      "If things don't go to plan (emergency C-section, NICU): 'We are safe. The team knows what they're doing. I'm not leaving your side.'"
     ],
     "practicalTasks": [
-      "Advocate for her birth plan preferences with the nurses.",
-      "Keep her hydrated (ice chips).",
-      "Cut the cord if you choose to do so."
+      "Know the birth plan, but hold it loosely \u2014 births rarely go exactly as planned. The priority is a healthy mom and baby, not checking every box.",
+      "Advocate for her wishes with the medical team: pain management preferences, who cuts the cord, delayed cord clamping, immediate skin-to-skin, golden hour (first hour of uninterrupted bonding).",
+      "Keep her hydrated: offer ice chips, wet washcloths for her forehead, and lip balm (her lips will get very dry).",
+      "Apply counter-pressure on her lower back during contractions using a tennis ball, your fist, or a rolling pin. Ask her where the pain is and adjust.",
+      "Know the epidural process: it takes 15-30 minutes to place, and she must stay completely still during a contraction while it's inserted. Hold her hands, make eye contact, keep her focused.",
+      "If a C-section is needed: you will likely be allowed in the OR in scrubs. You sit by her head behind the drape. Hold her hand. Talk to her. You'll hear baby cry before you see them.",
+      "Take photos/video when appropriate \u2014 but put the phone DOWN during the actual birth moment. Be present. You can photograph the golden hour.",
+      "Cut the cord if offered (and if you want to). The doctor will clamp it and hand you scissors. It feels like cutting through a thick rubber band. There's no pain for mom or baby.",
+      "After birth: make the phone calls, send the first photos, but protect the golden hour first. The world can wait 60 minutes.",
+      "Track the first feed: whether breast or bottle, note the time. Nurses will ask."
     ],
     "relationshipIdeas": [
-      "Skin-to-skin contact with your new baby as soon as possible."
+      "The golden hour: the first 60 minutes after birth should be uninterrupted skin-to-skin between mom and baby. No visitors, no phones (except one photo). Guard this time fiercely.",
+      "After the golden hour, do your own skin-to-skin. Take your shirt off, hold your baby against your bare chest. Your heartbeat will calm them.",
+      "Tell her what she just did. She may not fully process it yet. Say it clearly: 'You just brought our child into the world. You are incredible.'",
+      "Write down the exact time of birth, weight, length, and your first emotional reaction \u2014 you'll want to remember these details forever."
     ],
     "bondingTasks": [
       {
-        "emoji": "\ud83d\udc76",
-        "title": "Skin to Skin",
-        "text": "Take your shirt off and hold your baby against your bare chest."
+        "emoji": "\ud83c\udfb5",
+        "title": "Labor DJ",
+        "text": "Have the labor playlist ready on a Bluetooth speaker. Music can be incredibly grounding during contractions. Let her choose the vibe \u2014 some women want calming nature sounds, others want pump-up anthems. Switch it up as labor progresses."
+      },
+      {
+        "emoji": "\ud83d\udce3",
+        "title": "The Advocate",
+        "text": "Speak up for her birth preferences with the medical team. If she wanted delayed cord clamping, say it. If she doesn't want visitors for the first hour, enforce it. She may not be able to advocate for herself during labor \u2014 that's YOUR job."
+      },
+      {
+        "emoji": "\u2702\ufe0f",
+        "title": "Cord Cutter",
+        "text": "If you choose to cut the cord, the doctor will clamp it and hand you the scissors. It's tougher than you'd expect (like thick rubber). Take a breath, make the cut. This is a symbolic moment \u2014 you are physically separating your baby from the womb and welcoming them to the world."
+      },
+      {
+        "emoji": "\ud83e\uddf8",
+        "title": "Golden Hour Guardian",
+        "text": "The first 60 minutes after birth are called the 'Golden Hour.' Protect this time fiercely: no visitors, no non-essential medical procedures (if possible), no phones. Just mom, baby, and you. Skin-to-skin, first feed attempt, and the quiet magic of meeting your child."
       }
     ],
     "mustBuy": [
-      "Coffee for you (it's going to be a long day)"
+      "Large water bottle with a straw for her (she'll be incredibly thirsty after delivery)",
+      "Snacks for you: labor can last 6-36 hours and the cafeteria may be closed at 3 AM",
+      "Extra phone charger (long USB cable so she can reach from the bed)",
+      "Going-home outfit for baby: onesie, hat, socks, and the car seat you already installed"
     ],
-    "optionalBuy": [],
+    "optionalBuy": [
+      "A small Bluetooth speaker for the labor playlist",
+      "Her own pillow from home (hospital pillows are terrible)",
+      "A lightweight robe or button-front pajamas for her post-delivery (much easier than hospital gowns)",
+      "Fuzzy socks with grips (labor & delivery rooms are cold and she'll be walking the halls)",
+      "A onesie or blanket with a personal meaning for baby's first outfit"
+    ],
     "medicalRoadmap": [
-      "Labor has 3 stages: Dilation, Pushing/Birth, and Delivery of the Placenta."
+      "STAGE 1 \u2014 LABOR: Cervix dilates from 0 to 10 cm. Broken into Early (0-6 cm), Active (6-10 cm), and Transition (8-10 cm). This is the longest stage.",
+      "STAGE 2 \u2014 PUSHING & BIRTH: Fully dilated. She pushes with each contraction. Baby descends, crowns, and is born. Duration: minutes to 3 hours.",
+      "STAGE 3 \u2014 PLACENTA: Delivered 5-30 minutes after birth. Mild contractions. Fundal massage may follow to help the uterus contract and prevent hemorrhage.",
+      "EPIDURAL: Given during active labor. An anesthesiologist inserts a catheter into the epidural space in the spine. Takes 15-30 min to place, 10-20 min to take effect. She'll still feel pressure but not pain. She can still push.",
+      "C-SECTION (if needed): May be planned or emergency. She'll receive spinal anesthesia. You'll sit by her head behind a drape. Surgery takes ~45-60 minutes. Baby is usually out within 10-15 minutes. Recovery is longer (6-8 weeks).",
+      "DELAYED CORD CLAMPING: Waiting 1-3 minutes before clamping allows extra blood and iron to transfer to baby. Recommended by WHO and ACOG.",
+      "VITAMIN K SHOT: Given to baby shortly after birth to prevent bleeding disorders. Standard of care. Consent is usually requested.",
+      "ERYTHROMYCIN EYE OINTMENT: Applied to baby's eyes to prevent infection. Also standard."
     ],
     "questions": [
-      "When can we do skin-to-skin?"
+      "Can we do delayed cord clamping (1-3 minutes) if the birth goes smoothly?",
+      "Can we have immediate skin-to-skin during the golden hour, including during any post-delivery procedures?",
+      "If a C-section becomes necessary, can I stay in the OR? Can we still do skin-to-skin in the OR?",
+      "What is the hospital's policy on visitors during labor and the golden hour?",
+      "When will the Vitamin K shot and eye ointment be administered, and can it wait until after the golden hour?",
+      "If baby needs to go to the NICU, can one of us go with them?",
+      "What are the first feeding support resources available (lactation consultant, formula if needed)?",
+      "How long will we stay in the hospital after a vaginal delivery vs a C-section?"
     ],
     "takeaways": [
-      "Be her rock.",
-      "You are a father now."
+      "You are not a spectator. You are her coach, her advocate, and her anchor.",
+      "Birth plans are guidelines, not guarantees. A healthy mom and baby is the only real goal.",
+      "Transition is the hardest part \u2014 but it's also the shortest. When she says 'I can't,' she's almost there.",
+      "Protect the golden hour. The world can wait 60 minutes.",
+      "It's okay to cry. It's okay to feel overwhelmed. You just became a father.",
+      "You did it. Both of you. Welcome to the most important role of your life."
     ]
   }
 };
