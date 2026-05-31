@@ -1767,7 +1767,7 @@ const WEEKS_DATA = {
       {
         "name": "Nausea",
         "why": "Rising hCG and estrogen",
-        "help": "Stock crackers, avoid cooking smelly foods"
+        "help": "Keep plain crackers by her bedside so she can eat before standing up. Buy acupressure wristbands and locate the P6 Nei Guan point on her inner wrist to apply gentle relief."
       },
       {
         "name": "Frequent Urination",
@@ -1789,8 +1789,13 @@ const WEEKS_DATA = {
     "bondingTasks": [
       {
         "emoji": "\ud83c\udfb6",
-        "title": "Playlist",
-        "text": "Create a soothing music playlist."
+        "title": "Soothing Playlist",
+        "text": "Curate a calm acoustic or ambient nature playlist to help her relax during intense nausea spells."
+      },
+      {
+        "emoji": "\ud83d\udc99",
+        "title": "Bump Audio Resonance",
+        "text": "Lean in and speak calmly near her belly. Sound travels effectively through tissue and amniotic fluid; beginning this week, your lower vocal frequencies will start registering soothing vibrations."
       }
     ],
     "mustBuy": [
@@ -1804,7 +1809,11 @@ const WEEKS_DATA = {
     "medicalRoadmap": [
       "Write down questions for your upcoming OB appointment."
     ],
-    "questions": [],
+    "questions": [
+      "At what threshold does all-day nausea indicate severe Hyperemesis Gravidarum?",
+      "Is a combined routine of Vitamin B6 and Doxylamine (Unisom) safe and recommended for her?",
+      "What exercises are safe to continue doing during these fatigue spells?"
+    ],
     "takeaways": [
       "Morning sickness can happen 24/7.",
       "Your main job is keeping her fed and rested."
@@ -1967,9 +1976,14 @@ const WEEKS_DATA = {
     ],
     "bondingTasks": [
       {
-        "emoji": "\ud83d\udcb8",
-        "title": "Money Talk",
-        "text": "Have a calm, 15-minute alignment chat on baby finances."
+        "emoji": "\ud83d\udc93",
+        "title": "Dating Scan Heartbeat",
+        "text": "Attend the first ultrasound scan together. Watching the tiny flicker of the heartbeat for the first time is a profound moment that makes fatherhood feel real—be fully present and hold her hand."
+      },
+      {
+        "emoji": "\ud83d\uddbc\ufe0f",
+        "title": "Heartbeat Scan Artifact",
+        "text": "Get a clean printout of the first scan, write the heart rate (in beats per minute) and the date on the back, and place it in a prominent shared frame at home."
       }
     ],
     "mustBuy": [
@@ -1979,7 +1993,11 @@ const WEEKS_DATA = {
     "medicalRoadmap": [
       "If you haven't had the dating ultrasound yet, it will likely happen this week."
     ],
-    "questions": [],
+    "questions": [
+      "Are we allowed to record a short audio snippet or video of the heartbeat?",
+      "Is the crown-rump length (CRL) measuring exactly to our expected due date?",
+      "Is the heartbeat rate within the healthy 110-180 bpm range for this stage?"
+    ],
     "takeaways": [
       "The embryo is starting to look distinctly human.",
       "It's time to get your finances organized."
@@ -2185,6 +2203,11 @@ const WEEKS_DATA = {
         "name": "Heartburn",
         "why": "Progesterone relaxes the stomach valve",
         "help": "Keep Tums handy, avoid spicy dinners"
+      },
+      {
+        "name": "Round Ligament Pain",
+        "why": "Uterine muscles stretching and pulling",
+        "help": "Help her rest, buy a supportive belly band, or gently hold and lift her lower belly from behind to relieve gravity tension (abdominal support hold)."
       }
     ],
     "emotionalScripts": [
@@ -2200,8 +2223,13 @@ const WEEKS_DATA = {
     "bondingTasks": [
       {
         "emoji": "\ud83d\udcf8",
-        "title": "Announcement",
-        "text": "Take the announcement photo."
+        "title": "Announcement Photo",
+        "text": "Take the official first-trimester announcement photo to share with family or keep as a private milestone."
+      },
+      {
+        "emoji": "\ud83d\udce6",
+        "title": "First Trimester Capsule",
+        "text": "Put together a keepsake memory box containing the first positive test, the dating scan pictures, and a brief handwritten note from you about your thoughts during these first 12 weeks."
       }
     ],
     "mustBuy": [
@@ -4050,6 +4078,25 @@ function renderWeek(key) {
                   ${data.relationshipIdeas.map(r => `<li style="margin-bottom:var(--space-2)">${r}</li>`).join('')}
                 </ul>
               </div>
+            </div>
+          </div>
+
+          <div class="info-card fade-in" style="margin-top:var(--space-6)">
+            <div class="info-card-header">
+              <div class="info-card-icon icon-bonding" style="background: color-mix(in oklab, var(--color-${data.trimester}-accent) 15%, transparent)">🧠</div>
+              <div>
+                <div class="info-card-title">Prenatal Bonding Lab</div>
+                <div class="info-card-sub">Start connecting with your baby early</div>
+              </div>
+            </div>
+            <div class="bonding-grid" style="margin-top:var(--space-4)">
+              ${data.bondingTasks && data.bondingTasks.length > 0 ? data.bondingTasks.map(task => `
+                <div class="bonding-item">
+                  <div class="bi-emoji">${task.emoji}</div>
+                  <div class="bi-title">${task.title}</div>
+                  <div class="bi-text">${task.text}</div>
+                </div>
+              `).join('') : '<div style="font-size:var(--text-sm);color:var(--color-text-muted)">No specific bonding exercises this week.</div>'}
             </div>
           </div>
 
