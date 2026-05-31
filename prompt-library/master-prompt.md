@@ -244,13 +244,13 @@ A complete, turn-key encyclopedia ready for web deployment including:
 
 ### Phase 3 — Second Trimester (Weeks 14–27)
 - [ ] Weeks 14–18 (Anatomy scan, first kicks)
-- [ ] Weeks 19–23 (Halfway point, baby shower)
+- [/] Weeks 19–23 (Halfway point, baby shower) [Week 20 Enriched]
 - [ ] Weeks 24–27 (Viability milestone)
 - [ ] Second Trimester Summary
 
 ### Phase 4 — Third Trimester (Weeks 28–40+)
-- [ ] Weeks 28–32 (Birth plan, childbirth classes)
-- [ ] Weeks 33–36 (Hospital bag, final prep)
+- [/] Weeks 28–32 (Birth plan, childbirth classes) [Week 28 Enriched]
+- [/] Weeks 33–36 (Hospital bag, final prep) [Week 36 Enriched]
 - [ ] Weeks 37–40+ (Full term, labor signs)
 - [ ] Third Trimester Summary
 
