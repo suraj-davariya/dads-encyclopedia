@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Command Center Preview — Expectant Dad's Encyclopedia</title>
+
+<!-- Premium Fonts -->
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&f[]=cabinet-grotesk@400,500,700,800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════
+   PREMIUM DARK INTERACTIVE STYLES
+   ═══════════════════════════════════════════ */
+:root {
+  --font-display: 'Cabinet Grotesk', 'Georgia', serif;
+  --font-serif: 'Instrument Serif', 'Georgia', serif;
+  --font-body: 'Satoshi', 'Inter', sans-serif;
+
+  --color-bg: #070605;
+  --color-surface: #100f0e;
+  --color-surface-2: #161513;
+  --color-surface-offset: #1d1b19;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-text: #f5f4f2;
+  --color-text-muted: #a3a19b;
+  --color-text-faint: #5f5d58;
+  --color-primary: #ff6a1a;
+  --color-primary-hover: #ff8542;
+  --color-primary-glow: rgba(255, 106, 26, 0.15);
+
+  /* Trimester Hue-Accents */
+  --color-prep-accent: #60a5fa; --color-prep-glow: rgba(96, 165, 250, 0.15);
+  --color-t1-accent: #fbbf24; --color-t1-glow: rgba(251, 191, 36, 0.15);
+  --color-t2-accent: #34d399; --color-t2-glow: rgba(52, 211, 153, 0.15);
+  --color-t3-accent: #a78bfa; --color-t3-glow: rgba(167, 139, 250, 0.15);
+  --color-birth-accent: #f87171; --color-birth-glow: rgba(248, 113, 113, 0.15);
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  --transition: all 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  min-height: 100vh;
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Ambient Neon Glow Background Spots */
+.ambient-glow-1 {
+  position: absolute;
+  top: -10%;
+  left: 15%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, var(--color-primary-glow) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+.ambient-glow-2 {
+  position: absolute;
+  top: 30%;
+  right: -5%;
+  width: 45vw;
+  height: 45vw;
+  background: radial-gradient(circle, var(--color-t1-glow) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: var(--radius-xl) 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── HEADER ─────────────────────────────────────────────────── */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1.5rem;
+}
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  text-decoration: none;
+}
+.logo span {
+  color: var(--color-primary);
+}
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+.back-btn {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: 0.5rem 1.25rem;
+  color: var(--color-text);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.back-btn:hover {
+  background: var(--color-border);
+  transform: translateY(-2px);
+}
+
+/* ── HERO LAYOUT ────────────────────────────────────────────── */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-primary);
+  background: var(--color-primary-glow);
+  padding: 0.35rem 1rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.5rem;
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 3.75rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+}
+.hero-title span.accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary) 30%, var(--color-primary-hover) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-subtitle {
+  font-size: clamp(1rem, 1.8vw, 1.125rem);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+}
+
+/* ── COMMAND CENTER PANEL (CONCEPT A) ────────────────────────── */
+.command-panel {
+  background: rgba(22, 21, 19, 0.4);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.panel-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Circular Progress block */
+.progress-block {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+}
+
+.circle-svg-container {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  flex-shrink: 0;
+}
+.circle-svg-container svg {
+  transform: rotate(-90deg);
+}
+.circle-bg {
+  fill: none;
+  stroke: var(--color-surface-offset);
+  stroke-width: 8;
+}
+.circle-fill {
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-dasharray: 251.2;
+  stroke-dashoffset: 251.2; /* Animates dynamically */
+  transition: stroke-dashoffset 0.6s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.5s ease;
+}
+.circle-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--color-text);
+}
+
+.progress-text-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.progress-val-label {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-faint);
+}
+.progress-headline {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+.progress-sub {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+/* Checklist items */
+.checklist-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.check-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.check-row:hover {
+  border-color: var(--color-primary);
+  background: var(--color-surface-offset);
+}
+.check-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: white;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+.check-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text);
+  transition: var(--transition);
+}
+
+/* Checked States */
+.check-row.checked {
+  background: rgba(251, 191, 36, 0.05);
+  border-color: var(--color-t1-accent);
+}
+.check-row.checked .check-box {
+  background: var(--color-t1-accent);
+  border-color: var(--color-t1-accent);
+}
+.check-row.checked .check-text {
+  text-decoration: line-through;
+  color: var(--color-text-muted);
+}
+
+/* Command Footer Stats */
+.panel-stats-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 1.25rem;
+}
+.panel-stat {
+  display: flex;
+  flex-direction: column;
+}
+.panel-stat-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-faint);
+}
+.panel-stat-value {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+/* ── TRIMESTER PORTAL HUB ───────────────────────────────────── */
+.hub-section {
+  margin-top: 6rem;
+}
+.hub-title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: -0.02em;
+  margin-bottom: 2.5rem;
+}
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 900px) {
+  .hub-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .hub-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hub-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.hub-card:hover {
+  transform: translateY(-4px);
+  border-color: currentColor;
+  box-shadow: 0 10px 24px rgba(255, 106, 26, 0.1);
+}
+.hub-icon {
+  font-size: 1.5rem;
+}
+.hub-card-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--color-text);
+}
+.hub-card-desc {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+.hub-card.prep { color: var(--color-prep-accent); }
+.hub-card.t1 { color: var(--color-t1-accent); }
+.hub-card.t2 { color: var(--color-t2-accent); }
+.hub-card.t3 { color: var(--color-t3-accent); }
+.hub-card.birth { color: var(--color-birth-accent); }
+
+/* Confetti effect */
+.confetti {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0;
+  transform: translateY(0);
+}
+@keyframes confetti-burst {
+  0% { opacity: 1; transform: translate(0, 0) scale(1); }
+  100% { opacity: 0; transform: translate(var(--x), var(--y)) scale(0.5); }
+}
+
+/* ── ANIMATION ENTRY ────────────────────────────────────────── */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-slide {
+  animation: slideInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+</style>
+</head>
+<body>
+
+<div class="ambient-glow-1"></div>
+<div class="ambient-glow-2"></div>
+
+<div class="container animate-slide">
+  <!-- HEADER -->
+  <header>
+    <a href="#" class="logo">Dad<span>'s</span> Encyclopedia</a>
+    <div class="nav-links">
+      <a href="landing-preview.html" class="back-btn">← Concept B Preview</a>
+      <a href="index.html" class="back-btn">Main Encyclopedia</a>
+    </div>
+  </header>
+
+  <!-- HERO SPLIT LAYOUT -->
+  <div class="hero-grid">
+    <!-- Left Column: Copy -->
+    <div class="hero-content">
+      <span class="eyebrow">Design Concept A Preview</span>
+      <h1 class="hero-title">
+        The Modern Dad's<br>
+        <span class="accent">Pregnancy Encyclopedia</span>
+      </h1>
+      <p class="hero-subtitle">
+        A comprehensive, week-by-week guide built for first-time fathers. From the first positive test to the first month home — every milestone, every question, every challenge covered.
+      </p>
+      <div class="hero-cta">
+        <button class="gate-btn" onclick="alert('In the main application, this will slide you directly down to the Pre-Conception week guide!')" style="background:var(--color-primary); color:white; border:none; border-radius:var(--radius-sm); padding:0.75rem 1.5rem; font-weight:700; font-size:0.9rem; cursor:pointer; box-shadow: 0 4px 12px rgba(255, 106, 26, 0.25);">
+          Start the Encyclopedia
+        </button>
+      </div>
+    </div>
+
+    <!-- Right Column: Interactive Command Center (Concept A) -->
+    <div class="command-panel" id="command-center-panel">
+      
+      <div class="panel-header">
+        <div class="panel-title">📊 Command Dashboard</div>
+        <div style="font-size:0.7rem; background:rgba(255, 255, 255, 0.05); padding:0.25rem 0.6rem; border-radius:50px; color:var(--color-text-muted); font-weight:600">Trimester 1 Setup</div>
+      </div>
+
+      <!-- Circular progress circle -->
+      <div class="progress-block">
+        <div class="circle-svg-container">
+          <svg width="90" height="90">
+            <circle class="circle-bg" cx="45" cy="45" r="40"></circle>
+            <circle class="circle-fill" id="progress-circle" cx="45" cy="45" r="40"></circle>
+          </svg>
+          <div class="circle-text" id="progress-percent">0%</div>
+        </div>
+        <div class="progress-text-info">
+          <div class="progress-val-label">Interactive Checklist</div>
+          <div class="progress-headline" id="panel-headline">Get Ready, Dad!</div>
+          <div class="progress-sub" id="panel-sub">Tap tasks below to build setup checklist progress.</div>
+        </div>
+      </div>
+
+      <!-- Checklist -->
+      <div class="checklist-container">
+        
+        <div class="check-row" onclick="toggleTask(this, 25)">
+          <div class="check-box">✓</div>
+          <span class="check-text">Attend first Dating Ultrasound scan</span>
+        </div>
+
+        <div class="check-row" onclick="toggleTask(this, 25)">
+          <div class="check-box">✓</div>
+          <span class="check-text">Purchase digital pregnancy tests</span>
+        </div>
+
+        <div class="check-row" onclick="toggleTask(this, 25)">
+          <div class="check-box">✓</div>
+          <span class="check-text">Call OB-GYN and schedule dating appt</span>
+        </div>
+
+        <div class="check-row" onclick="toggleTask(this, 25)">
+          <div class="check-box">✓</div>
+          <span class="check-text">Stock up on early ginger candies</span>
+        </div>
+
+      </div>
+
+      <!-- Panel Footer stats -->
+      <div class="panel-stats-bar">
+        <div class="panel-stat">
+          <span class="panel-stat-label">Expected Phase</span>
+          <span class="panel-stat-value" style="color: var(--color-t1-accent)">First Trimester</span>
+        </div>
+        <div class="panel-stat">
+          <span class="panel-stat-label">Countdown</span>
+          <span class="panel-stat-value">252 Days Remaining</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PORTAL HUB -->
+  <div class="hub-section">
+    <h3 class="hub-title">🗺️ Choose Your Starting Trimester</h3>
+    <div class="hub-grid">
+      
+      <div class="hub-card prep" onclick="switchTrimester('prep')">
+        <span class="hub-icon">🌱</span>
+        <div class="hub-card-title">Pre-Conception</div>
+        <div class="hub-card-desc">Healthy habits, cycle tracking, and insurance planning.</div>
+      </div>
+
+      <div class="hub-card t1" onclick="switchTrimester('t1')">
+        <span class="hub-icon">🌸</span>
+        <div class="hub-card-title">First Trimester</div>
+        <div class="hub-card-desc">Missed periods, positive tests, and heartbeats.</div>
+      </div>
+
+      <div class="hub-card t2" onclick="switchTrimester('t2')">
+        <span class="hub-icon">🌿</span>
+        <div class="hub-card-title">Second Trimester</div>
+        <div class="hub-card-desc">Energy returns, kick counts, and anatomy scans.</div>
+      </div>
+
+      <div class="hub-card t3" onclick="switchTrimester('t3')">
+        <span class="hub-icon">🌟</span>
+        <div class="hub-card-title">Third Trimester</div>
+        <div class="hub-card-desc">Diaper bags, car seats, nesting, and labor preps.</div>
+      </div>
+
+      <div class="hub-card birth" onclick="switchTrimester('birth')">
+        <span class="hub-icon">👶</span>
+        <div class="hub-card-title">Birth & Beyond</div>
+        <div class="hub-card-desc">Labor stages, golden hour, and first month home.</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+// Keep track of ticked progress percentage
+let currentProgress = 0;
+const RADIUS = 40;
+const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
+
+// Initialize circle SVG
+document.addEventListener('DOMContentLoaded', () => {
+  const circle = document.getElementById('progress-circle');
+  if (circle) {
+    circle.style.strokeDasharray = CIRCUMFERENCE;
+    circle.style.strokeDashoffset = CIRCUMFERENCE;
+  }
+});
+
+// Toggle individual task checking
+function toggleTask(element, weight) {
+  const isChecked = element.classList.toggle('checked');
+  
+  if (isChecked) {
+    currentProgress += weight;
+    createConfettiBurst(element);
+  } else {
+    currentProgress -= weight;
+  }
+  
+  currentProgress = Math.max(0, Math.min(100, currentProgress));
+  
+  // Update UI progress circle
+  updateProgressCircle(currentProgress);
+}
+
+// Update progress SVG circle and counters
+function updateProgressCircle(percent) {
+  const circle = document.getElementById('progress-circle');
+  const percentText = document.getElementById('progress-percent');
+  const headline = document.getElementById('panel-headline');
+  const sub = document.getElementById('panel-sub');
+  
+  if (circle) {
+    const offset = CIRCUMFERENCE - (percent / 100) * CIRCUMFERENCE;
+    circle.style.strokeDashoffset = offset;
+  }
+  
+  if (percentText) {
+    // Tick text up smoothly
+    let currentVal = parseInt(percentText.textContent) || 0;
+    const interval = setInterval(() => {
+      if (currentVal < percent) {
+        currentVal++;
+        percentText.textContent = currentVal + '%';
+      } else if (currentVal > percent) {
+        currentVal--;
+        percentText.textContent = currentVal + '%';
+      } else {
+        clearInterval(interval);
+      }
+    }, 10);
+  }
+
+  // Update helper text dynamically based on dad status
+  if (percent === 0) {
+    headline.textContent = "Get Ready, Dad!";
+    sub.textContent = "Tap tasks below to build setup checklist progress.";
+  } else if (percent < 50) {
+    headline.textContent = "Good Start!";
+    sub.textContent = "Early trimester steps are coming together.";
+  } else if (percent < 100) {
+    headline.textContent = "Almost Ready!";
+    sub.textContent = "Most dad duties are locked in. Just a bit more!";
+  } else {
+    headline.textContent = "100% Prepared! 🏆";
+    sub.textContent = "Trimester 1 setup is fully locked and secure!";
+  }
+}
+
+// Confetti burst on task complete
+function createConfettiBurst(element) {
+  const rect = element.getBoundingClientRect();
+  const parent = document.getElementById('command-center-panel');
+  const parentRect = parent.getBoundingClientRect();
+  
+  // Calculate center of the tapped checklist row relative to the glass panel
+  const originX = (rect.left + rect.width / 2) - parentRect.left;
+  const originY = (rect.top + rect.height / 2) - parentRect.top;
+
+  const colors = ['#ff6a1a', '#fbbf24', '#34d399', '#60a5fa', '#a78bfa'];
+  
+  for (let i = 0; i < 15; i++) {
+    const confetti = document.createElement('div');
+    confetti.className = 'confetti';
+    
+    // Choose random trimester color
+    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    
+    // Position
+    confetti.style.left = originX + 'px';
+    confetti.style.top = originY + 'px';
+    
+    // Set random translation vector for explosion
+    const angle = Math.random() * Math.PI * 2;
+    const distance = 40 + Math.random() * 80;
+    const x = Math.cos(angle) * distance;
+    const y = Math.sin(angle) * distance;
+    
+    confetti.style.setProperty('--x', x + 'px');
+    confetti.style.setProperty('--y', y + 'px');
+    
+    // Animate
+    confetti.style.animation = 'confetti-burst 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards';
+    
+    parent.appendChild(confetti);
+    
+    // Cleanup
+    setTimeout(() => {
+      confetti.remove();
+    }, 850);
+  }
+}
+
+// Simulated switcher for portal hub
+function switchTrimester(trimester) {
+  const panel = document.getElementById('command-center-panel');
+  const headline = document.getElementById('panel-headline');
+  const sub = document.getElementById('panel-sub');
+  const progressCircle = document.getElementById('progress-circle');
+  
+  const colors = {
+    prep: { accent: 'var(--color-prep-accent)', glow: 'var(--color-prep-glow)', label: 'Pre-Conception setup', title: 'Prepare Together', countdown: '280 Days Remaining' },
+    t1: { accent: 'var(--color-t1-accent)', glow: 'var(--color-t1-glow)', label: 'Trimester 1 Setup', title: 'Get Ready, Dad!', countdown: '252 Days Remaining' },
+    t2: { accent: 'var(--color-t2-accent)', glow: 'var(--color-t2-glow)', label: 'Trimester 2 Setup', title: 'Feel the Kicks!', countdown: '168 Days Remaining' },
+    t3: { accent: 'var(--color-t3-accent)', glow: 'var(--color-t3-glow)', label: 'Trimester 3 Setup', title: 'Pack the Bags!', countdown: '84 Days Remaining' },
+    birth: { accent: 'var(--color-birth-accent)', glow: 'var(--color-birth-glow)', label: 'Month 1 Setup', title: 'Golden Hour Duty', countdown: '0 Days (Birth Day!)' }
+  };
+  
+  const trim = colors[trimester];
+  if (!trim) return;
+
+  // Flash panel border and glow
+  panel.style.borderColor = trim.accent;
+  panel.style.boxShadow = `0 24px 60px ${trim.glow}`;
+  
+  if (progressCircle) {
+    progressCircle.style.stroke = trim.accent;
+  }
+
+  // Update checklist content simulated
+  const checklist = document.querySelector('.checklist-container');
+  const tasks = {
+    prep: [
+      "Review insurance maternity policies",
+      "Cut down alcohol & start men's multivitamins",
+      "Draft family financial budget spreadsheet",
+      "Set pre-conception special date night"
+    ],
+    t1: [
+      "Attend first Dating Ultrasound scan",
+      "Purchase digital pregnancy tests",
+      "Call OB-GYN and schedule dating appt",
+      "Stock up on early ginger candies"
+    ],
+    t2: [
+      "Attend Level-2 Anatomy scan",
+      "Draft nursery crib safety plan",
+      "Start daily belly baby talking exercises",
+      "Attend prenatal yoga or stretching sessions"
+    ],
+    t3: [
+      "Secure GBS test results with doctor",
+      "Perform drive dry-run to labor room",
+      "Pack Dad & Mom delivery bags",
+      "Install and test infant car seat base"
+    ],
+    birth: [
+      "Coach her through early labor breathing",
+      "Hold baby skin-to-skin during Golden Hour",
+      "Setup diaper washing & feeding rotations",
+      "Set boundary guidelines for early visitors"
+    ]
+  };
+
+  checklist.innerHTML = tasks[trimester].map(t => `
+    <div class="check-row" onclick="toggleTask(this, 25)">
+      <div class="check-box" style="border-color: ${trim.accent}">✓</div>
+      <span class="check-text">${t}</span>
+    </div>
+  `).join('');
+
+  // Reset progress circle
+  currentProgress = 0;
+  updateProgressCircle(0);
+  
+  // Update stats bar
+  const stats = document.querySelectorAll('.panel-stat-value');
+  if (stats.length >= 2) {
+    stats[0].textContent = trim.label.replace(' setup', '');
+    stats[0].style.color = trim.accent;
+    stats[1].textContent = trim.countdown;
+  }
+
+  // Update label
+  const label = panel.querySelector('.panel-header div');
+  if (label) {
+    label.textContent = trim.label;
+    label.style.color = trim.accent;
+    label.style.backgroundColor = trim.glow;
+  }
+}
+</script>
+
+</body>
+</html>
