@@ -1086,3 +1086,29 @@ h1,h2,h3,h4,h5 {
   color: var(--text-muted);
 }
 
+/* ── PREMIUM CASCADE ENTRANCE ANIMATIONS ─────────────────────── */
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Cascade staggered delays for premium entrance flow */
+.fade-in:nth-of-type(1) { animation-delay: 40ms; }
+.fade-in:nth-of-type(2) { animation-delay: 120ms; }
+.fade-in:nth-of-type(3) { animation-delay: 200ms; }
+.fade-in:nth-of-type(4) { animation-delay: 280ms; }
+.fade-in:nth-of-type(5) { animation-delay: 360ms; }
+.fade-in:nth-of-type(6) { animation-delay: 440ms; }
+
+
