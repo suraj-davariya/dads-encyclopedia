@@ -466,9 +466,23 @@ a:hover { text-decoration: underline; }
 .sidebar-title { font-size: var(--text-sm); font-weight: 800; margin-bottom: var(--space-4); display: flex; align-items: center; gap: var(--space-2); }
 .progress-weeks { display: flex; flex-wrap: wrap; gap: var(--space-2); }
 .week-dot { width: 28px; height: 28px; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-size: 0.6rem; font-weight: 800; cursor: pointer; transition: all var(--transition); border: 2px solid transparent; }
-.week-dot.completed { background: var(--color-t1); color: var(--color-t1-accent); border-color: var(--color-t1-accent); }
-.week-dot.current { background: var(--color-t1-accent); color: white; box-shadow: 0 0 0 3px color-mix(in oklab, var(--color-t1-accent) 30%, transparent); }
+.week-dot.completed.prep { background: var(--color-prep); color: var(--color-prep-accent); border-color: var(--color-prep-accent); }
+.week-dot.completed.t1 { background: var(--color-t1); color: var(--color-t1-accent); border-color: var(--color-t1-accent); }
+.week-dot.completed.t2 { background: var(--color-t2); color: var(--color-t2-accent); border-color: var(--color-t2-accent); }
+.week-dot.completed.t3 { background: var(--color-t3); color: var(--color-t3-accent); border-color: var(--color-t3-accent); }
+.week-dot.completed.birth { background: var(--color-birth); color: var(--color-birth-accent); border-color: var(--color-birth-accent); }
+.week-dot.current { animation: activeDotPulse 2s infinite ease-in-out; }
+.week-dot.current.prep { background: var(--color-prep-accent); color: white; box-shadow: 0 0 10px var(--color-prep-accent); }
+.week-dot.current.t1 { background: var(--color-t1-accent); color: white; box-shadow: 0 0 10px var(--color-t1-accent); }
+.week-dot.current.t2 { background: var(--color-t2-accent); color: white; box-shadow: 0 0 10px var(--color-t2-accent); }
+.week-dot.current.t3 { background: var(--color-t3-accent); color: white; box-shadow: 0 0 10px var(--color-t3-accent); }
+.week-dot.current.birth { background: var(--color-birth-accent); color: white; box-shadow: 0 0 10px var(--color-birth-accent); }
 .week-dot.future { background: var(--color-surface-offset); color: var(--color-text-faint); }
+@keyframes activeDotPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); filter: brightness(1.2); }
+  100% { transform: scale(1); }
+}
 .resource-link { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3); border-radius: var(--radius-lg); border: 1px solid var(--color-border); text-decoration: none; color: var(--color-text); transition: all var(--transition); margin-bottom: var(--space-2); }
 .resource-link:hover { background: var(--color-surface-2); text-decoration: none; }
 .resource-icon { width: 32px; height: 32px; border-radius: var(--radius-md); background: var(--color-surface-offset); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
@@ -1335,6 +1349,11 @@ function updateSidebarDots() {
     if (!k) return;
     
     dot.className = 'week-dot';
+    
+    // Add trimester class dynamically
+    const trimester = WEEKS_DATA[k]?.trimester || 'prep';
+    dot.classList.add(trimester);
+    
     if (k === currentKey) {
       dot.classList.add('current');
     } else if (isWeekCompleted(k)) {
