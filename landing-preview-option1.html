@@ -1353,136 +1353,23 @@ a:hover { text-decoration: underline; }
   font-size: 0.85rem;
 }
 
-/* ── FLOATING CONTRACTION TIMER PILL ── */
-.floating-timer-container {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 990;
-  display: flex;
-  align-items: center;
-  pointer-events: none;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.floating-timer-btn {
-  pointer-events: auto;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  background: rgba(22, 21, 19, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 106, 26, 0.25);
-  padding: 0.75rem 1.25rem;
+.header-timer-btn {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
   border-radius: 50px;
-  color: var(--color-text);
-  font-family: var(--font-display);
-  font-size: 0.8rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  padding: 0.4rem 0.85rem;
   cursor: pointer;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 106, 26, 0.1);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-  overflow: hidden;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--color-text);
+  transition: all 0.2s;
 }
-
-.floating-timer-btn::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255, 106, 26, 0.15), transparent);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.floating-timer-btn:hover {
-  transform: translateY(-4px) scale(1.03);
-  border-color: var(--color-primary);
-  box-shadow: 0 12px 40px rgba(255, 106, 26, 0.25), 0 0 25px rgba(255, 106, 26, 0.15);
-}
-
-.floating-timer-btn:hover::before {
-  opacity: 1;
-}
-
-.floating-timer-btn:active {
-  transform: translateY(-1px) scale(0.98);
-}
-
-.ft-icon {
-  font-size: 1.1rem;
-  filter: drop-shadow(0 0 4px rgba(255, 106, 26, 0.4));
-  transition: transform 0.3s ease;
-}
-
-.floating-timer-btn:hover .ft-icon {
-  transform: rotate(15deg) scale(1.1);
-}
-
-.ft-text {
-  font-weight: 800;
-}
-
-.ft-pulse {
-  width: 8px;
-  height: 8px;
-  background-color: var(--color-primary);
-  border-radius: 50%;
-  position: relative;
-  display: inline-block;
-  box-shadow: 0 0 8px var(--color-primary);
-}
-
-.ft-pulse::after {
-  content: '';
-  position: absolute;
-  inset: -4px;
-  border-radius: 50%;
-  border: 2px solid var(--color-primary);
-  opacity: 0;
-  animation: ft-pulse-ring 2s cubic-bezier(0.215, 0.610, 0.355, 1) infinite;
-}
-
-@keyframes ft-pulse-ring {
-  0% {
-    transform: scale(0.5);
-    opacity: 0.8;
-  }
-  80%, 100% {
-    transform: scale(1.8);
-    opacity: 0;
-  }
-}
-
-/* Hide floating button when drawer is open using :has selector */
-body:has(#timer-drawer.open) .floating-timer-container {
-  opacity: 0;
-  pointer-events: none;
-  transform: scale(0.9) translateY(15px);
-}
-
-/* Mobile responsive collapsing */
-@media (max-width: 640px) {
-  .floating-timer-container {
-    bottom: 1.5rem;
-    right: 1.5rem;
-  }
-  .ft-text {
-    display: none;
-  }
-  .floating-timer-btn {
-    padding: 0.85rem;
-    border-radius: 50%;
-    gap: 0;
-  }
-  .ft-pulse {
-    position: absolute;
-    top: 2px;
-    right: 2px;
-  }
+.header-timer-btn:hover {
+  background: var(--color-border);
+  transform: translateY(-1px);
 }
 </style>
 </head>
@@ -1517,6 +1404,9 @@ body:has(#timer-drawer.open) .floating-timer-container {
       </nav>
 
       <div class="header-actions">
+        <button class="header-timer-btn" onclick="toggleTimerDrawer()" aria-label="Open labor contraction timer">
+          <span>⏱️</span> Contraction Timer
+        </button>
         <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
         </button>
@@ -1605,125 +1495,68 @@ body:has(#timer-drawer.open) .floating-timer-container {
       </div>
 
       <div class="hero-visual" style="align-self: center;">
-        <style>
-          .hero-check-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-            background: var(--color-surface);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-md);
-            padding: 0.75rem 1rem;
-            cursor: pointer;
-            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-          }
-          .hero-check-item:hover {
-            border-color: var(--color-primary) !important;
-            transform: translateX(4px);
-            background: var(--color-surface-2) !important;
-          }
-          .hero-check-box {
-            width: 20px;
-            height: 20px;
-            border-radius: 4px;
-            border: 2px solid var(--color-border);
-            background: transparent;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            color: white;
-            transition: all 0.2s ease;
-          }
-          .hero-check-box.checked {
-            border-color: var(--color-primary) !important;
-            background: var(--color-primary) !important;
-          }
-          .hero-check-title {
-            font-size: var(--text-sm);
-            font-weight: 700;
-            color: var(--color-text);
-            transition: all 0.2s ease;
-          }
-          #hero-dashboard-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(255, 106, 26, 0.4) !important;
-          }
-          #hero-dashboard-btn:active {
-            transform: scale(0.98);
-          }
-        </style>
-        
-        <div style="background: rgba(22, 21, 19, 0.4); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 2rem; box-shadow: 0 15px 35px rgba(0,0,0,0.5); position: relative; width: 100%; display: flex; flex-direction: column; gap: 1.5rem;" id="hero-dashboard-panel">
+        <div style="background: rgba(22, 21, 19, 0.4); backdrop-filter: blur(20px); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 2rem; box-shadow: 0 15px 35px rgba(0,0,0,0.5); position: relative; width: 100%; display: flex; flex-direction: column; gap: 1.5rem;" id="hero-timeline-panel">
           
           <div style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--color-border); padding-bottom: 0.75rem;">
-            <span style="display: flex; align-items: center; gap: 0.5rem;">⚡ Dad Readiness Center</span>
-            <span style="font-size: 0.7rem; background: rgba(255, 106, 26, 0.15); color: var(--color-primary); padding: 0.25rem 0.6rem; border-radius: 50px; font-weight: 700;">Active Dashboard</span>
+            <span>⏱️ Interactive Timeline Ribbon</span>
+            <span style="font-size: 0.7rem; background: var(--color-primary-highlight); color: var(--color-primary); padding: 0.25rem 0.6rem; border-radius: 50px; font-weight: 700;">Option 1</span>
           </div>
 
-          <!-- Circular Progress and Active Week Monitor -->
-          <div style="display: flex; align-items: center; gap: 1.5rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.25rem; box-shadow: var(--shadow-sm);">
-            <div style="position: relative; width: 80px; height: 80px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
-              <svg width="80" height="80" viewBox="0 0 100 100" style="transform: rotate(-90deg); overflow: visible;">
-                <circle cx="50" cy="50" r="40" fill="transparent" stroke="var(--color-surface-offset)" stroke-width="8"></circle>
-                <circle id="hero-circular-progress" cx="50" cy="50" r="40" fill="transparent" stroke="var(--color-primary)" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="251.2" stroke-linecap="round" style="transition: stroke-dashoffset 0.6s cubic-bezier(0.16, 1, 0.3, 1); filter: drop-shadow(0 0 4px var(--color-primary));"></circle>
-              </svg>
-              <div style="position: absolute; font-family: var(--font-display); font-size: 1.1rem; font-weight: 800; color: var(--color-text);" id="hero-progress-text">0%</div>
-            </div>
-            <div>
-              <div style="font-family: var(--font-display); font-size: 0.95rem; font-weight: 800; color: var(--color-text); margin-bottom: 0.25rem;">Dad Readiness Score</div>
-              <p style="font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.45; margin: 0; min-height: 2.8em;" id="hero-progress-desc">Complete your initial dad duties to boost your score.</p>
-            </div>
-          </div>
+          <!-- Vertical Timeline Nodes Grid -->
+          <div style="display: flex; flex-direction: column; gap: 1.25rem; position: relative; padding-left: 1.5rem; margin-top: 0.25rem;">
+            <!-- Vertical Line -->
+            <div style="position: absolute; left: 5px; top: 10px; bottom: 10px; width: 2px; background: var(--color-surface-offset);"></div>
+            <div id="timeline-fill-line" style="position: absolute; left: 5px; top: 10px; height: 0%; width: 2px; background: var(--color-primary); transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1);"></div>
 
-          <!-- Interactive Checkbox List -->
-          <div style="display: flex; flex-direction: column; gap: 0.75rem;" id="hero-checklist-container">
-            <div style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-muted); margin-bottom: 0.15rem;">Dad Milestone Checklist</div>
-            
-            <!-- Checkbox 1 -->
-            <div class="hero-check-item" onclick="toggleHeroCheck(0, this)">
-              <div class="hero-check-box checked">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div style="display: flex; flex-direction: column; gap: 0.15rem;">
-                <span class="hero-check-title" style="text-decoration: line-through; opacity: 0.7;">Confirm pregnancy with doctor</span>
-                <span style="font-size: var(--text-xs); color: var(--color-text-muted);">Week 4 priority task</span>
-              </div>
+            <!-- Prep node -->
+            <div style="display: flex; align-items: center; gap: 1rem; cursor: pointer; position: relative;" onclick="setHeroTimeline('prep', 0, this)">
+              <div class="timeline-node-dot active" style="width: 12px; height: 12px; border-radius: 50%; background: var(--color-prep-accent); border: 2px solid var(--color-border); box-shadow: 0 0 10px var(--color-prep-accent); z-index: 1; transition: var(--transition);"></div>
+              <div style="font-family: var(--font-display); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: var(--color-prep-accent); transition: var(--transition);">Pre-Conception</div>
             </div>
 
-            <!-- Checkbox 2 -->
-            <div class="hero-check-item" onclick="toggleHeroCheck(1, this)">
-              <div class="hero-check-box"></div>
-              <div style="display: flex; flex-direction: column; gap: 0.15rem;">
-                <span class="hero-check-title">Setup baby fund savings plan</span>
-                <span style="font-size: var(--text-xs); color: var(--color-text-muted);">Financial Fortress (Section C)</span>
-              </div>
+            <!-- T1 node -->
+            <div style="display: flex; align-items: center; gap: 1rem; cursor: pointer; position: relative;" onclick="setHeroTimeline('t1', 33, this)">
+              <div class="timeline-node-dot" style="width: 12px; height: 12px; border-radius: 50%; background: var(--color-t1-accent); border: 2px solid var(--color-border); z-index: 1; transition: var(--transition);"></div>
+              <div style="font-family: var(--font-display); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: var(--color-text-muted); transition: var(--transition);">Week 4 · Trimester 1</div>
             </div>
 
-            <!-- Checkbox 3 -->
-            <div class="hero-check-item" onclick="toggleHeroCheck(2, this)">
-              <div class="hero-check-box"></div>
-              <div style="display: flex; flex-direction: column; gap: 0.15rem;">
-                <span class="hero-check-title">Study trimester symptom guides</span>
-                <span style="font-size: var(--text-xs); color: var(--color-text-muted);">Symptom decoder duties</span>
-              </div>
+            <!-- T2 node -->
+            <div style="display: flex; align-items: center; gap: 1rem; cursor: pointer; position: relative;" onclick="setHeroTimeline('t2', 66, this)">
+              <div class="timeline-node-dot" style="width: 12px; height: 12px; border-radius: 50%; background: var(--color-t2-accent); border: 2px solid var(--color-border); z-index: 1; transition: var(--transition);"></div>
+              <div style="font-family: var(--font-display); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: var(--color-text-muted); transition: var(--transition);">Week 20 · Trimester 2</div>
             </div>
 
-            <!-- Checkbox 4 -->
-            <div class="hero-check-item" onclick="toggleHeroCheck(3, this)">
-              <div class="hero-check-box"></div>
-              <div style="display: flex; flex-direction: column; gap: 0.15rem;">
-                <span class="hero-check-title">Pack the hospital "Dad Bag"</span>
-                <span style="font-size: var(--text-xs); color: var(--color-text-muted);">Third Trimester prep</span>
-              </div>
+            <!-- T3 node -->
+            <div style="display: flex; align-items: center; gap: 1rem; cursor: pointer; position: relative;" onclick="setHeroTimeline('t3', 100, this)">
+              <div class="timeline-node-dot" style="width: 12px; height: 12px; border-radius: 50%; background: var(--color-t3-accent); border: 2px solid var(--color-border); z-index: 1; transition: var(--transition);"></div>
+              <div style="font-family: var(--font-display); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: var(--color-text-muted); transition: var(--transition);">Week 36 · Trimester 3</div>
             </div>
 
           </div>
 
-          <!-- Enter Mission Control Button -->
-          <button onclick="document.getElementById('week-display-container').scrollIntoView({behavior: 'smooth', block: 'start'})" style="margin-top: 0.25rem; font-family: var(--font-display); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; background: var(--color-primary); color: white; border: none; border-radius: var(--radius-md); padding: 0.85rem 1.5rem; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 12px rgba(255,106,26,0.25); display: flex; align-items: center; justify-content: center; gap: 0.5rem;" id="hero-dashboard-btn">
-            <span>🚀 Enter Full Mission Control</span>
-          </button>
+          <!-- Glass dynamic preview card inside Visual visual -->
+          <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; box-shadow: var(--shadow-sm); transition: border-color 0.4s, box-shadow 0.4s;" id="hero-timeline-detail-card">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span id="hero-wk-badge" style="font-size: 0.65rem; font-weight: 800; text-transform: uppercase; padding: 0.25rem 0.60rem; border-radius: 50px; background: rgba(96, 165, 250, 0.15); color: var(--color-prep-accent);">Pre-Conception</span>
+              <span id="hero-wk-size" style="font-size: 0.75rem; color: var(--color-text-muted); font-weight: 700;">Planning Phase</span>
+            </div>
+            <h3 id="hero-wk-title" style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 900; letter-spacing: -0.01em;">🚀 The Starting Line</h3>
+            <p id="hero-wk-desc" style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5;">Preparing together, building healthy habits, aligning on parenting values. Pregnancy clock starts months before birth.</p>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.25rem;">
+              <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem;">
+                <span id="hero-marker-1" style="width: 6px; height: 6px; border-radius: 50%; background: var(--color-prep-accent); flex-shrink: 0; transition: var(--transition);"></span>
+                <span id="hero-bullet-1">Sperm takes 74 days to mature. Start limiting alcohol now.</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem;">
+                <span id="hero-marker-2" style="width: 6px; height: 6px; border-radius: 50%; background: var(--color-prep-accent); flex-shrink: 0; transition: var(--transition);"></span>
+                <span id="hero-bullet-2">Start men's Zinc vitamins and track cycle details.</span>
+              </div>
+            </div>
+            <button id="hero-wk-btn" style="background: var(--color-primary); color: white; border: none; border-radius: var(--radius-sm); padding: 0.6rem; font-weight: 700; font-size: 0.8rem; cursor: pointer; text-align: center; margin-top: 0.5rem; box-shadow: 0 4px 10px rgba(255, 106, 26, 0.2); transition: var(--transition);" onclick="smoothScrollToWeek('prep')">
+              Read Full Prep Guide →
+            </button>
+          </div>
+
         </div>
       </div>
     </div>
@@ -5967,6 +5800,113 @@ function analyzeContractions(history) {
 }
 
 
+
+// ─── OPTION 1 HERO TIMELINE PREVIEW JS ──────────────────────────
+const HERO_TIMELINE_DATA = {
+  prep: {
+    badge: "Pre-Conception",
+    colorClass: "prep",
+    size: "Planning Phase",
+    title: "🚀 The Starting Line",
+    desc: "Preparing together, building healthy habits, aligning on parenting values. Pregnancy clock starts months before birth.",
+    bullet1: "Sperm takes 74 days to mature. Start limiting alcohol now.",
+    bullet2: "Start men's Zinc vitamins and track cycle details.",
+    btnText: "Read Full Prep Guide →",
+    hash: "prep"
+  },
+  t1: {
+    badge: "Week 4 · Trimester 1",
+    colorClass: "t1",
+    size: "Poppy Seed (~2mm)",
+    title: "❤️ Tiny Heartbeat Begins",
+    desc: "Most couples confirm pregnancy this week. Hormones surge, and the heart tube starts pulsing.",
+    bullet1: "Neural tube closes: foundation of brain and spine takes shape.",
+    bullet2: "Heart tube begins pulsing at 80-85 beats per minute.",
+    btnText: "Read Week 4 Guide →",
+    hash: "4"
+  },
+  t2: {
+    badge: "Week 20 · Trimester 2",
+    colorClass: "t2",
+    size: "Banana (~25.6cm)",
+    title: "🧠 Anatomy Scan & Halfway",
+    desc: "Anatomy scan week! Baby's sensory systems spike and they can hear your deep voice.",
+    bullet1: "Detailed scan reviews major organs, limbs, and heart chambers.",
+    bullet2: "Baby hears ambient sounds—primetime to talk to the belly.",
+    btnText: "Read Week 20 Guide →",
+    hash: "20"
+  },
+  t3: {
+    badge: "Week 36 · Trimester 3",
+    colorClass: "t3",
+    size: "Romaine Lettuce (~47cm)",
+    title: "🩺 Early Term Preparation",
+    desc: "Diaper bags, GBS tests, and infant car seat checks are locked. The delivery room is close.",
+    bullet1: "Standard Group B Strep vaginal swab test is administered.",
+    bullet2: "Finalize hospital bags and perform driving dry runs.",
+    btnText: "Read Week 36 Guide →",
+    hash: "36"
+  }
+};
+
+function setHeroTimeline(key, fillPercent, el) {
+  const data = HERO_TIMELINE_DATA[key];
+  if (!data) return;
+
+  // Update filling vertical track line
+  const fillLine = document.getElementById('timeline-fill-line');
+  if (fillLine) fillLine.style.height = fillPercent + '%';
+
+  // Update dots class styling
+  document.querySelectorAll('.timeline-node-dot').forEach(dot => {
+    dot.classList.remove('active');
+    dot.style.boxShadow = 'none';
+  });
+
+  if (el) {
+    const dot = el.querySelector('.timeline-node-dot');
+    if (dot) {
+      dot.classList.add('active');
+      dot.style.boxShadow = `0 0 10px var(--color-${data.colorClass}-accent)`;
+    }
+  }
+
+  // Animate dynamic detail card with fade transition
+  const card = document.getElementById('hero-timeline-detail-card');
+  if (card) {
+    card.style.opacity = 0;
+    setTimeout(() => {
+      document.getElementById('hero-wk-badge').textContent = data.badge;
+      document.getElementById('hero-wk-badge').style.color = `var(--color-${data.colorClass}-accent)`;
+      document.getElementById('hero-wk-badge').style.backgroundColor = `color-mix(in oklab, var(--color-${data.colorClass}-accent) 15%, transparent)`;
+      
+      document.getElementById('hero-wk-size').textContent = data.size;
+      document.getElementById('hero-wk-title').textContent = data.title;
+      document.getElementById('hero-wk-desc').textContent = data.desc;
+      
+      document.getElementById('hero-bullet-1').textContent = data.bullet1;
+      document.getElementById('hero-bullet-2').textContent = data.bullet2;
+      
+      document.getElementById('hero-marker-1').style.backgroundColor = `var(--color-${data.colorClass}-accent)`;
+      document.getElementById('hero-marker-2').style.backgroundColor = `var(--color-${data.colorClass}-accent)`;
+      
+      const btn = document.getElementById('hero-wk-btn');
+      btn.textContent = data.btnText;
+      btn.style.backgroundColor = `var(--color-${data.colorClass}-accent)`;
+      btn.style.boxShadow = `0 4px 10px color-mix(in oklab, var(--color-${data.colorClass}-accent) 25%, transparent)`;
+      btn.onclick = () => smoothScrollToWeek(data.hash);
+      
+      card.style.borderColor = `var(--color-${data.colorClass}-accent)`;
+      card.style.boxShadow = `0 8px 24px color-mix(in oklab, var(--color-${data.colorClass}-accent) 10%, transparent)`;
+      card.style.opacity = 1;
+    }, 150);
+  }
+}
+
+function smoothScrollToWeek(weekKey) {
+  renderWeek(weekKey);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // Check hash for initial load
     let initialKey = 'prep';
@@ -6012,180 +5952,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Initialize Dad Readiness Dashboard score on the home visual center
-    updateHeroProgress();
+    setHeroTimeline('prep', 0);
 });
 
-// ─── DAD COMMAND DASHBOARD CODE (OPTION 2) ───────────────────
-const HERO_CHECK_STATES = [true, false, false, false];
-
-function updateHeroProgress() {
-  const checkedCount = HERO_CHECK_STATES.filter(Boolean).length;
-  const percentage = Math.round((checkedCount / HERO_CHECK_STATES.length) * 100);
-  
-  // Update percentage text
-  const textEl = document.getElementById('hero-progress-text');
-  if (textEl) textEl.textContent = percentage + '%';
-  
-  // Update circular progress bar stroke-dashoffset
-  const circle = document.getElementById('hero-circular-progress');
-  if (circle) {
-    const circumference = 251.2;
-    const offset = circumference - (percentage / 100) * circumference;
-    circle.style.strokeDashoffset = offset;
-  }
-  
-  // Update description based on percentage
-  const desc = document.getElementById('hero-progress-desc');
-  if (desc) {
-    if (percentage === 0) {
-      desc.textContent = "Complete your initial dad duties to boost your score.";
-    } else if (percentage === 25) {
-      desc.textContent = "Great start! Confirming pregnancy with a doctor is your absolute first duty.";
-    } else if (percentage === 50) {
-      desc.textContent = "Halfway there! Planning your finances early with a savings plan prevents late stress.";
-    } else if (percentage === 75) {
-      desc.textContent = "Incredible! Studying symptom guides to support your partner is your superpower.";
-    } else if (percentage === 100) {
-      desc.textContent = "🎉 Excellent! Maximum preparation score achieved. You're ready, Dad!";
-      // Trigger a massive confetti burst!
-      triggerFullConfettiBurst();
-    }
-  }
-}
-
-function toggleHeroCheck(index, element) {
-  const newState = !HERO_CHECK_STATES[index];
-  HERO_CHECK_STATES[index] = newState;
-  
-  const checkbox = element.querySelector('.hero-check-box');
-  const title = element.querySelector('.hero-check-title');
-  
-  if (checkbox && title) {
-    if (newState) {
-      checkbox.classList.add('checked');
-      checkbox.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>';
-      title.style.textDecoration = 'line-through';
-      title.style.opacity = '0.7';
-      
-      // Trigger small micro-confetti burst from the checkmark
-      createConfettiBurst(checkbox);
-    } else {
-      checkbox.classList.remove('checked');
-      checkbox.innerHTML = '';
-      title.style.textDecoration = 'none';
-      title.style.opacity = '1';
-    }
-  }
-  
-  updateHeroProgress();
-}
-
-function createConfettiBurst(element) {
-  const rect = element.getBoundingClientRect();
-  const x = rect.left + rect.width / 2;
-  const y = rect.top + rect.height / 2;
-  
-  const colors = ['#ff6a1a', '#3b82f6', '#10b981', '#f59e0b', '#ec4899'];
-  for (let i = 0; i < 15; i++) {
-    const particle = document.createElement('div');
-    particle.style.position = 'fixed';
-    particle.style.left = x + 'px';
-    particle.style.top = y + 'px';
-    particle.style.width = Math.random() * 6 + 4 + 'px';
-    particle.style.height = Math.random() * 6 + 4 + 'px';
-    particle.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
-    particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-    particle.style.pointerEvents = 'none';
-    particle.style.zIndex = '9999';
-    
-    // Physics
-    const angle = Math.random() * Math.PI * 2;
-    const velocity = Math.random() * 5 + 3;
-    const vx = Math.cos(angle) * velocity;
-    const vy = Math.sin(angle) * velocity - 2.5; // Upward bias
-    
-    document.body.appendChild(particle);
-    
-    let posX = x;
-    let posY = y;
-    let opacity = 1;
-    let currentVy = vy;
-    
-    const animate = () => {
-      if (opacity <= 0.02) {
-        particle.remove();
-        return;
-      }
-      posX += vx;
-      currentVy += 0.2; // Gravity
-      posY += currentVy;
-      opacity -= 0.025;
-      
-      particle.style.left = posX + 'px';
-      particle.style.top = posY + 'px';
-      particle.style.opacity = opacity;
-      particle.style.transform = `rotate(${posX * 2}deg)`;
-      
-      requestAnimationFrame(animate);
-    };
-    
-    requestAnimationFrame(animate);
-  }
-}
-
-function triggerFullConfettiBurst() {
-  const colors = ['#ff6a1a', '#3b82f6', '#10b981', '#f59e0b', '#ec4899', '#8b5cf6'];
-  const width = window.innerWidth;
-  const height = window.innerHeight;
-  
-  for (let i = 0; i < 100; i++) {
-    setTimeout(() => {
-      const particle = document.createElement('div');
-      particle.style.position = 'fixed';
-      const startX = Math.random() * width;
-      const startY = height + 10;
-      particle.style.left = startX + 'px';
-      particle.style.top = startY + 'px';
-      particle.style.width = Math.random() * 8 + 6 + 'px';
-      particle.style.height = Math.random() * 12 + 6 + 'px';
-      particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-      particle.style.pointerEvents = 'none';
-      particle.style.zIndex = '9999';
-      
-      const angle = -Math.PI / 2 + (Math.random() - 0.5) * 0.9;
-      const velocity = Math.random() * 12 + 10;
-      const vx = Math.cos(angle) * velocity;
-      let currentVy = Math.sin(angle) * velocity;
-      
-      document.body.appendChild(particle);
-      
-      let posX = startX;
-      let posY = startY;
-      let opacity = 1;
-      
-      const animate = () => {
-        if (opacity <= 0.01 || posY > height + 20) {
-          particle.remove();
-          return;
-        }
-        posX += vx;
-        currentVy += 0.25; // Gravity
-        posY += currentVy;
-        opacity -= 0.008;
-        
-        particle.style.left = posX + 'px';
-        particle.style.top = posY + 'px';
-        particle.style.opacity = opacity;
-        particle.style.transform = `rotate(${posX * 3}deg)`;
-        
-        requestAnimationFrame(animate);
-      };
-      
-      requestAnimationFrame(animate);
-    }, Math.random() * 600);
-  }
-}
 </script>
 
 <!-- 📜 DAD'S JOURNAL HISTORY MODAL -->
@@ -6270,15 +6039,6 @@ function triggerFullConfettiBurst() {
       </div>
     </div>
   </div>
-</div>
-
-<!-- ⏱️ FLOATING CONTRACTION TIMER PILL -->
-<div class="floating-timer-container">
-  <button class="floating-timer-btn" onclick="toggleTimerDrawer()" aria-label="Open labor contraction timer">
-    <span class="ft-icon">⏱️</span>
-    <span class="ft-text">Contraction Timer</span>
-    <span class="ft-pulse"></span>
-  </button>
 </div>
 
 </body>

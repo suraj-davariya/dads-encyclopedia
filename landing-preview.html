@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Landing Preview — Expectant Dad's Encyclopedia</title>
+
+<!-- Premium Fonts -->
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&f[]=cabinet-grotesk@400,500,700,800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════
+   PREMIUM DARK INTERACTIVE STYLES
+   ═══════════════════════════════════════════ */
+:root {
+  --font-display: 'Cabinet Grotesk', 'Georgia', serif;
+  --font-serif: 'Instrument Serif', 'Georgia', serif;
+  --font-body: 'Satoshi', 'Inter', sans-serif;
+
+  --color-bg: #070605;
+  --color-surface: #100f0e;
+  --color-surface-2: #161513;
+  --color-surface-offset: #1d1b19;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-text: #f5f4f2;
+  --color-text-muted: #a3a19b;
+  --color-text-faint: #5f5d58;
+  --color-primary: #ff6a1a;
+  --color-primary-hover: #ff8542;
+  --color-primary-glow: rgba(255, 106, 26, 0.15);
+
+  /* Trimester Hue-Accents */
+  --color-prep-accent: #60a5fa; --color-prep-glow: rgba(96, 165, 250, 0.15);
+  --color-t1-accent: #fbbf24; --color-t1-glow: rgba(251, 191, 36, 0.15);
+  --color-t2-accent: #34d399; --color-t2-glow: rgba(52, 211, 153, 0.15);
+  --color-t3-accent: #a78bfa; --color-t3-glow: rgba(167, 139, 250, 0.15);
+  --color-birth-accent: #f87171; --color-birth-glow: rgba(248, 113, 113, 0.15);
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  --transition: all 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  min-height: 100vh;
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Ambient Neon Glow Background Spots */
+.ambient-glow-1 {
+  position: absolute;
+  top: -10%;
+  left: 20%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, var(--color-primary-glow) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+.ambient-glow-2 {
+  position: absolute;
+  top: 40%;
+  right: -10%;
+  width: 45vw;
+  height: 45vw;
+  background: radial-gradient(circle, var(--color-t2-glow) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1100px;
+  margin-inline: auto;
+  padding: var(--radius-xl) 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── HEADER ─────────────────────────────────────────────────── */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1.5rem;
+}
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  text-decoration: none;
+}
+.logo span {
+  color: var(--color-primary);
+}
+.back-btn {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: 0.5rem 1.25rem;
+  color: var(--color-text);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.back-btn:hover {
+  background: var(--color-border);
+  transform: translateY(-2px);
+}
+
+/* ── HERO TEXT ──────────────────────────────────────────────── */
+.hero-text-aligner {
+  text-align: center;
+  max-width: 800px;
+  margin-inline: auto;
+  margin-bottom: 5rem;
+}
+.eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-primary);
+  background: var(--color-primary-glow);
+  padding: 0.35rem 1rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.5rem;
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+}
+.hero-title span.accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary) 30%, var(--color-primary-hover) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* ── INTERACTIVE TIMELINE RIBBON (CONCEPT B) ────────────────── */
+.timeline-section-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.01em;
+}
+.timeline-wrapper {
+  background: rgba(22, 21, 19, 0.4);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 4rem 2rem 5rem 2rem;
+  position: relative;
+  margin-bottom: 4rem;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.timeline-ribbon-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-inline: auto;
+}
+
+/* Horizontal Timeline Progress Line */
+.timeline-track-bg {
+  position: absolute;
+  left: 3%;
+  right: 3%;
+  height: 4px;
+  background: var(--color-surface-offset);
+  border-radius: var(--radius-full);
+  z-index: 0;
+}
+.timeline-track-fill {
+  position: absolute;
+  left: 3%;
+  width: 0%; /* Dynamic animation on load */
+  height: 4px;
+  background: linear-gradient(90deg, 
+    var(--color-prep-accent) 0%, 
+    var(--color-t1-accent) 25%, 
+    var(--color-t2-accent) 55%, 
+    var(--color-t3-accent) 80%, 
+    var(--color-birth-accent) 100%
+  );
+  border-radius: var(--radius-full);
+  z-index: 1;
+  transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 10px rgba(255, 106, 26, 0.3);
+}
+
+/* Milestone Node styles */
+.milestone-node {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+}
+
+.node-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-surface);
+  border: 4px solid var(--color-border);
+  box-shadow: 0 0 0 6px var(--color-bg);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.node-circle::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.node-label {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--color-text-faint);
+  margin-top: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+/* Hover & Active States */
+.milestone-node:hover .node-circle {
+  transform: scale(1.25);
+  box-shadow: 0 0 15px currentColor;
+}
+.milestone-node:hover .node-label,
+.milestone-node.active .node-label {
+  color: var(--color-text);
+  font-weight: 900;
+  transform: translateY(2px);
+}
+
+/* Color Classes for Timeline Nodes */
+.milestone-node.prep { color: var(--color-prep-accent); }
+.milestone-node.t1 { color: var(--color-t1-accent); }
+.milestone-node.t2 { color: var(--color-t2-accent); }
+.milestone-node.t3 { color: var(--color-t3-accent); }
+.milestone-node.birth { color: var(--color-birth-accent); }
+
+.milestone-node.active .node-circle {
+  border-color: currentColor;
+  background: currentColor;
+  transform: scale(1.4);
+  box-shadow: 0 0 20px currentColor, 0 0 0 6px var(--color-bg);
+}
+
+/* Floating Hover Cards */
+.floating-milestone-card {
+  position: absolute;
+  left: 50%;
+  bottom: 150%;
+  transform: translate(-50%, 15px);
+  width: 220px;
+  background: rgba(22, 21, 19, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+.floating-milestone-card::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 8px;
+  border-style: solid;
+  border-color: rgba(22, 21, 19, 0.95) transparent transparent transparent;
+}
+
+.milestone-node:hover .floating-milestone-card {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.float-badge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+.prep .float-badge { background: var(--color-prep-glow); color: var(--color-prep-accent); }
+.t1 .float-badge { background: var(--color-t1-glow); color: var(--color-t1-accent); }
+.t2 .float-badge { background: var(--color-t2-glow); color: var(--color-t2-accent); }
+.t3 .float-badge { background: var(--color-t3-glow); color: var(--color-t3-accent); }
+.birth .float-badge { background: var(--color-birth-glow); color: var(--color-birth-accent); }
+
+.float-title {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: 0.25rem;
+}
+.float-sub {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  line-height: 1.3;
+}
+
+/* ── PREVIEW DETAIL CONTAINER ────────────────────────────────── */
+.preview-detail-container {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 5rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.preview-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.preview-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.preview-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+}
+.preview-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+.preview-subtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+}
+.bullets-title {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-faint);
+  margin-top: 0.5rem;
+}
+.bullets-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-left: 0.25rem;
+}
+.bullet-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+}
+.bullet-marker {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Sidebar detail panel */
+.preview-aside {
+  border-left: 1px solid var(--color-border);
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.aside-block-title {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-faint);
+  margin-bottom: 0.5rem;
+}
+.metric-box {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1.25rem;
+}
+.metric-value {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-text);
+}
+.metric-desc {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.simulated-gate-box {
+  background: var(--color-surface-offset);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.gate-btn {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.75rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  cursor: pointer;
+  text-align: center;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(255, 106, 26, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.gate-btn:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 106, 26, 0.4);
+}
+
+/* ── ANIMATION & DELAY STYLES ───────────────────────────────── */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-slide {
+  animation: slideInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.fade-transition {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+</style>
+</head>
+<body>
+
+<div class="ambient-glow-1"></div>
+<div class="ambient-glow-2"></div>
+
+<div class="container animate-slide">
+  <!-- HEADER -->
+  <header>
+    <a href="#" class="logo">Dad<span>'s</span> Encyclopedia</a>
+    <a href="index.html" class="back-btn">← Back to Encyclopedia</a>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero-text-aligner">
+    <span class="eyebrow">Design Concept B Preview</span>
+    <h1 class="hero-title">
+      The Modern Dad's<br>
+      <span class="accent">Pregnancy Encyclopedia</span>
+    </h1>
+    <p class="hero-subtitle">
+      A comprehensive, week-by-week guide built for first-time fathers. From the first positive test to the first month home — every milestone, every question, every challenge covered.
+    </p>
+  </div>
+
+  <!-- INTERACTIVE TIMELINE RIBBON -->
+  <h2 class="timeline-section-title">⏱️ Scroll-Driven Chronology Ribbon</h2>
+  <div class="timeline-wrapper">
+    <div class="timeline-ribbon-container">
+      <div class="timeline-track-bg"></div>
+      <div class="timeline-track-fill" id="timeline-fill"></div>
+
+      <!-- Node 1: Prep -->
+      <div class="milestone-node prep active" onclick="selectTimelineNode('prep', 0)">
+        <div class="node-circle"></div>
+        <div class="node-label">Prep</div>
+        <div class="floating-milestone-card">
+          <div class="float-badge">Pre-Conception</div>
+          <div class="float-title">🚀 The Starting Line</div>
+          <div class="float-sub">Sperm takes 74 days to mature. Start optimizing health together now.</div>
+        </div>
+      </div>
+
+      <!-- Node 2: Week 1 -->
+      <div class="milestone-node t1" onclick="selectTimelineNode('1', 12.5)">
+        <div class="node-circle"></div>
+        <div class="node-label">Wk 1</div>
+        <div class="floating-milestone-card">
+          <div class="float-badge">Trimester 1</div>
+          <div class="float-title">🌱 The Journey Begins</div>
+          <div class="float-sub">Technically, menstrual period starts. Preparing the cycle.</div>
+        </div>
+      </div>
+
+      <!-- Node 3: Week 4 -->
+      <div class="milestone-node t1" onclick="selectTimelineNode('4', 25)">
+        <div class="node-circle"></div>
+        <div class="node-label">Wk 4</div>
+        <div class="floating-milestone-card">
+          <div class="float-badge">Trimester 1</div>
+          <div class="float-title">❤️ Heartbeat Begins</div>
+          <div class="float-sub">Embryo size: poppy seed. Most couples confirm pregnancy this week.</div>
+        </div>
+      </div>
+
+      <!-- Node 4: Week 12 -->
+      <div class="milestone-node t1" onclick="selectTimelineNode('12', 37.5)">
+        <div class="node-circle"></div>
+        <div class="node-label">Wk 12</div>
+        <div class="floating-milestone-card">
+          <div class="float-badge">Trimester 1</div>
+          <div class="float-title">👶 Graduation Week</div>
+          <div class="float-sub">Baby is fully formed. Miscarriage risk drops by 65%.</div>
+        </div>
+      </div>
+
+      <!-- Node 5: Week 20 -->
+      <div class="milestone-node t2" onclick="selectTimelineNode('20', 50)">
+        <div class="node-circle"></div>
+        <div class="node-label">Wk 20</div>
+        <div class="floating-milestone-card">
+          <div class="float-badge">Trimester 2</div>
+          <div class="float-title">🧠 Anatomy Milestone</div>
+          <div class="float-sub">Anatomy scan week. Baby can hear your voice. Halfway there!</div>
+        </div>
+      </div>
+
+      <!-- Node 6: Week 28 -->
+      <div class="milestone-node t3" onclick="selectTimelineNode('28', 62.5)">
+        <div class="node-circle"></div>
+        <div class="node-label">Wk 28</div>
+        <div class="floating-milestone-card">
+          <div class="float-badge">Trimester 3</div>
+          <div class="float-title">💫 Home Stretch</div>
+          <div class="float-sub">Third trimester begins. Baby is dreaming. Start kick counting.</div>
+        </div>
+      </div>
+
+      <!-- Node 7: Week 36 -->
+      <div class="milestone-node t3" onclick="selectTimelineNode('36', 75)">
+        <div class="node-circle"></div>
+        <div class="node-label">Wk 36</div>
+        <div class="floating-milestone-card">
+          <div class="float-badge">Trimester 3</div>
+          <div class="float-title">🩺 Early Term Prep</div>
+          <div class="float-sub">GBS culture swab. Finalize diaper bags & infant car seats.</div>
+        </div>
+      </div>
+
+      <!-- Node 8: Week 40 -->
+      <div class="milestone-node t3" onclick="selectTimelineNode('40', 87.5)">
+        <div class="node-circle"></div>
+        <div class="node-label">Wk 40</div>
+        <div class="floating-milestone-card">
+          <div class="float-badge">Trimester 3</div>
+          <div class="float-title">⏱️ The Due Date</div>
+          <div class="float-sub">Controlled patience. Only 5% of babies arrive exactly today.</div>
+        </div>
+      </div>
+
+      <!-- Node 9: Birth -->
+      <div class="milestone-node birth" onclick="selectTimelineNode('birth', 100)">
+        <div class="node-circle"></div>
+        <div class="node-label">Birth</div>
+        <div class="floating-milestone-card">
+          <div class="float-badge">Birth & Beyond</div>
+          <div class="float-title">👶 Golden Hour</div>
+          <div class="float-sub">Labor coach activation. Skin-to-skin contact &Month 1 setup.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TIMELINE PREVIEW CARD -->
+  <div class="preview-detail-container" id="preview-container">
+    <!-- Main Content details -->
+    <div class="preview-main">
+      <div class="preview-eyebrow">
+        <span class="preview-badge" id="wk-badge">PRE-CONCEPTION</span>
+      </div>
+      <h3 class="preview-title" id="wk-title">🚀 The Starting Line</h3>
+      <p class="preview-subtitle" id="wk-subtitle">Preparing together, building healthy habits, aligning on parenting values.</p>
+      
+      <div class="bullets-title">Baby Development</div>
+      <div class="bullets-list" id="wk-bullets">
+        <!-- Bullets populated dynamically -->
+      </div>
+    </div>
+
+    <!-- Side details panel -->
+    <div class="preview-aside">
+      <div>
+        <div class="aside-block-title">Weekly Overview</div>
+        <div class="metric-box" style="margin-bottom: 0.75rem;">
+          <div class="metric-value" id="aside-size">Planning</div>
+          <div class="metric-desc" id="aside-size-label">Baby Size</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-value" id="aside-win">Habits Align</div>
+          <div class="metric-desc">Top Dad Priority</div>
+        </div>
+      </div>
+
+      <div class="simulated-gate-box">
+        <div style="font-size: 0.8rem; line-height: 1.4; color: var(--color-text-muted)">Clicking this ribbon instantly teleports you deep into the full actionable week guides below!</div>
+        <button class="gate-btn" id="gate-btn-action">
+          <span>Read Full Prep Guide</span> →
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Weekly mock dataset to simulate interactive timeline previews
+const TIMELINE_PREVIEW_DATA = {
+  "prep": {
+    badge: "PRE-CONCEPTION",
+    colorClass: "prep",
+    title: "🚀 The Starting Line",
+    subtitle: "Preparing together, safety checks, building healthy habits, aligning on parenting values.",
+    bullets: [
+      "No baby yet! Sperm takes about 74 days to mature, so your health now shapes conception 2.5 months later.",
+      "Start daily pre-conception vitamins (Zinc & Selenium for you, Folic Acid for her) to optimize outcomes.",
+      "Review medical insurance policies to confirm exactly what maternity options and OB-GYN paths are covered."
+    ],
+    size: "Planning Phase",
+    priority: "Habits Align",
+    action: "Read Full Prep Guide",
+    hash: "#week-prep"
+  },
+  "1": {
+    badge: "WEEK 1 — FIRST TRIMESTER",
+    colorClass: "t1",
+    title: "🌱 The Journey Begins",
+    subtitle: "Technically, menstrual period starts. The body is prepping for ovulation.",
+    bullets: [
+      "Week 1 of pregnancy actually begins on the first day of her last menstrual period (LMP) — you aren't pregnant yet!",
+      "The body is shedding the old uterine lining to create a completely fresh, nutrient-rich bed for fertilization.",
+      "Dad duty: Keep track of the exact start date of this period — it is used to calculate the official due date."
+    ],
+    size: "Menstrual Period",
+    priority: "Support & Comfort",
+    action: "Read Week 1 Guide",
+    hash: "#week-1"
+  },
+  "4": {
+    badge: "WEEK 4 — FIRST TRIMESTER",
+    colorClass: "t1",
+    title: "❤️ Tiny Heartbeat Begins",
+    subtitle: "Most couples confirm pregnancy this week. Hormones spike and early symptoms rise.",
+    bullets: [
+      "Implantation completes. The cells trigger hCG production — the key hormone detected by positive tests.",
+      "The neural tube closes, establishing the foundational pathways for the brain and spinal cord.",
+      "The primitive heart tube forms and begins pulsing at a steady 80-85 beats per minute."
+    ],
+    size: "Poppy Seed (~2mm)",
+    priority: "Confirm & Support",
+    action: "Read Week 4 Guide",
+    hash: "#week-4"
+  },
+  "12": {
+    badge: "WEEK 12 — FIRST TRIMESTER",
+    colorClass: "t1",
+    title: "👶 Graduation Week",
+    subtitle: "End of the critical first trimester close by. Baby is fully formed and active.",
+    bullets: [
+      "Baby is fully formed! Major organs, muscles, and tiny skeletal structures are complete and functional.",
+      "The vocal cords are forming, fingernails and toenails are sprouting, and baby wiggling actively.",
+      "The miscarriage risk drops by 65% after this week, bringing a massive wave of emotional relief for dads."
+    ],
+    size: "Lime (~5.4cm)",
+    priority: "Share the News",
+    action: "Read Week 12 Guide",
+    hash: "#week-12"
+  },
+  "20": {
+    badge: "WEEK 20 — SECOND TRIMESTER",
+    colorClass: "t2",
+    title: "🧠 Anatomy Scan & Halfway",
+    subtitle: "Baby's sensory systems spike. You are officially halfway through the pregnancy timeline!",
+    bullets: [
+      "Anatomy ultrasound scan: Detailed measurement of organs, limbs, heart chambers, and placenta placement.",
+      "Sensory blast: Baby's ears are active, hearing ambient sounds, heartbeats, and especially your deep voice.",
+      "Diaphragm movements start practicing breathing. The skin is protected by a creamy coating called vernix."
+    ],
+    size: "Banana (~25.6cm)",
+    priority: "Talk to Belly",
+    action: "Read Week 20 Guide",
+    hash: "#week-20"
+  },
+  "28": {
+    badge: "WEEK 28 — THIRD TRIMESTER",
+    colorClass: "t3",
+    title: "💫 Home Stretch Begins",
+    subtitle: "Third trimester kicks off. Physical fatigue returns and baby enters active REM sleep.",
+    bullets: [
+      "Baby opens their eyes! Eyelashes are fully grown, and they can blink and detect light streaming through.",
+      "REM sleep cycles: Baby is dreaming, and their brain tissue begins forming its essential deep folds.",
+      "Daily kick counts start: Learn to track baby's active windows to verify 10 kicks within 2 hours."
+    ],
+    size: "Eggplant (~37.6cm)",
+    priority: "Pediatric Prep",
+    action: "Read Week 28 Guide",
+    hash: "#week-28"
+  },
+  "36": {
+    badge: "WEEK 36 — THIRD TRIMESTER",
+    colorClass: "t3",
+    title: "🩺 Early Term Preparation",
+    subtitle: "Final safety drills. Group B Strep (GBS) tests, hospital bags, and car seats are locked.",
+    bullets: [
+      "Standard GBS vaginal swab test is administered to check for bacteria that require penicillin during birth.",
+      "Pelvic lightening: Baby drops lower into the pelvis, helping mom breathe easier but raising pressure.",
+      "Dad checklist: Finalize diaper/hospital bags, perform a dry run drive to delivery, and lock infant car seat."
+    ],
+    size: "Romaine Lettuce (~47.4cm)",
+    priority: "Safety Lock",
+    action: "Read Week 36 Guide",
+    hash: "#week-36"
+  },
+  "40": {
+    badge: "WEEK 40 — THIRD TRIMESTER",
+    colorClass: "t3",
+    title: "⏱️ The Official Due Date",
+    subtitle: "Controlled patience is key. Your baby is 100% ready to meet you.",
+    bullets: [
+      "Only 5% of babies arrive exactly on their due date — going past it by a week is completely normal.",
+      "The lungs are fully mature, reflexes are sharp, and baby's skull bones are soft to ease passing through.",
+      "Action items: Keep timing contractions with the timer, provide lower-back massages, and keep her calm."
+    ],
+    size: "Watermelon (~51cm)",
+    priority: "Labor Coach",
+    action: "Read Week 40 Guide",
+    hash: "#week-40"
+  },
+  "birth": {
+    badge: "BIRTH & BEYOND",
+    colorClass: "birth",
+    title: "👶 The Golden Hour",
+    subtitle: "Welcome to fatherhood. Your coach training transitions into pure, active support.",
+    bullets: [
+      "Active labor coaching: Keep her focused, manage visitor boundaries, and advocate for her birth plan.",
+      "Golden Hour: Place baby skin-to-skin on her chest (and yours!) immediately after birth to regulate vital signs.",
+      "Month 1 nesting: Step up as gatekeeper, help with sleep cycles, and manage household recovery."
+    ],
+    size: "Newborn Baby",
+    priority: "Protect & Bond",
+    action: "Read Birth & Beyond Guide",
+    hash: "#week-birth"
+  }
+};
+
+// Handle timeline selection
+function selectTimelineNode(key, percent) {
+  // Update timeline track fill width
+  const fill = document.getElementById('timeline-fill');
+  if (fill) fill.style.width = percent + '%';
+
+  // Update active dot class
+  document.querySelectorAll('.milestone-node').forEach(node => {
+    node.classList.remove('active');
+  });
+  
+  // Find current node
+  const activeNode = event.currentTarget;
+  if (activeNode) activeNode.classList.add('active');
+
+  // Load preview data with animation flash
+  const data = TIMELINE_PREVIEW_DATA[key];
+  if (!data) return;
+
+  const container = document.getElementById('preview-container');
+  if (container) {
+    container.classList.add('fade-transition');
+    setTimeout(() => {
+      container.classList.remove('fade-transition');
+    }, 400);
+  }
+
+  // Set values
+  const wkBadge = document.getElementById('wk-badge');
+  if (wkBadge) {
+    wkBadge.textContent = data.badge;
+    wkBadge.className = `preview-badge ${data.colorClass}`;
+    
+    const activeColor = `var(--color-${data.colorClass}-accent)`;
+    const activeGlow = `var(--color-${data.colorClass}-glow)`;
+    
+    wkBadge.style.backgroundColor = activeGlow;
+    wkBadge.style.color = activeColor;
+    
+    if (container) {
+      container.style.borderColor = activeColor;
+      container.style.boxShadow = `0 12px 30px ${activeGlow}`;
+    }
+  }
+  
+  const wkTitle = document.getElementById('wk-title');
+  if (wkTitle) wkTitle.textContent = data.title;
+  
+  const wkSubtitle = document.getElementById('wk-subtitle');
+  if (wkSubtitle) wkSubtitle.textContent = data.subtitle;
+  
+  const asideSize = document.getElementById('aside-size');
+  if (asideSize) asideSize.textContent = data.size;
+  
+  const asideWin = document.getElementById('aside-win');
+  if (asideWin) asideWin.textContent = data.priority;
+  
+  const actionBtn = document.getElementById('gate-btn-action');
+  if (actionBtn) {
+    actionBtn.innerHTML = `<span>${data.action}</span> →`;
+    actionBtn.onclick = () => {
+      window.location.href = 'index.html' + data.hash;
+    };
+  }
+
+  // Rebuild bullets
+  const bulletContainer = document.getElementById('wk-bullets');
+  if (bulletContainer) {
+    bulletContainer.innerHTML = data.bullets.map(b => `
+      <div class="bullet-item">
+        <span class="bullet-marker ${data.colorClass}" style="background-color: var(--color-${data.colorClass}-accent)"></span>
+        <span>${b}</span>
+      </div>
+    `).join('');
+  }
+}
+
+// Initialize default state
+document.addEventListener('DOMContentLoaded', () => {
+  // Animate line fill to 0% initially
+  setTimeout(() => {
+    const fill = document.getElementById('timeline-fill');
+    if (fill) fill.style.width = '0%';
+  }, 100);
+  
+  // Trigger initial selection
+  const prepNode = document.querySelector('.milestone-node.prep');
+  if (prepNode) prepNode.click();
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adaptive Gate Preview — Expectant Dad's Encyclopedia</title>
+
+<!-- Premium Fonts -->
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&f[]=cabinet-grotesk@400,500,700,800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════
+   PREMIUM DARK INTERACTIVE STYLES
+   ═══════════════════════════════════════════ */
+:root {
+  --font-display: 'Cabinet Grotesk', 'Georgia', serif;
+  --font-serif: 'Instrument Serif', 'Georgia', serif;
+  --font-body: 'Satoshi', 'Inter', sans-serif;
+
+  --color-bg: #070605;
+  --color-surface: #100f0e;
+  --color-surface-2: #161513;
+  --color-surface-offset: #1d1b19;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-text: #f5f4f2;
+  --color-text-muted: #a3a19b;
+  --color-text-faint: #5f5d58;
+  --color-primary: #ff6a1a;
+  --color-primary-hover: #ff8542;
+  --color-primary-glow: rgba(255, 106, 26, 0.15);
+
+  /* Trimester Hue-Accents */
+  --color-prep-accent: #60a5fa; --color-prep-glow: rgba(96, 165, 250, 0.15);
+  --color-t1-accent: #fbbf24; --color-t1-glow: rgba(251, 191, 36, 0.15);
+  --color-t2-accent: #34d399; --color-t2-glow: rgba(52, 211, 153, 0.15);
+  --color-t3-accent: #a78bfa; --color-t3-glow: rgba(167, 139, 250, 0.15);
+  --color-birth-accent: #f87171; --color-birth-glow: rgba(248, 113, 113, 0.15);
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  --transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  min-height: 100vh;
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  transition: background-color 0.8s ease;
+}
+
+/* Dynamic Ambient Glow Shadow Spots */
+.ambient-glow-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, var(--color-primary-glow) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+  transition: background 0.8s ease;
+}
+
+.container {
+  max-width: 1000px;
+  margin-inline: auto;
+  padding: var(--radius-xl) 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── HEADER ─────────────────────────────────────────────────── */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1.5rem;
+}
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  text-decoration: none;
+}
+.logo span {
+  color: var(--color-primary);
+}
+.nav-links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.back-btn {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: 0.5rem 1.25rem;
+  color: var(--color-text);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.back-btn:hover {
+  background: var(--color-border);
+  transform: translateY(-2px);
+}
+
+/* ── HERO TEXT ──────────────────────────────────────────────── */
+.hero-text-aligner {
+  text-align: center;
+  max-width: 800px;
+  margin-inline: auto;
+  margin-bottom: 3.5rem;
+}
+.eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-primary);
+  background: var(--color-primary-glow);
+  padding: 0.35rem 1rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.5rem;
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+}
+.hero-title span.accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary) 30%, var(--color-primary-hover) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: var(--transition);
+}
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* ── THE ADAPTIVE DIAL GATE ────────────────────────────────── */
+.adaptive-gate-wrapper {
+  max-width: 680px;
+  margin-inline: auto;
+  background: rgba(22, 21, 19, 0.4);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+  transition: border-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.gate-question {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+/* Styled Stage Selector Buttons */
+.stage-badges-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+@media (max-width: 600px) {
+  .stage-badges-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.stage-badge-btn {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.stage-badge-btn:hover {
+  background: var(--color-surface-offset);
+  color: var(--color-text);
+  border-color: currentColor;
+}
+.stage-badge-btn.active {
+  background: currentColor;
+  color: var(--color-bg);
+  border-color: currentColor;
+  box-shadow: 0 0 12px currentColor;
+}
+
+.stage-badge-btn.prep { color: var(--color-prep-accent); }
+.stage-badge-btn.t1 { color: var(--color-t1-accent); }
+.stage-badge-btn.t2 { color: var(--color-t2-accent); }
+.stage-badge-btn.t3 { color: var(--color-t3-accent); }
+.stage-badge-btn.birth { color: var(--color-birth-accent); }
+
+/* Input Field Dial */
+.input-dial-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 320px;
+  margin-inline: auto;
+}
+.dial-input {
+  width: 90px;
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-align: center;
+  color: var(--color-text);
+  outline: none;
+  transition: var(--transition);
+}
+.dial-input:focus {
+  border-color: currentColor;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.05);
+}
+.dial-label {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-text-muted);
+}
+
+/* ── 3D FLIP CONTAINER CARD ──────────────────────────────────── */
+.flip-card-wrapper {
+  perspective: 1000px;
+  width: 100%;
+  height: 200px;
+  margin-top: 0.5rem;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+}
+.flip-card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+/* Front & Back glass face styles */
+.flip-card-face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  background: var(--color-surface);
+}
+
+.flip-card-front {
+  background: var(--color-surface-2);
+  color: var(--color-text-muted);
+}
+.flip-card-back {
+  transform: rotateY(180deg);
+  background: rgba(22, 21, 19, 0.7);
+  align-items: flex-start;
+  text-align: left;
+}
+
+.priority-title {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-faint);
+  margin-bottom: 0.5rem;
+}
+.priority-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+.priority-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+.priority-marker {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+/* CTA Gate trigger */
+.gate-btn {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 2rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(255, 106, 26, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-inline: auto;
+  text-decoration: none;
+}
+.gate-btn:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 106, 26, 0.4);
+}
+
+/* ── ENTRY STYLING ──────────────────────────────────────────── */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-slide {
+  animation: slideInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+</style>
+</head>
+<body>
+
+<div class="ambient-glow-center" id="ambient-glow"></div>
+
+<div class="container animate-slide">
+  <!-- HEADER -->
+  <header>
+    <a href="#" class="logo">Dad<span>'s</span> Encyclopedia</a>
+    <div class="nav-links">
+      <a href="landing-preview-a.html" class="back-btn">← Concept A</a>
+      <a href="landing-preview.html" class="back-btn">← Concept B</a>
+      <a href="index.html" class="back-btn">Main Encyclopedia</a>
+    </div>
+  </header>
+
+  <!-- HERO CENTERED -->
+  <div class="hero-text-aligner">
+    <span class="eyebrow">Design Concept C Preview</span>
+    <h1 class="hero-title">
+      The Modern Dad's<br>
+      <span class="accent" id="dynamic-accent">Pregnancy Encyclopedia</span>
+    </h1>
+    <p class="hero-subtitle">
+      A comprehensive, week-by-week guide built for first-time fathers. From the first positive test to the first month home — every milestone, every question, every challenge covered.
+    </p>
+  </div>
+
+  <!-- THE ADAPTIVE GATE WIDGET -->
+  <div class="adaptive-gate-wrapper" id="adaptive-gate-panel">
+    
+    <div class="gate-question">What stage of pregnancy are you in?</div>
+
+    <!-- Quick stage select badges -->
+    <div class="stage-badges-grid">
+      <button class="stage-badge-btn prep active" onclick="setPregnancyStage('prep')">Prep</button>
+      <button class="stage-badge-btn t1" onclick="setPregnancyStage('t1')">Trimester 1</button>
+      <button class="stage-badge-btn t2" onclick="setPregnancyStage('t2')">Trimester 2</button>
+      <button class="stage-badge-btn t3" onclick="setPregnancyStage('t3')">Trimester 3</button>
+      <button class="stage-badge-btn birth" onclick="setPregnancyStage('birth')">Birth</button>
+    </div>
+
+    <!-- Numeric Input Dial -->
+    <div class="input-dial-block">
+      <input type="text" class="dial-input" id="week-input" value="Prep" oninput="handleWeekInput(this)">
+      <span class="dial-label" id="dial-indicator">Stage</span>
+    </div>
+
+    <!-- 3D Flipping Card priorities -->
+    <div class="flip-card-wrapper">
+      <div class="flip-card-inner" id="flip-card">
+        
+        <!-- Front: Prompt to type -->
+        <div class="flip-card-face flip-card-front">
+          <div style="font-size:2rem; margin-bottom:0.5rem">🤰</div>
+          <div style="font-weight:600; font-size:0.95rem">Type any week (1–40) or tap a Trimester above!</div>
+          <div style="font-size:0.8rem; margin-top:0.25rem">Watch the entire site ambient shadow and colors morph.</div>
+        </div>
+
+        <!-- Back: Dynamic Priority List -->
+        <div class="flip-card-face flip-card-back">
+          <div class="priority-title" id="priority-header-title">DAD PRIORITIES RIGHT NOW</div>
+          <div class="priority-list" id="priority-list-items">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Adaptive CTA Gate button -->
+    <a href="index.html#week-prep" class="gate-btn" id="dynamic-gate-btn">
+      <span>Launch Pre-Conception Playbook</span> →
+    </a>
+
+  </div>
+</div>
+
+<script>
+// Mock datasets for each trimester/week stage
+const STAGES_DATA = {
+  prep: {
+    accent: 'var(--color-prep-accent)',
+    glow: 'var(--color-prep-glow)',
+    title: 'Pre-Conception Stage',
+    dialValue: 'Prep',
+    dialLabel: 'Stage',
+    actionText: 'Launch Pre-Conception Playbook',
+    hash: '#week-prep',
+    priorities: [
+      "Cut down alcohol & start men's Zinc & Selenium multivitamins.",
+      "Review medical insurance policies to confirm maternity/hospital coverage.",
+      "Draft family savings budget & open baby fund savings account."
+    ]
+  },
+  t1: {
+    accent: 'var(--color-t1-accent)',
+    glow: 'var(--color-t1-glow)',
+    title: 'Trimester 1 Setup',
+    dialValue: '4',
+    dialLabel: 'Week',
+    actionText: 'Read Week 4 Pregnancy Guide',
+    hash: '#week-4',
+    priorities: [
+      "Purchase digital pregnancy tests to confirm.",
+      "Call OB-GYN clinic to book the 8-week ultrasound scan.",
+      "Support partner with early morning fatigue and morning sickness."
+    ]
+  },
+  t2: {
+    accent: 'var(--color-t2-accent)',
+    glow: 'var(--color-t2-glow)',
+    title: 'Trimester 2 Operations',
+    dialValue: '20',
+    dialLabel: 'Week',
+    actionText: 'Read Week 20 Anatomy Scan Guide',
+    hash: '#week-20',
+    priorities: [
+      "Prepare questions for the critical Level 2 Anatomy scan.",
+      "Talk daily to her belly—baby's hearing is actively listening.",
+      "Research nursery cribs & setup baby register checklist."
+    ]
+  },
+  t3: {
+    accent: 'var(--color-t3-accent)',
+    glow: 'var(--color-t3-glow)',
+    title: 'Trimester 3 Nesting',
+    dialValue: '36',
+    dialLabel: 'Week',
+    actionText: 'Read Week 36 Delivery Drill Guide',
+    hash: '#week-36',
+    priorities: [
+      "Confirm GBS test results and pediatrician shortlists.",
+      "Install infant car seat base and perform dry-run drive to ER.",
+      "Pack hospital dad-bags and finalize physical birth plans."
+    ]
+  },
+  birth: {
+    accent: 'var(--color-birth-accent)',
+    glow: 'var(--color-birth-glow)',
+    title: 'Month 1 & Labor',
+    dialValue: 'Birth',
+    dialLabel: 'Stage',
+    actionText: 'Launch Labor Coach Guide',
+    hash: '#week-birth',
+    priorities: [
+      "Time contractions and act as maternal medical advocate.",
+      "Hold baby skin-to-skin during the Golden Hour post-birth.",
+      "Step up as household gatekeeper during early healing recovery."
+    ]
+  }
+};
+
+// Set pregnancy stage and trigger animations
+function setPregnancyStage(stageKey) {
+  const stage = STAGES_DATA[stageKey];
+  if (!stage) return;
+
+  // Update active state in trimester badge buttons
+  document.querySelectorAll('.stage-badge-btn').forEach(btn => {
+    btn.classList.remove('active');
+    btn.style.boxShadow = '';
+    btn.style.backgroundColor = '';
+    btn.style.color = '';
+  });
+  
+  const activeBtn = document.querySelector(`.stage-badge-btn.${stageKey}`);
+  if (activeBtn) {
+    activeBtn.classList.add('active');
+    activeBtn.style.backgroundColor = stage.accent;
+    activeBtn.style.color = '#000';
+    activeBtn.style.boxShadow = `0 0 12px ${stage.accent}`;
+  }
+
+  // Update Input Dial fields
+  const input = document.getElementById('week-input');
+  if (input) {
+    input.value = stage.dialValue;
+    input.style.color = stage.accent;
+    input.style.borderColor = stage.accent;
+  }
+  
+  const dialLabel = document.getElementById('dial-indicator');
+  if (dialLabel) {
+    dialLabel.textContent = stage.dialLabel;
+    dialLabel.style.color = stage.accent;
+  }
+
+  // Morph Ambient glow shadow dynamically
+  const glow = document.getElementById('ambient-glow');
+  if (glow) {
+    glow.style.background = `radial-gradient(circle, ${stage.glow} 0%, transparent 70%)`;
+  }
+  
+  // Morph accent typography colors
+  const titleAccent = document.getElementById('dynamic-accent');
+  if (titleAccent) {
+    titleAccent.style.backgroundImage = `linear-gradient(135deg, ${stage.accent} 30%, #fff 100%)`;
+  }
+
+  // Morph panel border and shadow
+  const panel = document.getElementById('adaptive-gate-panel');
+  if (panel) {
+    panel.style.borderColor = stage.accent;
+    panel.style.boxShadow = `0 24px 60px ${stage.glow}`;
+  }
+
+  // 3D Flip priority cards to show custom list
+  const card = document.getElementById('flip-card');
+  const itemsContainer = document.getElementById('priority-list-items');
+  const headerText = document.getElementById('priority-header-title');
+  
+  if (itemsContainer) {
+    headerText.textContent = `${stage.title.toUpperCase()} · DAD PRIORITIES`;
+    itemsContainer.innerHTML = stage.priorities.map(p => `
+      <div class="priority-item">
+        <span class="priority-marker" style="background-color: ${stage.accent}; box-shadow: 0 0 6px ${stage.accent}"></span>
+        <span>${p}</span>
+      </div>
+    `).join('');
+  }
+
+  if (card) {
+    card.classList.add('flipped');
+  }
+
+  // Update gate dynamic CTA button
+  const cta = document.getElementById('dynamic-gate-btn');
+  if (cta) {
+    cta.innerHTML = `<span>${stage.actionText}</span> →`;
+    cta.style.background = stage.accent;
+    cta.style.boxShadow = `0 4px 12px ${stage.glow}`;
+    cta.href = 'index.html' + stage.hash;
+  }
+}
+
+// Handle key inputs into the numeric dial input
+function handleWeekInput(inputElement) {
+  const rawVal = inputElement.value.trim().toLowerCase();
+  
+  if (rawVal === '' || rawVal === 'prep') {
+    setPregnancyStage('prep');
+  } else if (rawVal === 'birth' || rawVal === 'labor') {
+    setPregnancyStage('birth');
+  } else {
+    const weekNum = parseInt(rawVal);
+    if (!isNaN(weekNum) && weekNum >= 1 && weekNum <= 40) {
+      if (weekNum <= 13) {
+        // T1
+        updateDialToCustomWeek(weekNum, 't1');
+      } else if (weekNum <= 27) {
+        // T2
+        updateDialToCustomWeek(weekNum, 't2');
+      } else {
+        // T3
+        updateDialToCustomWeek(weekNum, 't3');
+      }
+    }
+  }
+}
+
+// Direct sub-week updating from input text dial
+function updateDialToCustomWeek(weekNum, trimesterKey) {
+  const stage = STAGES_DATA[trimesterKey];
+  if (!stage) return;
+
+  // Highlight badge
+  document.querySelectorAll('.stage-badge-btn').forEach(btn => {
+    btn.classList.remove('active');
+    btn.style.boxShadow = '';
+    btn.style.backgroundColor = '';
+    btn.style.color = '';
+  });
+  
+  const activeBtn = document.querySelector(`.stage-badge-btn.${trimesterKey}`);
+  if (activeBtn) {
+    activeBtn.classList.add('active');
+    activeBtn.style.backgroundColor = stage.accent;
+    activeBtn.style.color = '#000';
+    activeBtn.style.boxShadow = `0 0 12px ${stage.accent}`;
+  }
+
+  const dialInput = document.getElementById('week-input');
+  if (dialInput) {
+    dialInput.style.color = stage.accent;
+    dialInput.style.borderColor = stage.accent;
+  }
+
+  const dialLabel = document.getElementById('dial-indicator');
+  if (dialLabel) {
+    dialLabel.textContent = 'Week';
+    dialLabel.style.color = stage.accent;
+  }
+
+  const glow = document.getElementById('ambient-glow');
+  if (glow) {
+    glow.style.background = `radial-gradient(circle, ${stage.glow} 0%, transparent 70%)`;
+  }
+
+  const titleAccent = document.getElementById('dynamic-accent');
+  if (titleAccent) {
+    titleAccent.style.backgroundImage = `linear-gradient(135deg, ${stage.accent} 30%, #fff 100%)`;
+  }
+
+  const panel = document.getElementById('adaptive-gate-panel');
+  if (panel) {
+    panel.style.borderColor = stage.accent;
+    panel.style.boxShadow = `0 24px 60px ${stage.glow}`;
+  }
+
+  // Adjust priorities list dynamically for specific subweeks
+  const itemsContainer = document.getElementById('priority-list-items');
+  const headerText = document.getElementById('priority-header-title');
+  const card = document.getElementById('flip-card');
+  
+  let priorities = stage.priorities;
+  if (weekNum === 1) {
+    priorities = [
+      "Keep track of the exact start date of this menstrual period.",
+      "Stock up on her preferred period pads, tampons, and comfort snacks.",
+      "Stay patient and supportive during her heavy cramps phase."
+    ];
+  } else if (weekNum === 12) {
+    priorities = [
+      "Review dating scan folders and prepare to announce the news to family.",
+      "Help her select comfortable maternity clothes as early bloating goes down.",
+      "Begin shortlisting pediatricians in your local insurance network."
+    ];
+  } else if (weekNum === 40) {
+    priorities = [
+      "Time contractions and prepare back massages to ease labor pressure.",
+      "Double check that the car has a full tank of gas and bags are in the trunk.",
+      "Stay calm, breathe with her, and contact delivery staff immediately."
+    ];
+  }
+
+  if (itemsContainer) {
+    headerText.textContent = `WEEK ${weekNum} · DAD PRIORITIES`;
+    itemsContainer.innerHTML = priorities.map(p => `
+      <div class="priority-item">
+        <span class="priority-marker" style="background-color: ${stage.accent}; box-shadow: 0 0 6px ${stage.accent}"></span>
+        <span>${p}</span>
+      </div>
+    `).join('');
+  }
+
+  if (card) card.classList.add('flipped');
+
+  // Update CTA btn
+  const cta = document.getElementById('dynamic-gate-btn');
+  if (cta) {
+    cta.innerHTML = `<span>Read Week ${weekNum} Pregnancy Guide</span> →`;
+    cta.style.background = stage.accent;
+    cta.style.boxShadow = `0 4px 12px ${stage.glow}`;
+    cta.href = `index.html#week-${weekNum}`;
+  }
+}
+
+// Initial boot
+document.addEventListener('DOMContentLoaded', () => {
+  setPregnancyStage('prep');
+});
+</script>
+
+</body>
+</html>
