@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,9 +17,9 @@
 
 <style>
 /* ═══════════════════════════════════════════
-   DESIGN TOKENS
-═══════════════════════════════════════════ */
-:root, [data-theme="light"] {
+   DESIGN TOKENS (Premium Dark-First)
+   ═══════════════════════════════════════════ */
+:root {
   --font-display: 'Cabinet Grotesk', 'Georgia', serif;
   --font-serif: 'Instrument Serif', 'Georgia', serif;
   --font-body: 'Satoshi', 'Inter', sans-serif;
@@ -38,30 +38,57 @@
   --space-10: 2.5rem; --space-12: 3rem;
   --space-16: 4rem; --space-20: 5rem; --space-24: 6rem;
 
-  /* Trimester color palette */
+  /* Trimester color palette HSL values */
   --prep-hue: 210;
-  --t1-hue: 32;
-  --t2-hue: 148;
-  --t3-hue: 280;
+  --t1-hue: 35;
+  --t2-hue: 155;
+  --t3-hue: 265;
   --birth-hue: 350;
 
-  --color-prep:   #dbeafe;
-  --color-prep-accent: #2563eb;
-  --color-t1:     #fef3c7;
-  --color-t1-accent: #d97706;
-  --color-t2:     #d1fae5;
-  --color-t2-accent: #059669;
-  --color-t3:     #ede9fe;
-  --color-t3-accent: #7c3aed;
-  --color-birth:  #fee2e2;
-  --color-birth-accent: #dc2626;
+  /* Trimester glow color definitions (high saturation for dark theme) */
+  --color-prep: #152033; --color-prep-accent: #60a5fa;
+  --color-t1: #2e2107; --color-t1-accent: #fbbf24;
+  --color-t2: #08281b; --color-t2-accent: #34d399;
+  --color-t3: #1a1030; --color-t3-accent: #a78bfa;
+  --color-birth: #280e0e; --color-birth-accent: #f87171;
 
+  /* Base Premium Dark Palette (Default) */
+  --color-bg: #070605;
+  --color-surface: #100f0e;
+  --color-surface-2: #161513;
+  --color-surface-offset: #1d1b19;
+  --color-divider: #262421;
+  --color-border: rgba(255, 255, 255, 0.07);
+  --color-text: #f5f4f2;
+  --color-text-muted: #a3a19b;
+  --color-text-faint: #5f5d58;
+  --color-text-inverse: #0d0c0b;
+  --color-primary: #ff6a1a;
+  --color-primary-hover: #ff8542;
+  --color-primary-highlight: rgba(255, 106, 26, 0.15);
+
+  --radius-sm: 0.375rem; --radius-md: 0.5rem;
+  --radius-lg: 0.75rem; --radius-xl: 1rem; --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 24px 48px rgba(0, 0, 0, 0.6);
+
+  --content-narrow: 640px;
+  --content-default: 960px;
+  --content-wide: 1200px;
+  --transition: 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="light"] {
   --color-bg: #faf9f7;
   --color-surface: #ffffff;
   --color-surface-2: #f5f4f1;
   --color-surface-offset: #eeece8;
   --color-divider: #e5e2dc;
-  --color-border: rgba(40,37,29,0.12);
+  --color-border: rgba(40, 37, 29, 0.12);
   --color-text: #1c1a16;
   --color-text-muted: #6b6860;
   --color-text-faint: #b0afa8;
@@ -70,40 +97,17 @@
   --color-primary-hover: #9d3e08;
   --color-primary-highlight: #fde8d8;
 
-  --radius-sm: 0.375rem; --radius-md: 0.5rem;
-  --radius-lg: 0.75rem; --radius-xl: 1rem; --radius-2xl: 1.5rem;
-  --radius-full: 9999px;
+  --color-prep: #dbeafe; --color-prep-accent: #2563eb;
+  --color-t1: #fef3c7; --color-t1-accent: #d97706;
+  --color-t2: #d1fae5; --color-t2-accent: #059669;
+  --color-t3: #ede9fe; --color-t3-accent: #7c3aed;
+  --color-birth: #fee2e2; --color-birth-accent: #dc2626;
 
   --shadow-sm: 0 1px 3px rgba(28,26,22,0.06), 0 1px 2px rgba(28,26,22,0.04);
   --shadow-md: 0 4px 12px rgba(28,26,22,0.08), 0 2px 6px rgba(28,26,22,0.04);
   --shadow-lg: 0 12px 32px rgba(28,26,22,0.12), 0 4px 12px rgba(28,26,22,0.06);
   --shadow-xl: 0 24px 48px rgba(28,26,22,0.14), 0 8px 20px rgba(28,26,22,0.07);
-
-  --content-narrow: 640px;
-  --content-default: 960px;
-  --content-wide: 1200px;
-  --transition: 200ms cubic-bezier(0.16,1,0.3,1);
-}
-
-[data-theme="dark"] {
-  --color-bg: #141210;
-  --color-surface: #1c1a16;
-  --color-surface-2: #232017;
-  --color-surface-offset: #2a271d;
-  --color-divider: #302d22;
-  --color-border: rgba(250,249,247,0.1);
-  --color-text: #e8e5df;
-  --color-text-muted: #928f86;
-  --color-text-faint: #5a5751;
-  --color-text-inverse: #1c1a16;
-  --color-primary: #f4874a;
-  --color-primary-hover: #f9a470;
-  --color-primary-highlight: #3d2010;
-  --color-prep: #1e2d45; --color-prep-accent: #60a5fa;
-  --color-t1: #3d2d08; --color-t1-accent: #fbbf24;
-  --color-t2: #0d2e1f; --color-t2-accent: #34d399;
-  --color-t3: #1e1535; --color-t3-accent: #a78bfa;
-  --color-birth: #2d0f0f; --color-birth-accent: #f87171;
+}71;
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.3); --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
   --shadow-lg: 0 12px 32px rgba(0,0,0,0.5); --shadow-xl: 0 24px 48px rgba(0,0,0,0.6);
 }
@@ -553,9 +557,181 @@ a:hover { text-decoration: underline; }
 }
 @keyframes reveal-fade { to { opacity: 1; } }
 
+/* ═══════════════════════════════════════════
+   PREGNANCY COMMAND CENTER & DASHBOARD STYLES
+   ═══════════════════════════════════════════ */
+.command-center-bar {
+  background: color-mix(in oklab, var(--color-surface) 93%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-3) 0;
+  position: sticky;
+  top: 67px;
+  z-index: 99;
+  transition: all var(--transition);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+.bar-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.5fr 1.5fr 1fr;
+  gap: var(--space-6);
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .bar-inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+  .command-center-bar {
+    position: static;
+  }
+}
+@media (max-width: 480px) {
+  .bar-inner {
+    grid-template-columns: 1fr;
+  }
+}
+.bar-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.bar-label {
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+}
+.bar-value {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+.bar-progress-container {
+  background: var(--color-surface-offset);
+  border-radius: var(--radius-full);
+  height: 6px;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 3px;
+  position: relative;
+}
+.bar-progress-fill {
+  background: var(--color-primary);
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.6s cubic-bezier(0.16,1,0.3,1);
+  box-shadow: 0 0 10px var(--color-primary);
+}
+.bar-progress-text {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-align: right;
+  margin-top: 2px;
+}
+
+/* Sidebar & Completed Dots glows */
+.week-dot.completed {
+  background: color-mix(in oklab, var(--color-t2-accent) 15%, transparent);
+  color: var(--color-t2-accent);
+  border-color: color-mix(in oklab, var(--color-t2-accent) 40%, transparent);
+  box-shadow: 0 0 8px color-mix(in oklab, var(--color-t2-accent) 20%, transparent);
+}
+.week-dot.current {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 15px color-mix(in oklab, var(--color-primary) 50%, transparent);
+  animation: pulse-glow 2s infinite alternate;
+}
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 8px color-mix(in oklab, var(--color-primary) 30%, transparent); }
+  100% { box-shadow: 0 0 16px color-mix(in oklab, var(--color-primary) 65%, transparent); }
+}
+
+/* Week status button */
+.btn-complete-toggle {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-offset);
+  color: var(--color-text);
+  font-weight: 700;
+  font-size: var(--text-xs);
+  transition: all var(--transition);
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: var(--space-2);
+}
+.btn-complete-toggle:hover {
+  background: var(--color-surface-2);
+  border-color: var(--color-text-muted);
+}
+.btn-complete-toggle.completed {
+  background: var(--color-t2-accent);
+  color: var(--color-text-inverse);
+  border-color: var(--color-t2-accent);
+  box-shadow: 0 4px 15px color-mix(in oklab, var(--color-t2-accent) 30%, transparent);
+}
+
+/* Checklist customization */
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  cursor: pointer;
+  transition: all var(--transition);
+  margin-bottom: var(--space-2);
+}
+.check-item:hover {
+  background: var(--color-surface-offset);
+  border-color: var(--color-text-muted);
+}
+.check-item.checked {
+  opacity: 0.55;
+  border-color: var(--color-divider);
+}
+.check-item.checked .ci-text {
+  text-decoration: line-through;
+  color: var(--color-text-muted);
+}
+.ci-box {
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--color-border);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+  margin-top: 2px;
+  color: white;
+}
+.check-item.checked .ci-box {
+  background: var(--color-t2-accent);
+  border-color: var(--color-t2-accent);
+}
+
+/* Custom premium glows for header */
+.site-header {
+  box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+}
+
 /* Print */
 @media print {
-  .site-header, .sidebar, .trimester-band { display: none; }
+  .site-header, .sidebar, .trimester-band, .command-center-bar { display: none; }
   .content-layout { grid-template-columns: 1fr; }
   .week-header { background: none; }
   body { font-size: 11pt; color: #000; }
@@ -600,6 +776,38 @@ a:hover { text-decoration: underline; }
     </div>
   </div>
 </header>
+
+<!-- 📊 PREGNANCY COMMAND CENTER (Progression Stats Banner) -->
+<div class="command-center-bar">
+  <div class="container--wide bar-inner">
+    <div class="bar-stat">
+      <span class="bar-label">Current Phase</span>
+      <span class="bar-value" id="dashboard-phase">Pre-Conception</span>
+    </div>
+    <div class="bar-stat">
+      <span class="bar-label">Current Week</span>
+      <span class="bar-value" id="dashboard-week">Planning</span>
+    </div>
+    <div class="bar-stat">
+      <span class="bar-label">Journey Progress</span>
+      <div class="bar-progress-container">
+        <div class="bar-progress-fill" id="dashboard-trim-progress" style="width: 0%"></div>
+      </div>
+      <span class="bar-progress-text" id="dashboard-trim-progress-text">0 / 42 weeks (0%)</span>
+    </div>
+    <div class="bar-stat">
+      <span class="bar-label">Tasks Completed</span>
+      <div class="bar-progress-container">
+        <div class="bar-progress-fill" id="dashboard-task-progress" style="width: 0%"></div>
+      </div>
+      <span class="bar-progress-text" id="dashboard-task-progress-text">0 / 0 completed</span>
+    </div>
+    <div class="bar-stat">
+      <span class="bar-label">Countdown</span>
+      <span class="bar-value" id="dashboard-countdown">280 days remaining</span>
+    </div>
+  </div>
+</div>
 
 <!-- ════════════════════════════════════════
      HERO
@@ -800,6 +1008,126 @@ a:hover { text-decoration: underline; }
   </div>
 </section>
 
+<section class="special-section" id="relationship" style="background:var(--color-surface-2)">
+  <div class="container--wide">
+    <div class="special-grid">
+      <div>
+        <span class="special-label" style="background:var(--color-t1);color:var(--color-t1-accent)">Section B</span>
+        <h2 class="special-title">Relationship Compass</h2>
+        <p style="font-size:var(--text-base);color:var(--color-text-muted);max-width:44ch;margin-bottom:var(--space-6)">Nurture your partnership, communicate clearly, and establish solid family boundaries together.</p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="fi-icon">🧭</div>
+            <div class="fi-content">
+              <div class="fi-title">Weekly Couple Check-Ins</div>
+              <div class="fi-body">Create space for empathy: ask how she's holding up, review the upcoming weekly agenda, and talk through any mutual anxieties without judgment.</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="fi-icon">🕯️</div>
+            <div class="fi-content">
+              <div class="fi-title">Intimacy Guidelines</div>
+              <div class="fi-body">Maintain connection through the physical and emotional shifts of each trimester. Understand when to prioritize gentle touch, comforting words, and validation.</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="fi-icon">⚖️</div>
+            <div class="fi-content">
+              <div class="fi-title">Division of Labor</div>
+              <div class="fi-body">Negotiate household responsibilities proactively. Step up and take over physically demanding tasks like lifting, grocery trips, and home maintenance.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="illus-placeholder" style="align-self:center">
+        <div class="ip-icon">❤️</div>
+        <div class="ip-title">[ILLUSTRATION: The Partnership Anchor]</div>
+        <div class="ip-desc">A warm, cozy living room scene showing two steaming mugs of tea next to a shared calendar, with glowing soft string-lights in the background.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="special-section" id="wellness">
+  <div class="container--wide">
+    <div class="special-grid" style="direction:rtl">
+      <div style="direction:ltr">
+        <span class="special-label" style="background:var(--color-t3);color:var(--color-t3-accent)">Section D</span>
+        <h2 class="special-title">Wellness Command Center</h2>
+        <p style="font-size:var(--text-base);color:var(--color-text-muted);max-width:44ch;margin-bottom:var(--space-6)">Mitigate stress, optimize your sleep, and prepare your body to carry the weight of new fatherhood.</p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="fi-icon">🧠</div>
+            <div class="fi-content">
+              <div class="fi-title">Dad's Mental Health Checklist</div>
+              <div class="fi-body">1 in 10 expecting dads experience prenatal anxiety or depression. Track your sleep quality, maintain connection with close friends, and speak openly when overwhelmed.</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="fi-icon">🧘‍♂️</div>
+            <div class="fi-content">
+              <div class="fi-title">Applied Stress Relief</div>
+              <div class="fi-body">Practice Box Breathing (inhale 4s, hold 4s, exhale 4s, hold 4s) to quickly down-regulate your nervous system during moments of intense pressure.</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="fi-icon">💪</div>
+            <div class="fi-content">
+              <div class="fi-title">Concentric Core Strength</div>
+              <div class="fi-body">Simple functional exercise guidelines: strengthen your back and core (planks, squats, deadlifts) to prepare for carrying baby carriers and car seats safely.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="illus-placeholder" style="direction:ltr;align-self:center">
+        <div class="ip-icon">🧘‍♂️</div>
+        <div class="ip-title">[ILLUSTRATION: The Wellness Sandbox]</div>
+        <div class="ip-desc">A clean, dark-themed wellness setup with a yoga mat, a water bottle, a foam roller, and a phone displaying a meditation progress tracker.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="special-section" id="culture" style="background:var(--color-surface-2)">
+  <div class="container--wide">
+    <div class="special-grid">
+      <div>
+        <span class="special-label" style="background:var(--color-birth);color:var(--color-birth-accent)">Section E</span>
+        <h2 class="special-title">Cultural Celebrations</h2>
+        <p style="font-size:var(--text-base);color:var(--color-text-muted);max-width:44ch;margin-bottom:var(--space-6)">Design modern rituals, celebrate pregnancy milestones, and welcome your child with meaningful traditions.</p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="fi-icon">✨</div>
+            <div class="fi-content">
+              <div class="fi-title">Honoring Shared Heritages</div>
+              <div class="fi-body">Talk about the family traditions you both grew up with, and blend them to establish new, unique rituals for your own household unit.</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="fi-icon">🍼</div>
+            <div class="fi-content">
+              <div class="fi-title">Modern Baby Shower Formats</div>
+              <div class="fi-body">Move away from formal gatherings: design a co-ed celebration that honors both mother and father together, focusing on friendship and support.</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="fi-icon">📸</div>
+            <div class="fi-content">
+              <div class="fi-title">Bump Photography Log</div>
+              <div class="fi-body">Simple, consistent photo setups to document her growth week-by-week. Capture the magical transformation in the exact same spot with a soft side-light.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="illus-placeholder" style="align-self:center">
+        <div class="ip-icon">✨</div>
+        <div class="ip-title">[ILLUSTRATION: The Ritual Hearth]</div>
+        <div class="ip-desc">A beautiful collage of Polaroid photos pinned to a corkboard, depicting pregnancy memories, bump progression milestones, and ultrasound prints.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ════════════════════════════════════════
      SOURCE LIBRARY
 ════════════════════════════════════════ -->
@@ -884,9 +1212,12 @@ a:hover { text-decoration: underline; }
       <div>
         <div class="footer-col-title">Special Sections</div>
         <div class="footer-links">
-          <a href="#toolkit">Modern Dad's Toolkit</a>
-          <a href="#financial">Financial Fortress</a>
-          <a href="#source-library">Source Library</a>
+          <a href="#toolkit">Section A: Modern Dad's Toolkit</a>
+          <a href="#relationship">Section B: Relationship Compass</a>
+          <a href="#financial">Section C: Financial Fortress</a>
+          <a href="#wellness">Section D: Wellness Command Center</a>
+          <a href="#culture">Section E: Cultural Celebrations</a>
+          <a href="#source-library">Reference Library</a>
         </div>
       </div>
       <div>
@@ -909,11 +1240,11 @@ a:hover { text-decoration: underline; }
      JAVASCRIPT
 ════════════════════════════════════════ -->
 <script>
-// Theme toggle
+// Theme toggle (Default to Dark first, persist in localStorage)
 (function(){
   const t = document.querySelector('[data-theme-toggle]');
   const r = document.documentElement;
-  let d = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+  let d = localStorage.getItem('theme') || 'dark';
   r.setAttribute('data-theme', d);
   const sunIcon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
   const moonIcon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
@@ -922,6 +1253,7 @@ a:hover { text-decoration: underline; }
     t.addEventListener('click', () => {
       d = d === 'dark' ? 'light' : 'dark';
       r.setAttribute('data-theme', d);
+      localStorage.setItem('theme', d);
       t.innerHTML = d === 'dark' ? sunIcon : moonIcon;
       t.setAttribute('aria-label', 'Switch to ' + (d === 'dark' ? 'light' : 'dark') + ' mode');
     });
@@ -930,21 +1262,164 @@ a:hover { text-decoration: underline; }
 
 // Mission tabs
 function switchTab(btn, panelId) {
-  document.querySelectorAll('.mission-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
-  document.querySelectorAll('.mission-panel').forEach(p => p.classList.remove('active'));
+  const tabGroup = btn.closest('.info-card');
+  if(!tabGroup) return;
+  tabGroup.querySelectorAll('.mission-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+  tabGroup.querySelectorAll('.mission-panel').forEach(p => p.classList.remove('active'));
   btn.classList.add('active');
   btn.setAttribute('aria-selected','true');
-  document.getElementById(panelId).classList.add('active');
+  const target = tabGroup.querySelector('#' + panelId);
+  if(target) target.classList.add('active');
 }
 
-// Checklist toggle
-function toggleCheck(item) {
-  item.classList.toggle('checked');
-  const box = item.querySelector('.ci-box');
-  if(item.classList.contains('checked')) {
+// ─── LOCAL STORAGE PERSISTENCE ENGINE ─────────────────────────
+
+// Check if a specific checklist item is checked
+function isItemChecked(weekId, type, index) {
+  const saved = JSON.parse(localStorage.getItem('dads-encyclopedia-checklists') || '{}');
+  const key = `${weekId}-${type}-${index}`;
+  return !!saved[key];
+}
+
+// Toggle a specific checklist item with localStorage update
+function toggleCheckItem(weekId, type, index, element) {
+  const saved = JSON.parse(localStorage.getItem('dads-encyclopedia-checklists') || '{}');
+  const key = `${weekId}-${type}-${index}`;
+  const newValue = !saved[key];
+  saved[key] = newValue;
+  localStorage.setItem('dads-encyclopedia-checklists', JSON.stringify(saved));
+  
+  element.classList.toggle('checked', newValue);
+  const box = element.querySelector('.ci-box');
+  if (newValue) {
     box.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>';
+    celebrateCheck(box);
   } else {
     box.innerHTML = '';
+  }
+  
+  // Re-calculate progression stats and update command center
+  calculateOverallProgress();
+}
+
+function celebrateCheck(el) {
+  const span = document.createElement('span');
+  span.className = 'check-celebrate';
+  span.textContent = '✅';
+  el.appendChild(span);
+  setTimeout(() => span.remove(), 800);
+}
+
+// Check if a week is marked as completed
+function isWeekCompleted(weekId) {
+  const completed = JSON.parse(localStorage.getItem('dads-encyclopedia-completed-weeks') || '{}');
+  return !!completed[weekId];
+}
+
+// Toggle week completion state
+function toggleWeekCompleted(weekId) {
+  const completed = JSON.parse(localStorage.getItem('dads-encyclopedia-completed-weeks') || '{}');
+  const newValue = !completed[weekId];
+  completed[weekId] = newValue;
+  localStorage.setItem('dads-encyclopedia-completed-weeks', JSON.stringify(completed));
+  
+  const btn = document.getElementById('week-complete-btn');
+  if (btn) {
+    btn.textContent = newValue ? '✓ Marked as Completed' : 'Mark Week as Completed';
+    btn.className = 'btn-complete-toggle ' + (newValue ? 'completed' : '');
+  }
+  
+  // Update UI components
+  updateSidebarDots();
+  calculateOverallProgress();
+}
+
+// Update the dot grid classes on the fly
+function updateSidebarDots() {
+  const currentKey = document.querySelector('article')?.id?.replace('week-', '') || 'prep';
+  document.querySelectorAll('.week-dot').forEach(dot => {
+    const k = dot.dataset.weekKey;
+    if (!k) return;
+    
+    dot.className = 'week-dot';
+    if (k === currentKey) {
+      dot.classList.add('current');
+    } else if (isWeekCompleted(k)) {
+      dot.classList.add('completed');
+    } else {
+      dot.classList.add('future');
+    }
+  });
+}
+
+// Calculate pregnancy and checklist stats for the Pregnancy Command Center
+function calculateOverallProgress() {
+  let totalTasks = 0;
+  let completedTasks = 0;
+  
+  // Scan through all weeks inside WEEKS_DATA dynamically
+  Object.keys(WEEKS_DATA).forEach(weekId => {
+    const w = WEEKS_DATA[weekId];
+    if (w.practicalTasks) {
+      w.practicalTasks.forEach((_, idx) => {
+        totalTasks++;
+        if (isItemChecked(weekId, 'practical', idx)) completedTasks++;
+      });
+    }
+    if (w.mustBuy) {
+      w.mustBuy.forEach((_, idx) => {
+        totalTasks++;
+        if (isItemChecked(weekId, 'mustBuy', idx)) completedTasks++;
+      });
+    }
+    if (w.optionalBuy) {
+      w.optionalBuy.forEach((_, idx) => {
+        totalTasks++;
+        if (isItemChecked(weekId, 'optionalBuy', idx)) completedTasks++;
+      });
+    }
+  });
+  
+  const taskPercentage = totalTasks ? Math.round((completedTasks / totalTasks) * 100) : 0;
+  
+  // Count completed weeks out of total 42 weeks
+  const completedWeeksMap = JSON.parse(localStorage.getItem('dads-encyclopedia-completed-weeks') || '{}');
+  let completedWeeksCount = 0;
+  const totalWeeks = Object.keys(WEEKS_DATA).length;
+  
+  Object.keys(WEEKS_DATA).forEach(weekId => {
+    if (completedWeeksMap[weekId]) completedWeeksCount++;
+  });
+  
+  const overallWeekPercentage = Math.round((completedWeeksCount / totalWeeks) * 100);
+  
+  // Update Stats elements in the DOM
+  const trimFill = document.getElementById('dashboard-trim-progress');
+  const trimText = document.getElementById('dashboard-trim-progress-text');
+  if (trimFill) trimFill.style.width = overallWeekPercentage + '%';
+  if (trimText) trimText.textContent = `${completedWeeksCount} / ${totalWeeks} weeks (${overallWeekPercentage}%)`;
+  
+  const taskFill = document.getElementById('dashboard-task-progress');
+  const taskText = document.getElementById('dashboard-task-progress-text');
+  if (taskFill) taskFill.style.width = taskPercentage + '%';
+  if (taskText) taskText.textContent = `${completedTasks} / ${totalTasks} tasks (${taskPercentage}%)`;
+  
+  // Dynamic color updating based on active trimester
+  const activeArticle = document.querySelector('article');
+  if (activeArticle) {
+    const weekKey = activeArticle.id.replace('week-', '');
+    const data = WEEKS_DATA[weekKey];
+    if (data) {
+      const activeColor = `var(--color-${data.trimester}-accent)`;
+      if (trimFill) {
+        trimFill.style.background = activeColor;
+        trimFill.style.boxShadow = `0 0 10px ${activeColor}`;
+      }
+      if (taskFill) {
+        taskFill.style.background = activeColor;
+        taskFill.style.boxShadow = `0 0 10px ${activeColor}`;
+      }
+    }
   }
 }
 
@@ -3437,13 +3912,47 @@ function renderWeek(key) {
     ? data.symptomTable.map(s => `<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-bottom:1px solid var(--color-border);font-size:var(--text-sm)"><div><strong>${s.name}</strong></div><div>${s.why}</div><div>${s.help}</div></div>`).join('')
     : '<div style="font-size:var(--text-sm);color:var(--color-text-muted)">No major symptoms this week.</div>';
 
+  // Build Checklist Items with saved states
+  const practicalCheckItems = data.practicalTasks && data.practicalTasks.length > 0
+    ? data.practicalTasks.map((t, idx) => {
+        const checked = isItemChecked(data.id, 'practical', idx);
+        return `
+        <div class="check-item ${checked ? 'checked' : ''}" onclick="toggleCheckItem('${data.id}', 'practical', ${idx}, this)">
+          <div class="ci-box">${checked ? '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>' : ''}</div>
+          <div class="ci-text">${t}</div>
+        </div>`;
+      }).join('')
+    : '<div style="font-size:var(--text-sm);color:var(--color-text-muted)">No specific tasks this week.</div>';
+
+  const mustBuyItems = data.mustBuy && data.mustBuy.length > 0
+    ? data.mustBuy.map((b, idx) => {
+        const checked = isItemChecked(data.id, 'mustBuy', idx);
+        return `
+        <div class="check-item ${checked ? 'checked' : ''}" onclick="toggleCheckItem('${data.id}', 'mustBuy', ${idx}, this)">
+          <div class="ci-box">${checked ? '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>' : ''}</div>
+          <div class="ci-text">${b}</div>
+        </div>`;
+      }).join('')
+    : '<div style="font-size:var(--text-sm);color:var(--color-text-muted)">None this week</div>';
+
+  const optionalBuyItems = data.optionalBuy && data.optionalBuy.length > 0
+    ? data.optionalBuy.map((b, idx) => {
+        const checked = isItemChecked(data.id, 'optionalBuy', idx);
+        return `
+        <div class="check-item ${checked ? 'checked' : ''}" onclick="toggleCheckItem('${data.id}', 'optionalBuy', ${idx}, this)">
+          <div class="ci-box">${checked ? '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>' : ''}</div>
+          <div class="ci-text">${b}</div>
+        </div>`;
+      }).join('')
+    : '<div style="font-size:var(--text-sm);color:var(--color-text-muted)">None this week</div>';
+
   // We recreate the layout structure with all data
   const html = `
 <article id="week-${data.id}">
-  <div class="week-header">
+  <div class="week-header" style="border-top: 4px solid var(--color-${data.trimester}-accent); background: linear-gradient(180deg, var(--color-${data.trimester}) 0%, var(--color-bg) 100%)">
     <div class="container">
       <div class="week-eyebrow">
-        <span class="week-badge">Week ${data.id === 'prep' || data.id === 'birth' ? '' : data.id + ' · '}${data.trimesterLabel}</span>
+        <span class="week-badge" style="background: var(--color-${data.trimester}-accent)">Week ${data.id === 'prep' || data.id === 'birth' ? '' : data.id + ' · '}${data.trimesterLabel}</span>
       </div>
       <h2 class="week-title">${data.emoji} ${data.title}</h2>
       <p class="week-subtitle">${data.subtitle}</p>
@@ -3484,13 +3993,13 @@ function renderWeek(key) {
           
           <div class="info-card fade-in">
             <div class="info-card-header">
-              <div class="info-card-icon icon-baby">👶</div>
+              <div class="info-card-icon icon-baby" style="background: color-mix(in oklab, var(--color-${data.trimester}-accent) 15%, transparent)">👶</div>
               <div>
                 <div class="info-card-title">Baby's Development</div>
               </div>
             </div>
             <div class="list-items">
-              ${data.babyDevBullets.map(b => `<div class="list-item"><span class="list-bullet"></span><span>${b}</span></div>`).join('')}
+              ${data.babyDevBullets.map(b => `<div class="list-item"><span class="list-bullet" style="background: var(--color-${data.trimester}-accent)"></span><span>${b}</span></div>`).join('')}
             </div>
           </div>
           
@@ -3499,23 +4008,25 @@ function renderWeek(key) {
               <div class="info-card-icon icon-partner">❤️</div>
               <div>
                 <div class="info-card-title">Partner's Journey</div>
-                <div class="info-card-desc">Symptom decoder and how to help</div>
+                <div class="info-card-sub">Symptom decoder and how to help</div>
               </div>
             </div>
             <div style="margin-top:var(--space-4)">
               <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--space-2);padding-bottom:var(--space-2);border-bottom:2px solid var(--color-border);font-weight:700;font-size:var(--text-xs);text-transform:uppercase;letter-spacing:0.05em;color:var(--color-text-muted)">
                 <div>Symptom</div><div>Why it's happening</div><div>How you can help</div>
               </div>
-              ${symptomRows}
+              <div style="display: flex; flex-direction: column; gap: var(--space-2)">
+                ${symptomRows}
+              </div>
             </div>
           </div>
 
           <div class="info-card fade-in" style="margin-top:var(--space-6)">
             <div class="info-card-header">
-              <div class="info-card-icon icon-mission">🚀</div>
+              <div class="info-card-icon icon-mission" style="background: color-mix(in oklab, var(--color-prep-accent) 15%, transparent)">🚀</div>
               <div>
-                <div class="info-card-title">Mission Control</div>
-                <div class="info-card-desc">Your dad duties for this week</div>
+                <div class="info-card-title">Dad's Mission Control</div>
+                <div class="info-card-sub">Your dad duties for this week</div>
               </div>
             </div>
             <div class="mission-tabs">
@@ -3523,7 +4034,7 @@ function renderWeek(key) {
               <button class="mission-tab" onclick="switchTab(this, 'tab-practical')" aria-selected="false">Practical</button>
               <button class="mission-tab" onclick="switchTab(this, 'tab-relationship')" aria-selected="false">Relationship</button>
             </div>
-            <div class="mission-content">
+            <div class="mission-content" style="margin-top: var(--space-4)">
               <div id="tab-emotional" class="mission-panel active">
                 <ul style="padding-left:var(--space-4);margin:0;font-size:var(--text-sm)">
                   ${data.emotionalScripts.map(s => `<li style="margin-bottom:var(--space-2)">"${s}"</li>`).join('')}
@@ -3531,11 +4042,7 @@ function renderWeek(key) {
               </div>
               <div id="tab-practical" class="mission-panel">
                 <div class="checklist">
-                  ${data.practicalTasks.map(t => `
-                  <div class="check-item" onclick="toggleCheck(this)">
-                    <div class="ci-box"></div>
-                    <div class="ci-text">${t}</div>
-                  </div>`).join('')}
+                  ${practicalCheckItems}
                 </div>
               </div>
               <div id="tab-relationship" class="mission-panel">
@@ -3548,13 +4055,13 @@ function renderWeek(key) {
 
           <div class="info-card fade-in" style="margin-top:var(--space-6); background:var(--color-surface-2)">
             <div class="info-card-header">
-              <div class="info-card-icon">🧠</div>
+              <div class="info-card-icon" style="background: var(--color-surface-offset)">🧠</div>
               <div>
                 <div class="info-card-title">Takeaways</div>
               </div>
             </div>
             <div class="list-items" style="margin-top:var(--space-4)">
-              ${data.takeaways.map(t => `<div class="list-item"><span class="list-bullet"></span><span style="font-weight:500">${t}</span></div>`).join('')}
+              ${data.takeaways.map(t => `<div class="list-item"><span class="list-bullet" style="background: var(--color-${data.trimester}-accent)"></span><span style="font-weight:500">${t}</span></div>`).join('')}
             </div>
           </div>
 
@@ -3562,13 +4069,22 @@ function renderWeek(key) {
         
         <aside class="sidebar">
             <div class="sidebar-card">
+              <div class="sidebar-title">🏁 Week Status</div>
+              <p style="font-size:var(--text-sm);margin-bottom:var(--space-2);color:var(--color-text-muted)">Mark this week as completed once you review the content and priority actions:</p>
+              <button id="week-complete-btn" class="btn-complete-toggle ${isWeekCompleted(data.id) ? 'completed' : ''}" onclick="toggleWeekCompleted('${data.id}')">
+                ${isWeekCompleted(data.id) ? '✓ Marked as Completed' : 'Mark Week as Completed'}
+              </button>
+            </div>
+
+            <div class="sidebar-card" style="margin-top:var(--space-6)">
                 <div class="sidebar-title">
                   Progress Tracker
                 </div>
                 <p style="font-size:var(--text-sm);margin-bottom:var(--space-4)">Select a week below:</p>
                 <div class="progress-weeks" style="gap: 5px;">
                   ${Object.keys(WEEKS_DATA).map(k => `
-                    <div class="week-dot ${k===key ? 'current' : 'completed'}" 
+                    <div class="week-dot" 
+                         data-week-key="${k}"
                          onclick="renderWeek('${k}')" 
                          style="cursor:pointer"
                          title="${WEEKS_DATA[k].title}">
@@ -3581,10 +4097,10 @@ function renderWeek(key) {
             <div class="sidebar-card" style="margin-top:var(--space-6)">
               <div class="sidebar-title">🛒 Dad's Shopping List</div>
               <div class="checklist" style="margin-top:var(--space-4)">
-                <div style="font-weight:700;font-size:var(--text-xs);text-transform:uppercase;margin-bottom:var(--space-2)">Must Buy</div>
-                ${data.mustBuy && data.mustBuy.length > 0 ? data.mustBuy.map(b => `<div class="check-item" onclick="toggleCheck(this)"><div class="ci-box"></div><div class="ci-text">${b}</div></div>`).join('') : '<div style="font-size:var(--text-sm);color:var(--color-text-muted)">None this week</div>'}
-                <div style="font-weight:700;font-size:var(--text-xs);text-transform:uppercase;margin:var(--space-4) 0 var(--space-2) 0">Optional</div>
-                ${data.optionalBuy && data.optionalBuy.length > 0 ? data.optionalBuy.map(b => `<div class="check-item" onclick="toggleCheck(this)"><div class="ci-box"></div><div class="ci-text">${b}</div></div>`).join('') : '<div style="font-size:var(--text-sm);color:var(--color-text-muted)">None this week</div>'}
+                <div style="font-weight:700;font-size:var(--text-xs);text-transform:uppercase;margin-bottom:var(--space-2);color:var(--color-text-muted)">Must Buy</div>
+                ${mustBuyItems}
+                <div style="font-weight:700;font-size:var(--text-xs);text-transform:uppercase;margin:var(--space-4) 0 var(--space-2) 0;color:var(--color-text-muted)">Optional</div>
+                ${optionalBuyItems}
               </div>
             </div>
 
@@ -3594,7 +4110,7 @@ function renderWeek(key) {
                 ${data.medicalRoadmap.map(m => `<li style="margin-bottom:var(--space-2)">${m}</li>`).join('')}
               </ul>
               ${data.questions && data.questions.length > 0 ? `
-              <div style="font-weight:700;font-size:var(--text-xs);text-transform:uppercase;margin:var(--space-4) 0 var(--space-2) 0">Questions to Ask</div>
+              <div style="font-weight:700;font-size:var(--text-xs);text-transform:uppercase;margin:var(--space-4) 0 var(--space-2) 0;color:var(--color-text-muted)">Questions to Ask</div>
               <ul style="padding-left:var(--space-4);font-size:var(--text-sm);color:var(--color-text-muted)">
                 ${data.questions.map(q => `<li>${q}</li>`).join('')}
               </ul>` : ''}
@@ -3622,6 +4138,29 @@ function renderWeek(key) {
     if(pill.classList.contains(data.trimester)) pill.classList.add('active');
   });
   
+  // Update Command Center Bar values
+  const phaseLabel = document.getElementById('dashboard-phase');
+  const weekLabel = document.getElementById('dashboard-week');
+  if (phaseLabel) phaseLabel.textContent = data.trimesterLabel;
+  if (weekLabel) weekLabel.textContent = data.id === 'prep' ? 'Pre-Conception' : (data.id === 'birth' ? 'Birth & Beyond' : `Week ${data.id}`);
+  
+  // Update countdown
+  let daysRemaining = 0;
+  if (data.id === 'prep') daysRemaining = 280;
+  else if (data.id === 'birth') daysRemaining = 0;
+  else {
+    const weekNum = parseInt(data.id) || 1;
+    daysRemaining = Math.max(0, 280 - (weekNum * 7));
+  }
+  const countdownElement = document.getElementById('dashboard-countdown');
+  if (countdownElement) {
+    countdownElement.textContent = daysRemaining > 0 ? `${daysRemaining} days remaining` : 'Birth Day!';
+  }
+  
+  // Re-sync UI state for all dots and overall progress bars
+  updateSidebarDots();
+  calculateOverallProgress();
+  
   // Scroll to top of week display smoothly
   document.getElementById('week-display-container').scrollIntoView({behavior: 'smooth', block: 'start'});
 }
@@ -3638,6 +4177,8 @@ document.addEventListener('DOMContentLoaded', () => {
         else if (hash === 'third-trimester') initialKey = '28';
         else if (hash === 'birth') initialKey = 'birth';
     }
+    
+    // Initial render
     renderWeek(initialKey);
     
     // Override trimester buttons to use JS render instead of hash links
@@ -3649,6 +4190,22 @@ document.addEventListener('DOMContentLoaded', () => {
             else if(btn.classList.contains('t2')) renderWeek('14');
             else if(btn.classList.contains('t3')) renderWeek('28');
             else if(btn.classList.contains('birth')) renderWeek('birth');
+        });
+    });
+    
+    // Override header nav pills to render dynamically
+    document.querySelectorAll('.nav-pill').forEach(pill => {
+        pill.addEventListener('click', (e) => {
+            const href = pill.getAttribute('href');
+            if (href) {
+                e.preventDefault();
+                const hash = href.replace('#week-', '').replace('#', '');
+                if (hash === 'pre-conception') renderWeek('prep');
+                else if (hash === 'second-trimester') renderWeek('14');
+                else if (hash === 'third-trimester') renderWeek('28');
+                else if (hash === 'birth') renderWeek('birth');
+                else if (WEEKS_DATA[hash]) renderWeek(hash);
+            }
         });
     });
 });
