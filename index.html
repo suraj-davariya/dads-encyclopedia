@@ -4082,6 +4082,49 @@ const WEEKS_DATA = {
   }
 };
 
+
+// ─── JOURNAL PROMPTS & DAD WINS STRUCTURES ─────────────────────
+const JOURNAL_PROMPTS = {
+  prep: "How do you feel about embarking on this pregnancy journey? What kind of father do you want to become, and what fears/excitements do you have?",
+  t1: "What was your immediate reaction to the positive test? How are you supporting your partner through these early, often intense physical symptoms?",
+  t2: "Have you felt the baby kick yet or heard the heartbeat? What are your hopes and thoughts as you plan the nursery and prepare for the anatomy scan?",
+  t3: "As the due date approaches, how are your hospital bag, driving route, and home preparations coming along? What are your feelings about labor and birth?",
+  birth: "Describe the day of labor and birth. What did it feel like holding your baby for the first time? What reflections do you have on this massive milestone?"
+};
+
+const DAD_WINS_DATA = {
+  prep: [
+    "Discussed pregnancy timeline and goals with partner",
+    "Started or adjusted our family financial savings plan",
+    "Researched prenatal vitamins and healthy lifestyle adjustments",
+    "Read the Pre-Conception preparation guide in the Encyclopedia"
+  ],
+  t1: [
+    "Attended the first ultrasound appointment together",
+    "Helped relieve or support partner's morning sickness",
+    "Read weekly baby development milestones to see how they grow",
+    "Completed first trimester checklists and OB doctor questions"
+  ],
+  t2: [
+    "Felt the baby's first kick or attended the anatomy scan",
+    "Discussed birth preferences and baby registry options",
+    "Took on extra household tasks during partner's high-energy weeks",
+    "Completed second trimester checklists and bonding lab exercises"
+  ],
+  t3: [
+    "Packed and double-checked the hospital bag with partner",
+    "Completed a physical dry-run drive to the delivery room entrance",
+    "Finalized our birth plan preferences and pediatrician backup",
+    "Set up the car seat and nursery sleeping arrangements safely"
+  ],
+  birth: [
+    "Supported partner during labor stages / was an active coach",
+    "Cut the umbilical cord or acted as the gatekeeper for visitors",
+    "Held baby skin-to-skin during the critical golden hour",
+    "Took photos/videos of the first moments and helped with feeding setup"
+  ]
+};
+
 function renderWeek(key) {
   const data = WEEKS_DATA[key];
   if(!data) return;
@@ -4126,6 +4169,91 @@ function renderWeek(key) {
         </div>`;
       }).join('')
     : '<div style="font-size:var(--text-sm);color:var(--color-text-muted)">None this week</div>';
+
+  // Load weekly journal state
+  const journalPrompt = JOURNAL_PROMPTS[data.trimester] || "Reflect on this week's progress, emotions, and how you are supporting your partner.";
+  const journalEntry = JSON.parse(localStorage.getItem('dads-encyclopedia-journals') || '{}')[data.id] || { text: '', mood: '', wins: {} };
+  
+  const moodEmojis = [
+    { emoji: '😴', label: 'Exhausted', name: 'exhausted' },
+    { emoji: '🤩', label: 'Excited', name: 'excited' },
+    { emoji: '🤯', label: 'Overwhelmed', name: 'overwhelmed' },
+    { emoji: '🤔', label: 'Contemplative', name: 'contemplative' },
+    { emoji: '😌', label: 'Peaceful', name: 'peaceful' }
+  ];
+  
+  const moodButtonsHtml = moodEmojis.map(m => {
+    const isSelected = journalEntry.mood === m.name;
+    return `
+      <button class="mood-btn ${isSelected ? 'selected' : ''}" 
+              data-mood-name="${m.name}"
+              onclick="selectJournalMood('${data.id}', '${m.name}', this)">
+        <span>${m.emoji}</span> ${m.label}
+      </button>
+    `;
+  }).join('');
+
+  const trimesterWins = DAD_WINS_DATA[data.trimester] || [];
+  const dadWinsHtml = trimesterWins.map((w, idx) => {
+    const isChecked = !!(journalEntry.wins && journalEntry.wins[idx]);
+    return `
+      <div class="win-item ${isChecked ? 'checked' : ''}" onclick="toggleDadWinItem('${data.id}', ${idx}, this)">
+        <div class="win-checkbox">${isChecked ? '✓' : ''}</div>
+        <span>${w}</span>
+      </div>
+    `;
+  }).join('');
+
+  const journalCardHtml = `
+    <div class="info-card fade-in journal-card" style="margin-top:var(--space-6)">
+      <div class="journal-header">
+        <div class="info-card-header" style="margin-bottom:0">
+          <div class="info-card-icon icon-journal" style="background: color-mix(in oklab, var(--color-${data.trimester}-accent) 15%, transparent)">✍️</div>
+          <div>
+            <div class="info-card-title">Dad's Weekly Journal</div>
+            <div class="info-card-sub">Your reflections, mood, and achievements</div>
+          </div>
+        </div>
+        <button class="btn-complete-toggle" style="padding:0.35rem 0.75rem;font-size:0.8rem;border-radius:50px" onclick="openJournalHistory()">
+          📜 View Journey
+        </button>
+      </div>
+
+      <div class="journal-prompt" style="border-left-color: var(--color-${data.trimester}-accent)">
+        "${journalPrompt}"
+      </div>
+
+      <div class="mood-tracker">
+        <div class="mood-label">Weekly Mood & Energy Check-in</div>
+        <div class="mood-buttons">
+          ${moodButtonsHtml}
+        </div>
+      </div>
+
+      <div class="dad-wins">
+        <div class="wins-title">Dad Wins This Week</div>
+        <div class="wins-grid">
+          ${dadWinsHtml}
+        </div>
+      </div>
+
+      <div class="reflection-editor">
+        <div class="wins-title">My Reflections & Notes</div>
+        <textarea class="journal-textarea" 
+                  placeholder="Write down any thoughts, ultrasound details, symptoms you helped manage, baby shopping wins, or things you learned..." 
+                  oninput="handleJournalInput('${data.id}', this)">${journalEntry.text || ''}</textarea>
+        <div class="journal-footer">
+          <div class="autosave-indicator" id="autosave-${data.id}">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Auto-saved to LocalStorage
+          </div>
+          <button class="btn-complete-toggle completed" style="font-size:0.85rem;padding:0.4rem 1rem" onclick="saveJournalEntryImmediately('${data.id}')">
+            ✓ Save Entry
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
 
   // We recreate the layout structure with all data
   const html = `
@@ -4253,6 +4381,8 @@ function renderWeek(key) {
             </div>
           </div>
 
+          ${journalCardHtml}
+
           <div class="info-card fade-in" style="margin-top:var(--space-6); background:var(--color-surface-2)">
             <div class="info-card-header">
               <div class="info-card-icon" style="background: var(--color-surface-offset)">🧠</div>
@@ -4288,7 +4418,7 @@ function renderWeek(key) {
                          onclick="renderWeek('${k}')" 
                          style="cursor:pointer"
                          title="${WEEKS_DATA[k].title}">
-                      ${k === 'prep' ? 'P' : (k === 'birth' ? 'B' : k)}
+                       ${k === 'prep' ? 'P' : (k === 'birth' ? 'B' : k)}
                     </div>
                   `).join('')}
                 </div>
@@ -4365,6 +4495,189 @@ function renderWeek(key) {
   document.getElementById('week-display-container').scrollIntoView({behavior: 'smooth', block: 'start'});
 }
 
+// ─── JOURNAL PERSISTENCE & AUTO-SAVE CORE FUNCTIONS ────────────
+function saveJournalField(weekId, field, value) {
+  const journals = JSON.parse(localStorage.getItem('dads-encyclopedia-journals') || '{}');
+  if (!journals[weekId]) {
+    journals[weekId] = { text: '', mood: '', wins: {} };
+  }
+  journals[weekId][field] = value;
+  localStorage.setItem('dads-encyclopedia-journals', JSON.stringify(journals));
+}
+
+let journalAutoSaveTimeout = null;
+function handleJournalInput(weekId, textarea) {
+  const indicator = document.getElementById(`autosave-${weekId}`);
+  if (indicator) {
+    indicator.textContent = '💾 Saving...';
+    indicator.className = 'autosave-indicator saving';
+  }
+  
+  if (journalAutoSaveTimeout) clearTimeout(journalAutoSaveTimeout);
+  journalAutoSaveTimeout = setTimeout(() => {
+    const text = textarea.value;
+    saveJournalField(weekId, 'text', text);
+    if (indicator) {
+      indicator.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Auto-saved to LocalStorage';
+      indicator.className = 'autosave-indicator saved';
+    }
+  }, 1000);
+}
+
+function saveJournalEntryImmediately(weekId) {
+  const textarea = document.querySelector(`.journal-textarea`);
+  if (textarea) {
+    saveJournalField(weekId, 'text', textarea.value);
+    const indicator = document.getElementById(`autosave-${weekId}`);
+    if (indicator) {
+      indicator.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Saved!';
+      indicator.className = 'autosave-indicator saved';
+    }
+  }
+}
+
+function selectJournalMood(weekId, moodName, btn) {
+  const buttons = btn.parentElement.querySelectorAll('.mood-btn');
+  buttons.forEach(b => b.classList.remove('selected'));
+  
+  const journals = JSON.parse(localStorage.getItem('dads-encyclopedia-journals') || '{}');
+  const currentMood = journals[weekId] ? journals[weekId].mood : '';
+  
+  if (currentMood === moodName) {
+    saveJournalField(weekId, 'mood', '');
+  } else {
+    btn.classList.add('selected');
+    saveJournalField(weekId, 'mood', moodName);
+  }
+}
+
+function toggleDadWinItem(weekId, winIdx, el) {
+  const journals = JSON.parse(localStorage.getItem('dads-encyclopedia-journals') || '{}');
+  if (!journals[weekId]) {
+    journals[weekId] = { text: '', mood: '', wins: {} };
+  }
+  if (!journals[weekId].wins) {
+    journals[weekId].wins = {};
+  }
+  
+  const isChecked = !journals[weekId].wins[winIdx];
+  journals[weekId].wins[winIdx] = isChecked;
+  localStorage.setItem('dads-encyclopedia-journals', JSON.stringify(journals));
+  
+  el.classList.toggle('checked', isChecked);
+  const checkbox = el.querySelector('.win-checkbox');
+  checkbox.textContent = isChecked ? '✓' : '';
+}
+
+function openJournalHistory() {
+  const modal = document.getElementById('journal-history-modal');
+  if (!modal) return;
+  
+  const journals = JSON.parse(localStorage.getItem('dads-encyclopedia-journals') || '{}');
+  const timelineContainer = document.getElementById('journal-timeline-container');
+  
+  const activeWeeks = Object.keys(WEEKS_DATA).filter(weekId => {
+    const entry = journals[weekId];
+    if (!entry) return false;
+    const hasText = entry.text && entry.text.trim().length > 0;
+    const hasMood = !!entry.mood;
+    const hasWins = entry.wins && Object.values(entry.wins).some(v => v === true);
+    return hasText || hasMood || hasWins;
+  });
+  
+  activeWeeks.sort((a, b) => {
+    if (a === 'prep') return -1;
+    if (b === 'prep') return 1;
+    if (a === 'birth') return 1;
+    if (b === 'birth') return -1;
+    return parseInt(a) - parseInt(b);
+  });
+  
+  if (activeWeeks.length === 0) {
+    timelineContainer.innerHTML = `
+      <div class="timeline-empty">
+        <div style="font-size:3rem;margin-bottom:1rem">✍️</div>
+        <h3>No journal entries yet</h3>
+        <p style="margin-top:0.5rem;font-size:var(--text-sm)">Start writing reflections or tracking your mood on any week to see your compiled journey here!</p>
+      </div>
+    `;
+  } else {
+    const moodEmojisMap = {
+      exhausted: '😴 Exhausted',
+      excited: '🤩 Excited',
+      overwhelmed: '🤯 Overwhelmed',
+      contemplative: '🤔 Contemplative',
+      peaceful: '😌 Peaceful'
+    };
+    
+    let timelineHtml = '<div class="timeline">';
+    
+    activeWeeks.forEach(weekId => {
+      const data = WEEKS_DATA[weekId];
+      const entry = journals[weekId];
+      if (!data || !entry) return;
+      
+      const moodText = entry.mood ? moodEmojisMap[entry.mood] || entry.mood : '';
+      const winsCount = entry.wins ? Object.values(entry.wins).filter(v => v === true).length : 0;
+      
+      let winsLabelHtml = '';
+      if (winsCount > 0) {
+        winsLabelHtml = `<span class="timeline-wins-badge">🏆 ${winsCount} Dad Win${winsCount > 1 ? 's' : ''} Completed</span>`;
+      }
+      
+      timelineHtml += `
+        <div class="timeline-node ${data.trimester}">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-time-badge">${data.id === 'prep' || data.id === 'birth' ? '' : 'Week '}${data.id === 'prep' ? 'Pre-Conception' : (data.id === 'birth' ? 'Birth & Beyond' : data.id)}</span>
+            <div class="timeline-title-row">
+              <span class="timeline-title">${data.emoji} ${data.title}</span>
+              ${moodText ? `<span class="timeline-mood">${moodText}</span>` : ''}
+            </div>
+            ${entry.text && entry.text.trim().length > 0 ? `<div class="timeline-text">${escapeHtml(entry.text)}</div>` : '<div style="font-style:italic;color:var(--color-text-muted);font-size:var(--text-sm)">No reflection notes written.</div>'}
+            ${winsLabelHtml}
+          </div>
+        </div>
+      `;
+    });
+    
+    timelineHtml += '</div>';
+    timelineContainer.innerHTML = timelineHtml;
+  }
+  
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeJournalHistory() {
+  const modal = document.getElementById('journal-history-modal');
+  if (modal) {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+function escapeHtml(str) {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function exportJournalJSON() {
+  const journals = localStorage.getItem('dads-encyclopedia-journals') || '{}';
+  const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(journals);
+  const downloadAnchor = document.createElement('a');
+  downloadAnchor.setAttribute("href", dataStr);
+  downloadAnchor.setAttribute("download", "dads-encyclopedia-journal-export.json");
+  document.body.appendChild(downloadAnchor);
+  downloadAnchor.click();
+  downloadAnchor.remove();
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
     // Check hash for initial load
     let initialKey = '4';
@@ -4409,6 +4722,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+<!-- 📜 DAD'S JOURNAL HISTORY MODAL -->
+<div id="journal-history-modal" class="modal" onclick="if(event.target === this) closeJournalHistory()">
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="modal-title">📜 My Pregnancy Journey Diary</div>
+      <button class="close-modal" onclick="closeJournalHistory()">&times;</button>
+    </div>
+    <div class="modal-body" id="journal-timeline-container">
+      <!-- Compiled timeline gets rendered here -->
+    </div>
+    <div class="modal-footer">
+      <button class="btn-complete-toggle" style="background:var(--surface-2);border-color:var(--border);color:var(--text)" onclick="exportJournalJSON()">
+        💾 Export Data (JSON)
+      </button>
+      <button class="btn-complete-toggle completed" onclick="window.print()">
+        🖨️ Print Journey
+      </button>
+      <button class="btn-complete-toggle" style="background:rgba(255,106,26,0.15);color:#ff6a1a;border-color:#ff6a1a" onclick="closeJournalHistory()">
+        Close
+      </button>
+    </div>
+  </div>
+</div>
 
 </script>
 </body>
