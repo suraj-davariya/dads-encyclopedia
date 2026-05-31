@@ -4401,9 +4401,17 @@ function renderWeek(key) {
             <div class="sidebar-card">
               <div class="sidebar-title">🏁 Week Status</div>
               <p style="font-size:var(--text-sm);margin-bottom:var(--space-2);color:var(--color-text-muted)">Mark this week as completed once you review the content and priority actions:</p>
-              <button id="week-complete-btn" class="btn-complete-toggle ${isWeekCompleted(data.id) ? 'completed' : ''}" onclick="toggleWeekCompleted('${data.id}')">
+              <button id="week-complete-btn" class="btn-complete-toggle ${isWeekCompleted(data.id) ? 'completed' : ''}" onclick="toggleWeekCompleted('${data.id}')" style="margin-bottom:var(--space-3)">
                 ${isWeekCompleted(data.id) ? '✓ Marked as Completed' : 'Mark Week as Completed'}
               </button>
+              <div style="display:flex;flex-direction:column;gap:var(--space-2);border-top:1px solid var(--color-border);padding-top:var(--space-3)" class="print-btn-group">
+                <button class="btn-complete-toggle" style="background:var(--color-surface-2);border-color:var(--color-border);color:var(--color-text);font-size:0.85rem;padding:0.4rem 1rem" onclick="window.print()">
+                  🖨️ Print Week Guide
+                </button>
+                <button class="btn-complete-toggle" style="background:var(--color-surface-2);border-color:var(--color-border);color:var(--color-text);font-size:0.85rem;padding:0.4rem 1rem" onclick="printChecklistOnly()">
+                  📋 Print Checklists Only
+                </button>
+              </div>
             </div>
 
             <div class="sidebar-card" style="margin-top:var(--space-6)">
@@ -4675,6 +4683,14 @@ function exportJournalJSON() {
   document.body.appendChild(downloadAnchor);
   downloadAnchor.click();
   downloadAnchor.remove();
+}
+
+function printChecklistOnly() {
+  document.body.classList.add('print-checklists-only-mode');
+  window.print();
+  setTimeout(() => {
+    document.body.classList.remove('print-checklists-only-mode');
+  }, 1000);
 }
 
 

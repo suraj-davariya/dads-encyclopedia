@@ -591,11 +591,133 @@ h1,h2,h3,h4,h5 {
 
 /* ── PRINT ──────────────────────────────────────────────────── */
 @media print {
-  .site-nav, #scroll-progress, .week-nav, #theme-toggle { display: none !important; }
-  .week-layout { display: block; }
-  .week-section { break-inside: avoid; }
-  body { color: #000; background: #fff; }
-  .week-header { background: #1a1730 !important; -webkit-print-color-adjust: exact; }
+  /* Hide non-printable elements */
+  .site-nav, 
+  #scroll-progress, 
+  .week-nav, 
+  #theme-toggle, 
+  .site-header, 
+  .trimester-band, 
+  .command-center-bar, 
+  .hero,
+  .special-section,
+  .site-footer,
+  .btn-complete-toggle,
+  .print-btn-group,
+  .autosave-indicator,
+  .sidebar-card:nth-child(1), /* Week status card */
+  .sidebar-card:nth-child(2) /* Progress Tracker */
+  { 
+    display: none !important; 
+  }
+
+  /* Reset layout for single column printing */
+  body { 
+    color: #000000 !important; 
+    background: #ffffff !important; 
+    font-size: 11pt !important;
+    line-height: 1.5 !important;
+  }
+  
+  .container, .container--wide {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .content-layout { 
+    display: block !important; 
+  }
+  
+  .main-content {
+    width: 100% !important;
+    float: none !important;
+  }
+  
+  .sidebar { 
+    width: 100% !important;
+    float: none !important;
+    margin-top: 2rem !important;
+    display: block !important;
+    position: static !important;
+  }
+
+  /* Components typography and formatting */
+  .info-card {
+    background: #ffffff !important;
+    border: 1px solid #dddddd !important;
+    box-shadow: none !important;
+    padding: 1.5rem !important;
+    margin-bottom: 2rem !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    color: #000000 !important;
+  }
+
+  .bonding-item, .overview-card, .timeline-content, .win-item {
+    background: #ffffff !important;
+    border: 1px solid #dddddd !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Keep table borders clean and dark for high contrast */
+  div[style*="border-bottom:1px solid"] {
+    border-bottom: 1px solid #cccccc !important;
+  }
+  
+  div[style*="border-bottom:2px solid"] {
+    border-bottom: 2px solid #000000 !important;
+  }
+
+  .week-header { 
+    background: none !important; 
+    border-bottom: 3px solid #000000 !important;
+    color: #000000 !important;
+    padding: 1rem 0 !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  .week-title {
+    color: #000000 !important;
+    font-size: 22pt !important;
+  }
+  
+  .week-subtitle {
+    color: #444444 !important;
+    font-size: 13pt !important;
+  }
+  
+  .week-badge {
+    background: #dddddd !important;
+    color: #000000 !important;
+    border: 1px solid #888888 !important;
+  }
+
+  /* Textarea reflection editor hides when printing if empty, or expands to fit content */
+  .journal-textarea {
+    background: #ffffff !important;
+    border: 1px solid #888888 !important;
+    color: #000000 !important;
+    height: auto !important;
+    min-height: 100px !important;
+  }
+
+  /* Print Checklists Only Mode */
+  body.print-checklists-only-mode .info-card:not(.journal-card),
+  body.print-checklists-only-mode .overview-grid,
+  body.print-checklists-only-mode .sidebar-card:not(:nth-child(3)), /* Hide status, tracker, roadmap */
+  body.print-checklists-only-mode .sidebar-card:nth-child(4) /* Hide roadmap */
+  {
+    display: none !important;
+  }
+  
+  body.print-checklists-only-mode .sidebar {
+    margin-top: 0 !important;
+  }
 }
 
 /* ── DAD'S JOURNAL & REFLECTION ────────────────────────────── */
