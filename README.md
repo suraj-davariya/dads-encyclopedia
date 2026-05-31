@@ -114,5 +114,10 @@ We follow strict version control guidelines. Every commit must combine multiple 
 ***
 
 <div align="center">
-  <i>Built with ❤️, excessive caffeine, and minimal sleep for first-time dads everywhere.</i>
+
+[![Built with Love](https://img.shields.io/badge/BUILT%20WITH-❤️%20LOVE-ff69b4?style=for-the-badge)](https://suraj-davariya.github.io/dads-encyclopedia/)
+[![Fuelled by Caffeine](https://img.shields.io/badge/FUELLED%20BY-☕%20CAFFEINE-704214?style=for-the-badge)](https://suraj-davariya.github.io/dads-encyclopedia/)
+[![Minimal Sleep](https://img.shields.io/badge/SLEEP%20LEVEL-😴%20MINIMAL-4b0082?style=for-the-badge)](https://suraj-davariya.github.io/dads-encyclopedia/)
+[![Designed for Dads](https://img.shields.io/badge/DESIGNED%20FOR-👶%20NEW%20DADS-059669?style=for-the-badge)](https://suraj-davariya.github.io/dads-encyclopedia/)
+
 </div>
