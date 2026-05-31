@@ -22,23 +22,25 @@ Welcome to the **Ultimate First-Time Dad's Pregnancy Encyclopedia**. We took the
 
 ---
 
-## ✨ Features (Why This Rules)
+## ✨ High-End Features (Why This Rules)
 
-- 📅 **40-Week Interactive Tracker:** A seamless, single-page experience covering pre-conception all the way to birth.
-- 🦸‍♂️ **Dad's Mission Control:** Stop guessing. Get exact, tabbed checklists for **Emotional**, **Practical**, and **Relationship** tasks every single week.
-- 🤰 **Partner Symptom Decoder:** Understand exactly what she's going through physically and emotionally, complete with the "Why it's happening" and "How you can help."
-- 🛒 **The "No-Regrets" Shopping List:** Weekly breakdowns of must-haves and nice-to-haves. Skip the marketing fluff and buy what actually matters.
-- 🧠 **Prenatal Bonding Lab:** Specific scripts, playlists, and challenges to start bonding with your baby before they even arrive.
-- 🎨 **Premium UI/UX:** Built with a bespoke OKLCH color design system. It looks like a million bucks, works flawlessly on mobile, and features smooth trimester color transitions.
+- 📅 **42-Week Master Tracker:** A seamless, single-page experience covering pre-conception (`prep`) all the way to birth and postpartum (`birth`).
+- ⏱️ **Interactive Labor Contraction Timer Coach:** A globally accessible slide-out drawer dashboard. Includes high-visibility stopwatch timing, automated **5-1-1 Active Labor Rule** checking, real-time clinical labor phase feedback (Early 🏠, Active 🚨, Transition 🤰), and medical guidance alerts.
+- ✍️ **Dad's Weekly Journal & Timeline Diary:** Interactive mood trackers, custom "Dad Wins" milestone checklists, and a reflective journal editor with a 1000ms auto-save mechanism. Includes a compiled timeline modal to view, print, or export your entire journey as JSON.
+- 🖨️ **PDF Export & Ink-Saving Print Engine:** One-click dynamic printing. Includes `Print Checklist Only` mode which isolates active shopping lists and dad tasks onto paper, perfect for carrying around or sticking on the fridge.
+- 🎨 **Premium UI/UX & Micro-Animations:** Staggered vertical vertical-slide entrances (`@keyframes slideUpFade`), premium satin saturated blurs (`backdrop-filter: blur(18px) saturate(180%)`), and trimester color-coded progress tracker dots featuring stately pulsating active glows.
+- 🤰 **Partner Symptom Decoder:** Detailed lookups on physical changes (Insomnia, Crowded Diaphragm, Nesting hormonal surges, Braxton Hicks practicing), with clear instructions on how Dads can actively support.
+- 🩺 **Clinical-Grade Milestones Enriched:** Deeply researched chapters for critical weeks (Week 12 genetic scans, Week 20 detailed anatomy ultrasounds, Week 28 RhoGAM checks, and Week 36 Group B Strep (GBS) tests and infant car seat checks).
 
 ---
 
 ## 🏗️ Architecture & Tech Stack
 
-This project is built for performance and absolute simplicity:
-- **Frontend:** Pure Vanilla HTML5, CSS3 (using OKLCH design tokens), and ES6+ JavaScript.
-- **Zero Dependencies:** No frameworks, no build steps, no complex setup. Just standard web technologies.
-- **Mobile First:** Highly optimized for mobile devices with a fluid design system.
+This project is built for performance, absolute simplicity, and zero configuration:
+- **Monolithic Architecture:** Highly optimized, self-contained `index.html` structure keeping the application lightning-fast and portable.
+- **Frontend Design System:** Built on premium HSL color tokens (`styles.css`), responsive layouts, and modern glassmorphic satins.
+- **Durable LocalStorage Engine:** Namespace-protected state engines (`dads-encyclopedia-checklists`, `dads-encyclopedia-journals`, `dads-encyclopedia-contractions`) ensuring user data, timed logs, and diary entries are never lost.
+- **Zero Configuration:** 100% vanilla HTML5, CSS3, and ES6+ JS. No node modules, compilation steps, or complex server requirements.
 
 ---
 
@@ -46,53 +48,42 @@ This project is built for performance and absolute simplicity:
 
 ```text
 dads-encyclopedia/
-├── assets/                  # 🖼️ Static assets (images, icons)
-├── data/                    # 🗃️ JSON data batches for each week
-│   └── batch_*.json         # Contains medically accurate milestone content
-├── prompt-library/          # 🤖 AI prompts, architecture notes, and AI agent roles
-├── app.js                   # ⚙️ Client-side interactivity (Tabs, Theme Toggles)
-├── styles.css               # 💅 Premium design system and OKLCH color tokens
-├── index.html               # 🌐 The generated production-ready application
-└── CONTRIBUTING.md          # 🤝 Guidelines for joining the dad squad
+├── prompt-library/          # 🤖 AI templates, prompts, and roles
+├── styles.css               # 💅 Premium CSS variables, design system, and OKLCH properties
+├── index.html               # 🌐 Monolithic application & dynamic javascript engine
+└── README.md                # 📖 This documentation file
 ```
 
 ---
 
 ## 🚀 Quick Start (Local Development)
 
-Ready to contribute or run your own instance? It takes less than 2 minutes.
+Ready to launch mission control? It takes less than 30 seconds.
 
-### 1. Clone the Repo
+### 1. Serve the App Locally
+We recommend running a local HTTP server to support smooth localStorage state handling and resource isolation:
 ```bash
-git clone https://github.com/your-username/dads-encyclopedia.git
-cd dads-encyclopedia
+# Python 3 local server
+python3 -m http.server 8000
 ```
 
-### 2. Make Content Updates
-All the heavy lifting is in the `data/` folder. Modify or create a new `batch_X.json` file. Follow the template found in `prompt-library/weekly-template.md`.
-
-### 3. Open and Explore
-Simply open `index.html` in your web browser to start using the encyclopedia. For the best experience, including smooth navigation and saved progress, we recommend using a simple local server.
-
-### 4. Launch Mission Control
-Use any local server to test the UI (or simply double-click `index.html`):
-```bash
-# Example using npx (if you have Node.js)
-npx serve .
-```
-Open [http://localhost:8000](http://localhost:8000) in your browser. 
+### 2. Open in Your Browser
+Open [http://localhost:8000](http://localhost:8000) in your web browser. 
 
 ---
 
-## 🗺️ Roadmap
+## 🗺️ Roadmap & Completed Milestones
 
-We are currently building out the 40-week masterplan. Track our progress below:
+We are systematically completing the master roadmap. Track our progress below:
 
-- [x] **Foundation:** Weeks 1–4 + Pre-Conception
-- [x] **Phase 1 (First Trimester):** Weeks 5–13 (Morning sickness peak, first ultrasound)
-- [ ] **Phase 2 (Second Trimester):** Weeks 14–27 (Anatomy scan, first kicks)
-- [ ] **Phase 3 (Third Trimester):** Weeks 28–40+ (Birth plan, hospital bags)
-- [ ] **Phase 4 (Birth & Beyond):** Labor, Delivery, and Month 1
+- [x] **Foundation Setup:** Weeks 1–4 + Pre-Conception (`prep`)
+- [x] **First Trimester:** Weeks 5–13 (Morning sickness, genetic screens, Week 12 Placenta Transitions)
+- [x] **Second Trimester:** Weeks 14–27 (Ultrasounds, anatomy check-ins, Week 20 Halfway mark)
+- [x] **Third Trimester Begins:** Weeks 28–32 (Week 28 RhoGAM, pediatrician prep, kick counts)
+- [x] **Late Stage Ready:** Weeks 33–36 (Week 36 Nesting, GBS tests, car seat installation checks)
+- [ ] **Phase 4 (Birth & Beyond):** Labor, Delivery, and Postpartum Month 1
+- [x] **Contraction Timer Coach Widget** (Integrated & 100% robust)
+- [x] **Weekly Journal & compiled Journey Timeline** (Integrated & 100% robust)
 
 ---
 
@@ -101,11 +92,9 @@ We are currently building out the 40-week masterplan. Track our progress below:
 We take our version control seriously. You **MUST** use multiple [gitmojis](https://gitmoji.dev/) for every commit to keep our history highly visual and expressive. 
 
 **Examples:**
-- `✨ 👶 📝 Add Week 6 chapter and update timeline roadmap`
+- `✨ 👶 📝 Add Week 28 chapter and update timeline roadmap`
 - `🐛 💄 🚑 Fix broken flexbox layout in mission control tabs`
-- `♻️ 🎨 🏗️ Refactor CSS color tokens to OKLCH for dark mode`
-
-See `.cursorrules` for full details.
+- `♻️ 🎨 🏗️ Refactor CSS color tokens for trimester glows`
 
 ---
 
