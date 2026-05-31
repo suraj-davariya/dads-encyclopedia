@@ -798,11 +798,11 @@ a:hover { text-decoration: underline; }
       </a>
 
       <nav class="nav-pills" aria-label="Trimester navigation">
-        <a href="#prep" class="nav-pill prep">Pre-Conception</a>
-        <a href="#week-1" class="nav-pill t1 active">First Trimester</a>
+        <a href="#week-prep" class="nav-pill prep active">Pre-Conception</a>
+        <a href="#week-1" class="nav-pill t1">First Trimester</a>
         <a href="#week-14" class="nav-pill t2">Second Trimester</a>
         <a href="#week-28" class="nav-pill t3">Third Trimester</a>
-        <a href="#birth" class="nav-pill birth">Birth & Beyond</a>
+        <a href="#week-birth" class="nav-pill birth">Birth & Beyond</a>
       </nav>
 
       <div class="header-actions">
@@ -933,27 +933,27 @@ a:hover { text-decoration: underline; }
 <nav class="trimester-band" aria-label="Trimester selector">
   <div class="container--wide">
     <div class="trimester-grid">
-      <button class="trimester-btn prep" onclick="location.href='#pre-conception'" aria-label="Pre-Conception">
+      <button class="trimester-btn prep active" onclick="location.href='#week-prep'" aria-label="Pre-Conception">
         <span class="t-icon">🌱</span>
         <span class="t-label">Pre-Conception</span>
         <span class="t-weeks">Planning Phase</span>
       </button>
-      <button class="trimester-btn t1 active" onclick="location.href='#week-4'" aria-label="First Trimester">
+      <button class="trimester-btn t1" onclick="location.href='#week-1'" aria-label="First Trimester">
         <span class="t-icon">🌸</span>
         <span class="t-label">First Trimester</span>
         <span class="t-weeks">Weeks 1–13</span>
       </button>
-      <button class="trimester-btn t2" onclick="location.href='#second-trimester'" aria-label="Second Trimester">
+      <button class="trimester-btn t2" onclick="location.href='#week-14'" aria-label="Second Trimester">
         <span class="t-icon">🌿</span>
         <span class="t-label">Second Trimester</span>
         <span class="t-weeks">Weeks 14–27</span>
       </button>
-      <button class="trimester-btn t3" onclick="location.href='#third-trimester'" aria-label="Third Trimester">
+      <button class="trimester-btn t3" onclick="location.href='#week-28'" aria-label="Third Trimester">
         <span class="t-icon">🌟</span>
         <span class="t-label">Third Trimester</span>
         <span class="t-weeks">Weeks 28–40+</span>
       </button>
-      <button class="trimester-btn birth" onclick="location.href='#birth'" aria-label="Birth and Beyond">
+      <button class="trimester-btn birth" onclick="location.href='#week-birth'" aria-label="Birth and Beyond">
         <span class="t-icon">👶</span>
         <span class="t-label">Birth & Beyond</span>
         <span class="t-weeks">Labor + Month 1</span>
