@@ -4712,16 +4712,29 @@ function renderWeek(key) {
 
 // ─── JOURNAL PERSISTENCE & AUTO-SAVE CORE FUNCTIONS ────────────
 function saveJournalField(weekId, field, value) {
-  const journals = JSON.parse(localStorage.getItem('dads-encyclopedia-journals') || '{}');
+  let journals = {};
+  try {
+    const parsed = JSON.parse(localStorage.getItem('dads-encyclopedia-journals'));
+    if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) {
+      journals = parsed;
+    }
+  } catch (e) {
+    console.error('Error parsing journals history:', e);
+  }
   if (!journals[weekId]) {
     journals[weekId] = { text: '', mood: '', wins: {} };
   }
   journals[weekId][field] = value;
-  localStorage.setItem('dads-encyclopedia-journals', JSON.stringify(journals));
+  try {
+    localStorage.setItem('dads-encyclopedia-journals', JSON.stringify(journals));
+  } catch (e) {
+    console.error('Error saving journals history:', e);
+  }
 }
 
 let journalAutoSaveTimeout = null;
 function handleJournalInput(weekId, textarea) {
+  if (!textarea) return;
   const indicator = document.getElementById(`autosave-${weekId}`);
   if (indicator) {
     indicator.textContent = '💾 Saving...';
@@ -4752,10 +4765,22 @@ function saveJournalEntryImmediately(weekId) {
 }
 
 function selectJournalMood(weekId, moodName, btn) {
+  if (!btn) return;
   const buttons = btn.parentElement.querySelectorAll('.mood-btn');
-  buttons.forEach(b => b.classList.remove('selected'));
+  if (buttons) {
+    buttons.forEach(b => b.classList.remove('selected'));
+  }
   
-  const journals = JSON.parse(localStorage.getItem('dads-encyclopedia-journals') || '{}');
+  let journals = {};
+  try {
+    const parsed = JSON.parse(localStorage.getItem('dads-encyclopedia-journals'));
+    if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) {
+      journals = parsed;
+    }
+  } catch (e) {
+    console.error('Error parsing journals mood:', e);
+  }
+  
   const currentMood = journals[weekId] ? journals[weekId].mood : '';
   
   if (currentMood === moodName) {
@@ -4767,7 +4792,17 @@ function selectJournalMood(weekId, moodName, btn) {
 }
 
 function toggleDadWinItem(weekId, winIdx, el) {
-  const journals = JSON.parse(localStorage.getItem('dads-encyclopedia-journals') || '{}');
+  if (!el) return;
+  let journals = {};
+  try {
+    const parsed = JSON.parse(localStorage.getItem('dads-encyclopedia-journals'));
+    if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) {
+      journals = parsed;
+    }
+  } catch (e) {
+    console.error('Error parsing journals wins:', e);
+  }
+  
   if (!journals[weekId]) {
     journals[weekId] = { text: '', mood: '', wins: {} };
   }
@@ -4777,19 +4812,35 @@ function toggleDadWinItem(weekId, winIdx, el) {
   
   const isChecked = !journals[weekId].wins[winIdx];
   journals[weekId].wins[winIdx] = isChecked;
-  localStorage.setItem('dads-encyclopedia-journals', JSON.stringify(journals));
+  try {
+    localStorage.setItem('dads-encyclopedia-journals', JSON.stringify(journals));
+  } catch (e) {
+    console.error('Error saving journals wins:', e);
+  }
   
   el.classList.toggle('checked', isChecked);
   const checkbox = el.querySelector('.win-checkbox');
-  checkbox.textContent = isChecked ? '✓' : '';
+  if (checkbox) {
+    checkbox.textContent = isChecked ? '✓' : '';
+  }
 }
 
 function openJournalHistory() {
   const modal = document.getElementById('journal-history-modal');
   if (!modal) return;
   
-  const journals = JSON.parse(localStorage.getItem('dads-encyclopedia-journals') || '{}');
+  let journals = {};
+  try {
+    const parsed = JSON.parse(localStorage.getItem('dads-encyclopedia-journals'));
+    if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) {
+      journals = parsed;
+    }
+  } catch (e) {
+    console.error('Error parsing journals history:', e);
+  }
+  
   const timelineContainer = document.getElementById('journal-timeline-container');
+  if (!timelineContainer) return;
   
   const activeWeeks = Object.keys(WEEKS_DATA).filter(weekId => {
     const entry = journals[weekId];
@@ -4901,6 +4952,7 @@ function printChecklistOnly() {
 }
 
 // ─── LABOR CONTRACTION TIMER & COACH LOGIC ─────────────────────
+// ─── LABOR CONTRACTION TIMER & COACH LOGIC ─────────────────────
 let timerInterval = null;
 let timerStart = null;
 
@@ -4926,65 +4978,93 @@ function handleTimerClick() {
   if (!timerInterval) {
     // Start Timing
     timerStart = Date.now();
-    btn.classList.add('active');
-    btnText.textContent = 'Stop Timer';
-    btnEmoji.textContent = '🛑';
-    status.textContent = 'Timing active contraction...';
+    if (btn) btn.classList.add('active');
+    if (btnText) btnText.textContent = 'Stop Timer';
+    if (btnEmoji) btnEmoji.textContent = '🛑';
+    if (status) status.textContent = 'Timing active contraction...';
     
     timerInterval = setInterval(() => {
       const diff = Math.floor((Date.now() - timerStart) / 1000);
       const mins = String(Math.floor(diff / 60)).padStart(2, '0');
       const secs = String(diff % 60).padStart(2, '0');
-      clock.textContent = `${mins}:${secs}`;
+      if (clock) clock.textContent = `${mins}:${secs}`;
     }, 1000);
   } else {
     // Stop Timing
     clearInterval(timerInterval);
     timerInterval = null;
-    btn.classList.remove('active');
-    btnText.textContent = 'Start Timer';
-    btnEmoji.textContent = '⏱️';
-    status.textContent = 'Ready to time';
+    if (btn) btn.classList.remove('active');
+    if (btnText) btnText.textContent = 'Start Timer';
+    if (btnEmoji) btnEmoji.textContent = '⏱️';
+    if (status) status.textContent = 'Ready to time';
     
     const duration = Math.floor((Date.now() - timerStart) / 1000);
     saveContraction(duration);
-    clock.textContent = '00:00';
+    if (clock) clock.textContent = '00:00';
   }
 }
 
 function saveContraction(duration) {
-  const history = JSON.parse(localStorage.getItem('dads-encyclopedia-contractions') || '[]');
+  let history = [];
+  try {
+    const parsed = JSON.parse(localStorage.getItem('dads-encyclopedia-contractions'));
+    if (Array.isArray(parsed)) {
+      history = parsed;
+    }
+  } catch (e) {
+    console.error('Error parsing contraction history:', e);
+  }
+  
   const now = new Date();
   const startTime = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
   
   let interval = 'N/A';
   if (history.length > 0) {
     const prev = history[0];
-    const prevEndTime = new Date(prev.timestamp);
-    const diffMs = now - prevEndTime;
-    const diffMins = Math.floor(diffMs / 1000 / 60);
-    const diffSecs = Math.floor((diffMs / 1000) % 60);
-    interval = `${diffMins}m ${diffSecs}s`;
+    if (prev && prev.timestamp) {
+      const prevEndTime = new Date(prev.timestamp);
+      const diffMs = now - prevEndTime;
+      if (!isNaN(diffMs)) {
+        const diffMins = Math.floor(diffMs / 1000 / 60);
+        const diffSecs = Math.floor((diffMs / 1000) % 60);
+        interval = `${diffMins}m ${diffSecs}s`;
+      }
+    }
   }
   
   const entry = {
     id: Date.now(),
     startTime: startTime,
-    duration: duration,
+    duration: isNaN(duration) ? 0 : duration,
     interval: interval,
     timestamp: now.toISOString()
   };
   
   history.unshift(entry); // Newest first
-  localStorage.setItem('dads-encyclopedia-contractions', JSON.stringify(history));
+  try {
+    localStorage.setItem('dads-encyclopedia-contractions', JSON.stringify(history));
+  } catch (e) {
+    console.error('Error saving contraction history:', e);
+  }
   
   renderContractionLog();
 }
 
 function renderContractionLog() {
-  const history = JSON.parse(localStorage.getItem('dads-encyclopedia-contractions') || '[]');
+  let history = [];
+  try {
+    const parsed = JSON.parse(localStorage.getItem('dads-encyclopedia-contractions'));
+    if (Array.isArray(parsed)) {
+      history = parsed;
+    }
+  } catch (e) {
+    console.error('Error parsing contraction history:', e);
+  }
+  
   const rows = document.getElementById('timer-log-rows');
   const empty = document.getElementById('timer-empty-state');
+  
+  if (!rows || !empty) return;
   
   if (history.length === 0) {
     rows.innerHTML = '';
@@ -4993,15 +5073,15 @@ function renderContractionLog() {
     empty.style.display = 'none';
     rows.innerHTML = history.map((c, idx) => {
       const num = history.length - idx;
-      const durMins = Math.floor(c.duration / 60);
-      const durSecs = c.duration % 60;
+      const durMins = Math.floor((c.duration || 0) / 60);
+      const durSecs = (c.duration || 0) % 60;
       const durationStr = durMins > 0 ? `${durMins}m ${durSecs}s` : `${durSecs}s`;
       return `
         <tr>
           <td>#${num}</td>
-          <td>${c.startTime}</td>
+          <td>${c.startTime || 'N/A'}</td>
           <td style="font-weight:600">${durationStr}</td>
-          <td>${c.interval}</td>
+          <td>${c.interval || 'N/A'}</td>
         </tr>
       `;
     }).join('');
@@ -5012,7 +5092,11 @@ function renderContractionLog() {
 
 function clearContractionHistory() {
   if (confirm('Are you sure you want to clear your contraction log? This cannot be undone.')) {
-    localStorage.removeItem('dads-encyclopedia-contractions');
+    try {
+      localStorage.removeItem('dads-encyclopedia-contractions');
+    } catch (e) {
+      console.error('Error clearing contraction history:', e);
+    }
     renderContractionLog();
   }
 }
@@ -5024,6 +5108,7 @@ function analyzeContractions(history) {
   const text = document.getElementById('coach-text');
   
   if (!banner || !icon || !title || !text) return;
+  if (!Array.isArray(history)) history = [];
   
   if (history.length < 3) {
     banner.className = 'coach-alert-banner early';
@@ -5035,16 +5120,21 @@ function analyzeContractions(history) {
   
   // Let's analyze the last 3 contractions to calculate average duration and interval
   const recent = history.slice(0, 3);
-  const avgDuration = recent.reduce((sum, c) => sum + c.duration, 0) / 3;
+  const avgDuration = recent.reduce((sum, c) => sum + (Number(c.duration) || 0), 0) / 3;
   
   // Calculate average interval
   let sumIntervalSecs = 0;
   let intervalsCount = 0;
   for (let i = 0; i < recent.length - 1; i++) {
-    const curTime = new Date(recent[i].timestamp);
-    const nextTime = new Date(recent[i+1].timestamp);
-    sumIntervalSecs += (curTime - nextTime) / 1000;
-    intervalsCount++;
+    if (recent[i] && recent[i].timestamp && recent[i+1] && recent[i+1].timestamp) {
+      const curTime = new Date(recent[i].timestamp);
+      const nextTime = new Date(recent[i+1].timestamp);
+      const diff = (curTime - nextTime) / 1000;
+      if (!isNaN(diff)) {
+        sumIntervalSecs += diff;
+        intervalsCount++;
+      }
+    }
   }
   
   const avgInterval = intervalsCount > 0 ? (sumIntervalSecs / intervalsCount) : 300; // default 5 min if not enough data
